@@ -12,12 +12,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      
       - name: Setup Buf
         uses: bufbuild/buf-setup-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Lint
-        run: buf lint proto
+        uses: bufbuild/buf-lint-action@v1
+        with:
+          input: "proto"
+
       - name: Generate
         run: buf generate proto
+      
+      - name: Check Breaking Change
+        if: github.event_name == 'pull_request'
+        uses: bufbuild/buf-breaking-action@v1
+        with:
+          input: "proto"
+          against: "https://github.com/mystikonetwork/mystiko-protos.git#branch=master,subdir=proto"
+      
+      - name: Check Dirty Files
+        run: git diff --quiet || (echo "some generated files are not included in repo" && exit 1)
+      
       - name: Telegram Failure Notification
         uses: appleboy/telegram-action@master
         if: failure()
