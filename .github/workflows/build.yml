@@ -20,7 +20,7 @@ jobs:
         run: buf lint proto
       - name: Check Breaking Change
         if: github.event_name == 'pull_request'
-        run: buf breaking proto --against "ssh://git@github.com/mystikonetwork/mystiko-protos.git#branch=master,subdir=proto"
+        run: buf breaking proto --against "https://github.com/mystikonetwork/mystiko-protos.git#branch=master,subdir=proto"
       - name: Generate
         run: buf generate proto
       - name: Check Dirty Files
