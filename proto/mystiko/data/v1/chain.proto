@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package mystiko.data.v1;
+
+import "mystiko/data/v1/contract.proto";
+
+message ChainData {
+   uint64   start_block = 1;
+   uint64   end_block = 2;
+   repeated ContractData contract_data = 3;
+ }

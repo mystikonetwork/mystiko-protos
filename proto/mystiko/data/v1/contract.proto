@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mystiko.data.v1;
+
+import "mystiko/data/v1/commitment.proto";
+import "mystiko/data/v1/nullifier.proto";
+
+message ContractData {
+  bytes    contract_address = 1;
+  repeated Commitment commitments= 2;
+  repeated Nullifier nullifiers = 3;
+}
+

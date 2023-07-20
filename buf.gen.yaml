@@ -1,0 +1,12 @@
+version: v1
+managed:
+  enabled: true
+  java_package_prefix:
+    default: network
+plugins:
+  - plugin: buf.build/community/neoeinstein-prost
+    out: gen/rust
+  - plugin: buf.build/protocolbuffers/java
+    out: gen/java
+  - plugin: buf.build/bufbuild/es
+    out: gen/es
