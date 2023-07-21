@@ -9,11 +9,12 @@ enum CommitmentStatus {
 }
 
 message Commitment {
-  bytes            commitment_hash = 1;
-  CommitmentStatus status = 2;
-  optional uint64  leaf_index = 3;
-  optional bytes   rollup_fee = 4;
-  optional bytes   encrypted_note = 5;
+  bytes            commitment_hash           = 1;
+  CommitmentStatus status                    = 2;
+  optional uint64  leaf_index                = 3;
+  optional bytes   rollup_fee                = 4;
+  optional bytes   encrypted_note            = 5;
   optional bytes   creation_transaction_hash = 6;
-  optional bytes   rollup_transaction_hash = 7;
+  optional bytes   rollup_transaction_hash   = 7;
+  optional bytes   relay_transaction_hash    = 8;
 }

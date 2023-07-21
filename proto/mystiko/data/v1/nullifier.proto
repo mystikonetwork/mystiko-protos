@@ -3,7 +3,7 @@ syntax = "proto3";
 package mystiko.data.v1;
 
 message Nullifier {
-  bytes nullifier = 1;
+  bytes nullifier        = 1;
   bytes transaction_hash = 2;
 }
 
