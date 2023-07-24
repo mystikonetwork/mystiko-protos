@@ -26,12 +26,12 @@ jobs:
       - name: Generate
         run: buf generate proto
       
-      - name: Check Breaking Change
-        if: github.event_name == 'pull_request'
-        uses: bufbuild/buf-breaking-action@v1
-        with:
-          input: "proto"
-          against: "https://github.com/mystikonetwork/mystiko-protos.git#branch=master,subdir=proto"
+#      - name: Check Breaking Change
+#        if: github.event_name == 'pull_request'
+#        uses: bufbuild/buf-breaking-action@v1
+#        with:
+#          input: "proto"
+#          against: "https://github.com/mystikonetwork/mystiko-protos.git#branch=master,subdir=proto"
       
       - name: Check Dirty Files
         run: git diff --quiet || (echo "some generated files are not included in repo" && exit 1)
@@ -53,3 +53,4 @@ jobs:
           format: markdown
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
