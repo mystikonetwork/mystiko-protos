@@ -3,9 +3,10 @@ syntax = "proto3";
 package mystiko.data.v1;
 
 enum CommitmentStatus {
-  COMMITMENT_STATUS_UNSPECIFIED = 0;
-  COMMITMENT_STATUS_QUEUED      = 1;
-  COMMITMENT_STATUS_INCLUDED    = 2;
+  COMMITMENT_STATUS_UNSPECIFIED   = 0;
+  COMMITMENT_STATUS_SRC_SUCCEEDED = 1;
+  COMMITMENT_STATUS_QUEUED        = 2;
+  COMMITMENT_STATUS_INCLUDED      = 3;
 }
 
 message Commitment {
