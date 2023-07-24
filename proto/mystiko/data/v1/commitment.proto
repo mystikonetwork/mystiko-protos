@@ -13,7 +13,7 @@ message Commitment {
   CommitmentStatus status                    = 2;
   uint64           block_number              = 3;
   optional uint64  included_block_number     = 4;
-  optional uint64  src_chain_block_number    = 5
+  optional uint64  src_chain_block_number    = 5;
   optional uint64  leaf_index                = 6;
   optional bytes   rollup_fee                = 7;
   optional bytes   encrypted_note            = 8;
