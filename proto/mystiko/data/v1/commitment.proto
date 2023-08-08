@@ -10,15 +10,15 @@ enum CommitmentStatus {
 }
 
 message Commitment {
-  bytes            commitment_hash           = 1;
-  CommitmentStatus status                    = 2;
-  uint64           block_number              = 3;
-  optional uint64  included_block_number     = 4;
-  optional uint64  src_chain_block_number    = 5;
-  optional uint64  leaf_index                = 6;
-  optional bytes   rollup_fee                = 7;
-  optional bytes   encrypted_note            = 8;
-  optional bytes   creation_transaction_hash = 9;
-  optional bytes   rollup_transaction_hash   = 10;
-  optional bytes   relay_transaction_hash    = 11;
+  bytes            commitment_hash            = 1;
+  CommitmentStatus status                     = 2;
+  uint64           block_number               = 3;
+  optional uint64  included_block_number      = 4;
+  optional uint64  src_chain_block_number     = 5;
+  optional uint64  leaf_index                 = 6;
+  optional bytes   rollup_fee                 = 7;
+  optional bytes   encrypted_note             = 8;
+  optional bytes   queued_transaction_hash    = 9;
+  optional bytes   included_transaction_hash  = 10;
+  optional bytes   src_chain_transaction_hash = 11;
 }
