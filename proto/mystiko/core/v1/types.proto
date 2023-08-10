@@ -3,55 +3,55 @@ syntax = "proto3";
 package mystiko.core.v1;
 
 enum AccountStatus {
-  CREATED   = 0;
-  SCANNING  = 1;
-  SCANNED   = 2;
-}
-
-enum CommitmentStatus {
-  INIT          = 0;
-  SRC_SUCCEEDED = 1;
-  QUEUED        = 2;
-  INCLUDED      = 3;
-  SPENT         = 4;
-  FAILED        = 5;
+  ACCOUNT_STATUS_CREATED   = 0;
+  ACCOUNT_STATUS_SCANNING  = 1;
+  ACCOUNT_STATUS_SCANNED   = 2;
 }
 
 enum ContractType {
-  DEPOSIT = 0;
-  POOL    = 1;
+  CONTRACT_TYPE_DEPOSIT = 0;
+  CONTRACT_TYPE_POOL    = 1;
 }
 
 enum BridgeType {
-  LOOP       = 0;
-  POLY       = 1;
-  TBRIDGE    = 2;
-  CELER      = 3;
-  LAYER_ZERO = 4;
-  AXELAR     = 5;
+  BRIDGE_TYPE_LOOP       = 0;
+  BRIDGE_TYPE_POLY       = 1;
+  BRIDGE_TYPE_TBRIDGE    = 2;
+  BRIDGE_TYPE_CELER      = 3;
+  BRIDGE_TYPE_LAYER_ZERO = 4;
+  BRIDGE_TYPE_AXELAR     = 5;
+}
+
+enum CommitmentStatus {
+  COMMITMENT_STATUS_INIT          = 0;
+  COMMITMENT_STATUS_SRC_SUCCEEDED = 1;
+  COMMITMENT_STATUS_QUEUED        = 2;
+  COMMITMENT_STATUS_INCLUDED      = 3;
+  COMMITMENT_STATUS_SPENT         = 4;
+  COMMITMENT_STATUS_FAILED        = 5;
 }
 
 enum DepositStatus {
-  INIT            = 0;
-  ASSET_APPROVING = 1;
-  ASSET_APPROVED  = 2;
-  SRC_PENDING     = 3;
-  SRC_SUCCEEDED   = 4;
-  QUEUED          = 5;
-  INCLUDED        = 6;
-  FAILED          = 7;
+  DEPOSIT_STATUS_INIT            = 0;
+  DEPOSIT_STATUS_ASSET_APPROVING = 1;
+  DEPOSIT_STATUS_ASSET_APPROVED  = 2;
+  DEPOSIT_STATUS_SRC_PENDING     = 3;
+  DEPOSIT_STATUS_SRC_SUCCEEDED   = 4;
+  DEPOSIT_STATUS_QUEUED          = 5;
+  DEPOSIT_STATUS_INCLUDED        = 6;
+  DEPOSIT_STATUS_FAILED          = 7;
 }
 
 enum TransactionType {
-  TRANSFER = 0;
-  WITHDRAW = 1;
+  TRANSACTION_TYPE_TRANSFER = 0;
+  TRANSACTION_TYPE_WITHDRAW = 1;
 }
 
 enum TransactionStatus {
-  INIT = 0;
-  PROOF_GENERATING = 1;
-  PROOF_GENERATED = 2;
-  PENDING = 3;
-  SUCCEEDED = 4;
-  FAILED = 5;
+  TRANSACTION_STATUS_INIT = 0;
+  TRANSACTION_STATUS_PROOF_GENERATING = 1;
+  TRANSACTION_STATUS_PROOF_GENERATED = 2;
+  TRANSACTION_STATUS_PENDING = 3;
+  TRANSACTION_STATUS_SUCCEEDED = 4;
+  TRANSACTION_STATUS_FAILED = 5;
 }

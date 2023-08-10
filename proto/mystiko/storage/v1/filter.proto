@@ -3,49 +3,49 @@ syntax = "proto3";
 package mystiko.storage.v1;
 
 enum SubFilterOperator {
-  IS_NULL       = 0;
-  IS_NOT_NULL   = 1;
-  EQUAL         = 2;
-  NOT_EQUAL     = 3;
-  GREATER       = 4;
-  GREATER_EQUAL = 5;
-  LESS          = 6;
-  LESS_EQUAL    = 7;
-  BETWEEN_AND   = 8;
-  IN            = 9;
+  SUB_FILTER_OPERATOR_IS_NULL       = 0;
+  SUB_FILTER_OPERATOR_IS_NOT_NULL   = 1;
+  SUB_FILTER_OPERATOR_EQUAL         = 2;
+  SUB_FILTER_OPERATOR_NOT_EQUAL     = 3;
+  SUB_FILTER_OPERATOR_GREATER       = 4;
+  SUB_FILTER_OPERATOR_GREATER_EQUAL = 5;
+  SUB_FILTER_OPERATOR_LESS          = 6;
+  SUB_FILTER_OPERATOR_LESS_EQUAL    = 7;
+  SUB_FILTER_OPERATOR_BETWEEN_AND   = 8;
+  SUB_FILTER_OPERATOR_IN            = 9;
 }
 
 enum ColumnValueType {
-  BOOL      = 0;
-  CHAR      = 1;
-  I8        = 2;
-  I16       = 3;
-  I32       = 4;
-  I64       = 5;
-  I128      = 6;
-  ISIZE     = 7;
-  U8        = 8;
-  U16       = 9;
-  U32       = 10;
-  U64       = 11;
-  U128      = 12;
-  USIZE     = 13;
-  F32       = 14;
-  F64       = 15;
-  STRING    = 16;
-  BIG_INT   = 17;
-  BIG_UINT  = 18;
-  JSON      = 19;
+  COLUMN_VALUE_TYPE_BOOL      = 0;
+  COLUMN_VALUE_TYPE_CHAR      = 1;
+  COLUMN_VALUE_TYPE_I8        = 2;
+  COLUMN_VALUE_TYPE_I16       = 3;
+  COLUMN_VALUE_TYPE_I32       = 4;
+  COLUMN_VALUE_TYPE_I64       = 5;
+  COLUMN_VALUE_TYPE_I128      = 6;
+  COLUMN_VALUE_TYPE_ISIZE     = 7;
+  COLUMN_VALUE_TYPE_U8        = 8;
+  COLUMN_VALUE_TYPE_U16       = 9;
+  COLUMN_VALUE_TYPE_U32       = 10;
+  COLUMN_VALUE_TYPE_U64       = 11;
+  COLUMN_VALUE_TYPE_U128      = 12;
+  COLUMN_VALUE_TYPE_USIZE     = 13;
+  COLUMN_VALUE_TYPE_F32       = 14;
+  COLUMN_VALUE_TYPE_F64       = 15;
+  COLUMN_VALUE_TYPE_STRING    = 16;
+  COLUMN_VALUE_TYPE_BIG_INT   = 17;
+  COLUMN_VALUE_TYPE_BIG_UINT  = 18;
+  COLUMN_VALUE_TYPE_JSON      = 19;
 }
 
 enum ConditionOperator {
-  AND = 0;
-  OR  = 1;
+  CONDITION_OPERATOR_AND = 0;
+  CONDITION_OPERATOR_OR  = 1;
 }
 
 enum Order {
-  ASC   = 0;
-  DESC  = 1;
+  ORDER_ASC   = 0;
+  ORDER_DESC  = 1;
 }
 
 message ColumnValue {
@@ -57,13 +57,13 @@ message ColumnValue {
     sint32  i16_value       = 5;
     sint32  i32_value       = 6;
     sint64  i64_value       = 7;
-    sint128 i128_value      = 8;
+    bytes   i128_value      = 8;
     sint32  isize_value     = 9;
     uint32  u8_value        = 10;
     uint32  u16_value       = 11;
     uint32  u32_value       = 12;
     uint64  u64_value       = 13;
-    uint128 u128_value      = 14;
+    bytes   u128_value      = 14;
     uint32  usize_value     = 15;
     float   f32_value       = 16;
     double  f64_value       = 17;
