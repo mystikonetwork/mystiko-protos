@@ -2,14 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.v1.document;
 
-enum CommitmentStatus {
-  INIT          = 0;
-  SRC_SUCCEEDED = 1;
-  QUEUED        = 2;
-  INCLUDED      = 3;
-  SPENT         = 4;
-  FAILED        = 5;
-}
+import "mystiko/core/v1/types.proto";
 
 message Commitment {
   string           id                               = 1;

@@ -2,19 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.v1.document;
 
-enum TransactionType {
-  TRANSFER = 0;
-  WITHDRAW = 1;
-}
-
-enum TransactionStatus {
-  INIT = 0;
-  PROOF_GENERATING = 1;
-  PROOF_GENERATED = 2;
-  PENDING = 3;
-  SUCCEEDED = 4;
-  FAILED = 5;
-}
+import "mystiko/core/v1/types.proto";
 
 message Transaction {
   string            id                                  = 1;
