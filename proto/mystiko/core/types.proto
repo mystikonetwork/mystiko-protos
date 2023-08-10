@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package mystiko.core;
+
+enum AccountStatus {
+  ACCOUNT_STATUS_CREATED_UNSPECIFIED    = 0;
+  ACCOUNT_STATUS_SCANNING               = 1;
+  ACCOUNT_STATUS_SCANNED                = 2;
+}
+
+enum ContractType {
+  CONTRACT_TYPE_DEPOSIT_UNSPECIFIED = 0;
+  CONTRACT_TYPE_POOL                = 1;
+}
+
+enum BridgeType {
+  BRIDGE_TYPE_LOOP_UNSPECIFIED        = 0;
+  BRIDGE_TYPE_POLY                    = 1;
+  BRIDGE_TYPE_TBRIDGE                 = 2;
+  BRIDGE_TYPE_CELER                   = 3;
+  BRIDGE_TYPE_LAYER_ZERO              = 4;
+  BRIDGE_TYPE_AXELAR                  = 5;
+}
+
+enum CommitmentStatus {
+  COMMITMENT_STATUS_INIT_UNSPECIFIED          = 0;
+  COMMITMENT_STATUS_SRC_SUCCEEDED             = 1;
+  COMMITMENT_STATUS_QUEUED                    = 2;
+  COMMITMENT_STATUS_INCLUDED                  = 3;
+  COMMITMENT_STATUS_SPENT                     = 4;
+  COMMITMENT_STATUS_FAILED                    = 5;
+}
+
+enum DepositStatus {
+  DEPOSIT_STATUS_INIT_UNSPECIFIED             = 0;
+  DEPOSIT_STATUS_ASSET_APPROVING              = 1;
+  DEPOSIT_STATUS_ASSET_APPROVED               = 2;
+  DEPOSIT_STATUS_SRC_PENDING                  = 3;
+  DEPOSIT_STATUS_SRC_SUCCEEDED                = 4;
+  DEPOSIT_STATUS_QUEUED                       = 5;
+  DEPOSIT_STATUS_INCLUDED                     = 6;
+  DEPOSIT_STATUS_FAILED                       = 7;
+}
+
+enum TransactionType {
+  TRANSACTION_TYPE_TRANSFER_UNSPECIFIED = 0;
+  TRANSACTION_TYPE_WITHDRAW             = 1;
+}
+
+enum TransactionStatus {
+  TRANSACTION_STATUS_INIT_UNSPECIFIED = 0;
+  TRANSACTION_STATUS_PROOF_GENERATING = 1;
+  TRANSACTION_STATUS_PROOF_GENERATED  = 2;
+  TRANSACTION_STATUS_PENDING          = 3;
+  TRANSACTION_STATUS_SUCCEEDED        = 4;
+  TRANSACTION_STATUS_FAILED           = 5;
+}

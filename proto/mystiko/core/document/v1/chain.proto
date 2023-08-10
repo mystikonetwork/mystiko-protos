@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package mystiko.core.v1.document;
+package mystiko.core.document.v1;
 
 message Provider {
   string url           = 1;

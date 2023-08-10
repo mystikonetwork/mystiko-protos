@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package mystiko.core.v1.handler;
+package mystiko.core.handler.v1;
 
 message UpdateProviderOptions {
   string   url                  = 1;
