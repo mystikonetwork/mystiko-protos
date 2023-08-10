@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package mystiko.core.v1.document;
+
+enum BridgeType {
+  LOOP       = 0;
+  POLY       = 1;
+  TBRIDGE    = 2;
+  CELER      = 3;
+  LAYER_ZERO = 4;
+  AXELAR     = 5;
+}
+
+enum DepositStatus {
+  INIT            = 0;
+  ASSET_APPROVING = 1;
+  ASSET_APPROVED  = 2;
+  SRC_PENDING     = 3;
+  SRC_SUCCEEDED   = 4;
+  QUEUED          = 5;
+  INCLUDED        = 6;
+  FAILED          = 7;
+}
+
+message Deposit {
+  string        id                                    = 1;
+  uint64        created_at                            = 2;
+  uint64        updated_at                            = 3;
+  uint64        chain_id                              = 4;
+  string        contract_address                      = 5;
+  string        pool_address                          = 6;
+  bytes         commitment_hash                       = 7;
+  bytes         hash_k                                = 8;
+  bytes         random_s                              = 9;
+  string        encrypted_note                        = 10;
+  string        asset_symbol                          = 11;
+  uint32        asset_decimals                        = 12;
+  optional      string asset_address                  = 13;
+  BridgeType    bridge_type                           = 14;
+  bytes         amount                                = 15;
+  bytes         rollup_fee_amount                     = 16;
+  bytes         bridge_fee_amount                     = 17;
+  optional      string bridge_fee_asset_address       = 18;
+  bytes         executor_fee_amount                   = 19;
+  optional      string executor_fee_asset_address     = 20;
+  bytes         service_fee_amount                    = 21;
+  string        shielded_recipient_address            = 22;
+  DepositStatus status                                = 23;
+  optional      string error_message                  = 24;
+  string        wallet_id                             = 25;
+  uint64        dst_chain_id                          = 26;
+  string        dst_chain_contract_address            = 27;
+  string        dst_pool_address                      = 28;
+  optional      string asset_approve_transaction_hash = 29;
+  optional      string transaction_hash               = 30;
+  optional      string relay_transaction_hash         = 31;
+  optional      string rollup_transaction_hash        = 32;
+}

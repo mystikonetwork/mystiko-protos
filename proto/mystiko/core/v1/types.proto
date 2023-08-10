@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package mystiko.core.v1;
+
+enum AccountStatus {
+  CREATED   = 0;
+  SCANNING  = 1;
+  SCANNED   = 2;
+}

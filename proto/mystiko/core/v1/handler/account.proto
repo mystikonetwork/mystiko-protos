@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package mystiko.core.v1.handler;
+
+import "mystiko/core/v1/types.proto";
+
+message CreateAccountOptions {
+  string   wallet_password = 1;
+  optional string name = 2;
+  optional uint32 scan_size = 3;
+  optional string secret_key = 4;
+}
+
+message UpdateAccountOptions {
+  string   wallet_password         = 1;
+  optional string        name      = 2;
+  optional uint32        scan_size = 3;
+  optional AccountStatus status    = 4;
+}
