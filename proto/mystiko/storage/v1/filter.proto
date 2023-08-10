@@ -3,49 +3,49 @@ syntax = "proto3";
 package mystiko.storage.v1;
 
 enum SubFilterOperator {
-  SUB_FILTER_OPERATOR_IS_NULL       = 0;
-  SUB_FILTER_OPERATOR_IS_NOT_NULL   = 1;
-  SUB_FILTER_OPERATOR_EQUAL         = 2;
-  SUB_FILTER_OPERATOR_NOT_EQUAL     = 3;
-  SUB_FILTER_OPERATOR_GREATER       = 4;
-  SUB_FILTER_OPERATOR_GREATER_EQUAL = 5;
-  SUB_FILTER_OPERATOR_LESS          = 6;
-  SUB_FILTER_OPERATOR_LESS_EQUAL    = 7;
-  SUB_FILTER_OPERATOR_BETWEEN_AND   = 8;
-  SUB_FILTER_OPERATOR_IN            = 9;
+  SUB_FILTER_OPERATOR_IS_NULL_UNSPECIFIED       = 0;
+  SUB_FILTER_OPERATOR_IS_NOT_NULL               = 1;
+  SUB_FILTER_OPERATOR_EQUAL                     = 2;
+  SUB_FILTER_OPERATOR_NOT_EQUAL                 = 3;
+  SUB_FILTER_OPERATOR_GREATER                   = 4;
+  SUB_FILTER_OPERATOR_GREATER_EQUAL             = 5;
+  SUB_FILTER_OPERATOR_LESS                      = 6;
+  SUB_FILTER_OPERATOR_LESS_EQUAL                = 7;
+  SUB_FILTER_OPERATOR_BETWEEN_AND               = 8;
+  SUB_FILTER_OPERATOR_IN                        = 9;
 }
 
 enum ColumnValueType {
-  COLUMN_VALUE_TYPE_BOOL      = 0;
-  COLUMN_VALUE_TYPE_CHAR      = 1;
-  COLUMN_VALUE_TYPE_I8        = 2;
-  COLUMN_VALUE_TYPE_I16       = 3;
-  COLUMN_VALUE_TYPE_I32       = 4;
-  COLUMN_VALUE_TYPE_I64       = 5;
-  COLUMN_VALUE_TYPE_I128      = 6;
-  COLUMN_VALUE_TYPE_ISIZE     = 7;
-  COLUMN_VALUE_TYPE_U8        = 8;
-  COLUMN_VALUE_TYPE_U16       = 9;
-  COLUMN_VALUE_TYPE_U32       = 10;
-  COLUMN_VALUE_TYPE_U64       = 11;
-  COLUMN_VALUE_TYPE_U128      = 12;
-  COLUMN_VALUE_TYPE_USIZE     = 13;
-  COLUMN_VALUE_TYPE_F32       = 14;
-  COLUMN_VALUE_TYPE_F64       = 15;
-  COLUMN_VALUE_TYPE_STRING    = 16;
-  COLUMN_VALUE_TYPE_BIG_INT   = 17;
-  COLUMN_VALUE_TYPE_BIG_UINT  = 18;
-  COLUMN_VALUE_TYPE_JSON      = 19;
+  COLUMN_VALUE_TYPE_BOOL_UNSPECIFIED      = 0;
+  COLUMN_VALUE_TYPE_CHAR                  = 1;
+  COLUMN_VALUE_TYPE_I8                    = 2;
+  COLUMN_VALUE_TYPE_I16                   = 3;
+  COLUMN_VALUE_TYPE_I32                   = 4;
+  COLUMN_VALUE_TYPE_I64                   = 5;
+  COLUMN_VALUE_TYPE_I128                  = 6;
+  COLUMN_VALUE_TYPE_ISIZE                 = 7;
+  COLUMN_VALUE_TYPE_U8                    = 8;
+  COLUMN_VALUE_TYPE_U16                   = 9;
+  COLUMN_VALUE_TYPE_U32                   = 10;
+  COLUMN_VALUE_TYPE_U64                   = 11;
+  COLUMN_VALUE_TYPE_U128                  = 12;
+  COLUMN_VALUE_TYPE_USIZE                 = 13;
+  COLUMN_VALUE_TYPE_F32                   = 14;
+  COLUMN_VALUE_TYPE_F64                   = 15;
+  COLUMN_VALUE_TYPE_STRING                = 16;
+  COLUMN_VALUE_TYPE_BIG_INT               = 17;
+  COLUMN_VALUE_TYPE_BIG_UINT              = 18;
+  COLUMN_VALUE_TYPE_JSON                  = 19;
 }
 
 enum ConditionOperator {
-  CONDITION_OPERATOR_AND = 0;
-  CONDITION_OPERATOR_OR  = 1;
+  CONDITION_OPERATOR_AND_UNSPECIFIED  = 0;
+  CONDITION_OPERATOR_OR               = 1;
 }
 
 enum Order {
-  ORDER_ASC   = 0;
-  ORDER_DESC  = 1;
+  ORDER_ASC_UNSPECIFIED   = 0;
+  ORDER_DESC              = 1;
 }
 
 message ColumnValue {

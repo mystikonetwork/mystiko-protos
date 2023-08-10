@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package mystiko.core;
+package mystiko.core.v1;
 
 enum AccountStatus {
   ACCOUNT_STATUS_CREATED_UNSPECIFIED    = 0;

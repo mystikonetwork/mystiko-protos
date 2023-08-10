@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.document.v1;
 
-import "mystiko/core/types.proto";
+import "mystiko/core/v1/common.proto";
 
 message Transaction {
   string            id                                  = 1;
@@ -30,9 +30,9 @@ message Transaction {
   optional          string  signature                   = 23;
   optional          bytes   random_auditing_public_key  = 24;
   repeated          string  encrypted_auditor_notes     = 25;
-  TransactionType   transaction_type                    = 26;
-  TransactionStatus status                              = 27;
-  optional          string  error_message               = 28;
-  optional          string  transaction_hash            = 29;
-  string            wallet_id                           = 30;
+  optional          string  error_message               = 26;
+  optional          string  transaction_hash            = 27;
+  string            wallet_id                           = 28;
+  mystiko.core.v1.TransactionType   transaction_type    = 29;
+  mystiko.core.v1.TransactionStatus status              = 30;
 }

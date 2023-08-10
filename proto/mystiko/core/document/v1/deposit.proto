@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.document.v1;
 
-import "mystiko/core/types.proto";
+import "mystiko/core/v1/common.proto";
 
 message Deposit {
   string        id                                    = 1;
@@ -18,23 +18,23 @@ message Deposit {
   string        asset_symbol                          = 11;
   uint32        asset_decimals                        = 12;
   optional      string asset_address                  = 13;
-  BridgeType    bridge_type                           = 14;
-  bytes         amount                                = 15;
-  bytes         rollup_fee_amount                     = 16;
-  bytes         bridge_fee_amount                     = 17;
-  optional      string bridge_fee_asset_address       = 18;
-  bytes         executor_fee_amount                   = 19;
-  optional      string executor_fee_asset_address     = 20;
-  bytes         service_fee_amount                    = 21;
-  string        shielded_recipient_address            = 22;
-  DepositStatus status                                = 23;
-  optional      string error_message                  = 24;
-  string        wallet_id                             = 25;
-  uint64        dst_chain_id                          = 26;
-  string        dst_chain_contract_address            = 27;
-  string        dst_pool_address                      = 28;
-  optional      string asset_approve_transaction_hash = 29;
-  optional      string transaction_hash               = 30;
-  optional      string relay_transaction_hash         = 31;
-  optional      string rollup_transaction_hash        = 32;
+  bytes         amount                                = 14;
+  bytes         rollup_fee_amount                     = 15;
+  bytes         bridge_fee_amount                     = 16;
+  optional      string bridge_fee_asset_address       = 17;
+  bytes         executor_fee_amount                   = 18;
+  optional      string executor_fee_asset_address     = 19;
+  bytes         service_fee_amount                    = 20;
+  string        shielded_recipient_address            = 21;
+  optional      string error_message                  = 22;
+  string        wallet_id                             = 23;
+  uint64        dst_chain_id                          = 24;
+  string        dst_chain_contract_address            = 25;
+  string        dst_pool_address                      = 26;
+  optional      string asset_approve_transaction_hash = 27;
+  optional      string transaction_hash               = 28;
+  optional      string relay_transaction_hash         = 29;
+  optional      string rollup_transaction_hash        = 30;
+  mystiko.core.v1.BridgeType    bridge_type           = 31;
+  mystiko.core.v1.DepositStatus status                = 32;
 }
