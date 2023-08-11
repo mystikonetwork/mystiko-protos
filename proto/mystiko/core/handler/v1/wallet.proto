@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package mystiko.core.handler.v1;
+
+message CreateWalletOptions {
+  string   password               = 1;
+  optional string mnemonic_phrase = 2;
+}

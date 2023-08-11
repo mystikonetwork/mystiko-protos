@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mystiko.core.handler.v1;
+
+message UpdateProviderOptions {
+  string   url                  = 1;
+  optional uint32 timeout_ms    = 2;
+  optional uint32 max_try_count = 3;
+  optional uint32 quorum_weight = 4;
+}
+
+message UpdateChainOptions {
+  repeated UpdateProviderOptions providers = 1;
+  optional string                name      = 2;
+}

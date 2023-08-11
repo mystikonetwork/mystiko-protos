@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package mystiko.core.document.v1;
+
+import "mystiko/core/v1/common.proto";
+
+message Commitment {
+  string           id                               = 1;
+  uint64           created_at                       = 2;
+  uint64           updated_at                       = 3;
+  uint64           chain_id                         = 4;
+  string           contract_address                 = 5;
+  bytes            commitment_hash                  = 6;
+  string           asset_symbol                     = 7;
+  uint32           asset_decimals                   = 8;
+  optional         string asset_address             = 9;
+  optional         bytes  rollup_fee_amount         = 10;
+  optional         string encrypted_note            = 11;
+  optional         bytes  leaf_index                = 12;
+  optional         bytes  amount                    = 13;
+  optional         bytes  nullifier                 = 14;
+  optional         string shielded_address          = 15;
+  optional         string queued_transaction_hash   = 16;
+  optional         string spending_transaction_hash = 17;
+  optional         string included_transaction_hash = 18;
+  mystiko.core.v1.CommitmentStatus status           = 19;
+}
