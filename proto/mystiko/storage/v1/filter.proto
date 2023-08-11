@@ -3,74 +3,78 @@ syntax = "proto3";
 package mystiko.storage.v1;
 
 enum SubFilterOperator {
-  SUB_FILTER_OPERATOR_IS_NULL_UNSPECIFIED       = 0;
-  SUB_FILTER_OPERATOR_IS_NOT_NULL               = 1;
-  SUB_FILTER_OPERATOR_EQUAL                     = 2;
-  SUB_FILTER_OPERATOR_NOT_EQUAL                 = 3;
-  SUB_FILTER_OPERATOR_GREATER                   = 4;
-  SUB_FILTER_OPERATOR_GREATER_EQUAL             = 5;
-  SUB_FILTER_OPERATOR_LESS                      = 6;
-  SUB_FILTER_OPERATOR_LESS_EQUAL                = 7;
-  SUB_FILTER_OPERATOR_BETWEEN_AND               = 8;
-  SUB_FILTER_OPERATOR_IN                        = 9;
+  SUB_FILTER_OPERATOR_UNSPECIFIED   = 0;
+  SUB_FILTER_OPERATOR_IS_NULL       = 1;
+  SUB_FILTER_OPERATOR_IS_NOT_NULL   = 2;
+  SUB_FILTER_OPERATOR_EQUAL         = 3;
+  SUB_FILTER_OPERATOR_NOT_EQUAL     = 4;
+  SUB_FILTER_OPERATOR_GREATER       = 5;
+  SUB_FILTER_OPERATOR_GREATER_EQUAL = 6;
+  SUB_FILTER_OPERATOR_LESS          = 7;
+  SUB_FILTER_OPERATOR_LESS_EQUAL    = 8;
+  SUB_FILTER_OPERATOR_BETWEEN_AND   = 9;
+  SUB_FILTER_OPERATOR_IN            = 10;
 }
 
 enum ColumnValueType {
-  COLUMN_VALUE_TYPE_BOOL_UNSPECIFIED      = 0;
-  COLUMN_VALUE_TYPE_CHAR                  = 1;
-  COLUMN_VALUE_TYPE_I8                    = 2;
-  COLUMN_VALUE_TYPE_I16                   = 3;
-  COLUMN_VALUE_TYPE_I32                   = 4;
-  COLUMN_VALUE_TYPE_I64                   = 5;
-  COLUMN_VALUE_TYPE_I128                  = 6;
-  COLUMN_VALUE_TYPE_ISIZE                 = 7;
-  COLUMN_VALUE_TYPE_U8                    = 8;
-  COLUMN_VALUE_TYPE_U16                   = 9;
-  COLUMN_VALUE_TYPE_U32                   = 10;
-  COLUMN_VALUE_TYPE_U64                   = 11;
-  COLUMN_VALUE_TYPE_U128                  = 12;
-  COLUMN_VALUE_TYPE_USIZE                 = 13;
-  COLUMN_VALUE_TYPE_F32                   = 14;
-  COLUMN_VALUE_TYPE_F64                   = 15;
-  COLUMN_VALUE_TYPE_STRING                = 16;
-  COLUMN_VALUE_TYPE_BIG_INT               = 17;
-  COLUMN_VALUE_TYPE_BIG_UINT              = 18;
-  COLUMN_VALUE_TYPE_JSON                  = 19;
+  COLUMN_VALUE_TYPE_UNSPECIFIED = 0;
+  COLUMN_VALUE_TYPE_BOOL        = 1;
+  COLUMN_VALUE_TYPE_CHAR        = 2;
+  COLUMN_VALUE_TYPE_I8          = 3;
+  COLUMN_VALUE_TYPE_I16         = 4;
+  COLUMN_VALUE_TYPE_I32         = 5;
+  COLUMN_VALUE_TYPE_I64         = 6;
+  COLUMN_VALUE_TYPE_I128        = 7;
+  COLUMN_VALUE_TYPE_ISIZE       = 8;
+  COLUMN_VALUE_TYPE_U8          = 9;
+  COLUMN_VALUE_TYPE_U16         = 10;
+  COLUMN_VALUE_TYPE_U32         = 11;
+  COLUMN_VALUE_TYPE_U64         = 12;
+  COLUMN_VALUE_TYPE_U128        = 13;
+  COLUMN_VALUE_TYPE_USIZE       = 14;
+  COLUMN_VALUE_TYPE_F32         = 15;
+  COLUMN_VALUE_TYPE_F64         = 16;
+  COLUMN_VALUE_TYPE_STRING      = 17;
+  COLUMN_VALUE_TYPE_BIG_INT     = 18;
+  COLUMN_VALUE_TYPE_BIG_UINT    = 19;
+  COLUMN_VALUE_TYPE_JSON        = 20;
 }
 
 enum ConditionOperator {
-  CONDITION_OPERATOR_AND_UNSPECIFIED  = 0;
-  CONDITION_OPERATOR_OR               = 1;
+  CONDITION_OPERATOR_UNSPECIFIED = 0;
+  CONDITION_OPERATOR_AND         = 1;
+  CONDITION_OPERATOR_OR          = 2;
 }
 
 enum Order {
-  ORDER_ASC_UNSPECIFIED   = 0;
-  ORDER_DESC              = 1;
+  ORDER_UNSPECIFIED = 0;
+  ORDER_ASC         = 1;
+  ORDER_DESC        = 2;
 }
 
 message ColumnValue {
-  ColumnValueType type      = 1;
+  ColumnValueType type     = 1;
   oneof value {
-    bool    bool_value      = 2;
-    string  char_value      = 3;
-    sint32  i8_value        = 4;
-    sint32  i16_value       = 5;
-    sint32  i32_value       = 6;
-    sint64  i64_value       = 7;
-    bytes   i128_value      = 8;
-    sint32  isize_value     = 9;
-    uint32  u8_value        = 10;
-    uint32  u16_value       = 11;
-    uint32  u32_value       = 12;
-    uint64  u64_value       = 13;
-    bytes   u128_value      = 14;
-    uint32  usize_value     = 15;
-    float   f32_value       = 16;
-    double  f64_value       = 17;
-    string  string_value    = 18;
-    sint64  big_int_value   = 19;
-    uint64  big_uint_value  = 20;
-    string  json_value      = 21;
+    bool    bool_value     = 2;
+    string  char_value     = 3;
+    sint32  i8_value       = 4;
+    sint32  i16_value      = 5;
+    sint32  i32_value      = 6;
+    sint64  i64_value      = 7;
+    bytes   i128_value     = 8;
+    sint32  isize_value    = 9;
+    uint32  u8_value       = 10;
+    uint32  u16_value      = 11;
+    uint32  u32_value      = 12;
+    uint64  u64_value      = 13;
+    bytes   u128_value     = 14;
+    uint32  usize_value    = 15;
+    float   f32_value      = 16;
+    double  f64_value      = 17;
+    string  string_value   = 18;
+    sint64  big_int_value  = 19;
+    uint64  big_uint_value = 20;
+    string  json_value     = 21;
   }
 }
 
