@@ -10,6 +10,6 @@ message UpdateProviderOptions {
 }
 
 message UpdateChainOptions {
-  optional string                name      = 1;
-  repeated UpdateProviderOptions providers = 2;
+  repeated UpdateProviderOptions providers = 1;
+  optional string                name      = 2;
 }
