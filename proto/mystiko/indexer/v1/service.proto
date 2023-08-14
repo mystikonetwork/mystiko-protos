@@ -5,13 +5,12 @@ package mystiko.indexer.v1;
 import "mystiko/data/v1/commitment.proto";
 import "mystiko/data/v1/nullifier.proto";
 
-enum ErrorCode {
-  ERROR_CODE_UNSPECIFIED = 0;
-}
-
 message Error {
-  ErrorCode code    = 1;
-  string    message = 2;
+  enum Code {
+    CODE_UNSPECIFIED = 0;
+  }
+  Code   code    = 1;
+  string message = 2;
 }
 
 message FetchContractRequest {
@@ -122,6 +121,10 @@ message ContractLoadedBlockResponse {
   optional Error error      = 4;
 }
 
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}
+
 service IndexerService {
   rpc FetchChain(FetchChainRequest)                           returns (FetchChainResponse);
   rpc QueryContractCommitment(QueryContractCommitmentRequest) returns (QueryContractCommitmentResponse);
@@ -130,4 +133,5 @@ service IndexerService {
   rpc CountContractNullifier(CountContractNullifierRequest)   returns (CountContractNullifierResponse);
   rpc ChainLoadedBlock(ChainLoadedBlockRequest)               returns (ChainLoadedBlockResponse);
   rpc ContractLoadedBlock(ContractLoadedBlockRequest)         returns (ContractLoadedBlockResponse);
+  rpc HealthCheck(HealthCheckRequest)                         returns (HealthCheckResponse);
 }
