@@ -6,7 +6,13 @@ managed:
 plugins:
   - plugin: buf.build/community/neoeinstein-prost
     out: gen/rust
+  - plugin: buf.build/community/neoeinstein-tonic
+    out: gen/rust
   - plugin: buf.build/protocolbuffers/java
     out: gen/java
+  - plugin: buf.build/grpc/java
+    out: gen/java
   - plugin: buf.build/bufbuild/es
+    out: gen/es
+  - plugin: buf.build/bufbuild/connect-es
     out: gen/es
