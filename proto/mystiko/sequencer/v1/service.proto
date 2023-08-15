@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package mystiko.indexer.v1;
+package mystiko.sequencer.v1;
 
 import "mystiko/data/v1/commitment.proto";
 import "mystiko/data/v1/nullifier.proto";
@@ -125,7 +125,7 @@ message HealthCheckRequest {}
 
 message HealthCheckResponse {}
 
-service IndexerService {
+service SequencerService {
   rpc FetchChain(FetchChainRequest)                           returns (FetchChainResponse);
   rpc QueryContractCommitment(QueryContractCommitmentRequest) returns (QueryContractCommitmentResponse);
   rpc CountContractCommitment(CountContractCommitmentRequest) returns (CountContractCommitmentResponse);
