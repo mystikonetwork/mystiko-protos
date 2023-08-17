@@ -28,6 +28,30 @@ enum Order {
   ORDER_DESC        = 2;
 }
 
+enum ColumnType {
+  COLUMN_TYPE_UNSPECIFIED = 0;
+  COLUMN_TYPE_BOOL        = 1;
+  COLUMN_TYPE_CHAR        = 2;
+  COLUMN_TYPE_I8          = 3;
+  COLUMN_TYPE_I16         = 4;
+  COLUMN_TYPE_I32         = 5;
+  COLUMN_TYPE_I64         = 6;
+  COLUMN_TYPE_I128        = 7;
+  COLUMN_TYPE_ISIZE       = 8;
+  COLUMN_TYPE_U8          = 9;
+  COLUMN_TYPE_U16         = 10;
+  COLUMN_TYPE_U32         = 11;
+  COLUMN_TYPE_U64         = 12;
+  COLUMN_TYPE_U128        = 13;
+  COLUMN_TYPE_USIZE       = 14;
+  COLUMN_TYPE_F32         = 15;
+  COLUMN_TYPE_F64         = 16;
+  COLUMN_TYPE_STRING      = 17;
+  COLUMN_TYPE_BIG_INT     = 18;
+  COLUMN_TYPE_BIG_UINT    = 19;
+  COLUMN_TYPE_JSON        = 20;
+}
+
 message ColumnValue {
   oneof value {
     bool    bool_value     = 1;
