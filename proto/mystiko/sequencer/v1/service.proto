@@ -5,17 +5,6 @@ package mystiko.sequencer.v1;
 import "mystiko/data/v1/commitment.proto";
 import "mystiko/data/v1/nullifier.proto";
 
-message Error {
-  enum Code {
-    CODE_UNSPECIFIED       = 0;
-    CODE_UNSUPPORTED_CHAIN = 1;
-    CODE_INVALID_REQUEST   = 2;
-    CODE_INTERNAL_ERROR    = 3;
-  }
-  Code   code    = 1;
-  string message = 2;
-}
-
 message FetchContractRequest {
   bytes    contract_address    = 1;
   optional uint64 start_block  = 2;
@@ -40,7 +29,6 @@ message FetchChainRequest {
 
 message FetchChainResponse {
   uint64   chain_id                        = 1;
-  optional Error error                     = 2;
   repeated FetchContractResponse contracts = 3;
 }
 
@@ -55,7 +43,6 @@ message QueryContractCommitmentRequest {
 
 message QueryContractCommitmentResponse {
   uint64   end_block                              = 1;
-  optional Error error                            = 2;
   repeated mystiko.data.v1.Commitment commitments = 3;
 }
 
@@ -69,7 +56,6 @@ message QueryContractNullifierRequest {
 
 message QueryContractNullifierResponse {
   uint64   end_block                              = 1;
-  optional Error error                            = 2;
   repeated mystiko.data.v1.Nullifier nullifiers   = 3;
 }
 
@@ -85,7 +71,6 @@ message CountContractCommitmentRequest {
 message CountContractCommitmentResponse {
   uint64   end_block   = 1;
   uint64   count       = 2;
-  optional Error error = 3;
 }
 
 message CountContractNullifierRequest {
@@ -99,7 +84,6 @@ message CountContractNullifierRequest {
 message CountContractNullifierResponse {
   uint64   end_block   = 1;
   uint64   count       = 2;
-  optional Error error = 3;
 }
 
 message ChainLoadedBlockRequest {
@@ -109,7 +93,6 @@ message ChainLoadedBlockRequest {
 message ChainLoadedBlockResponse {
   uint64   chain_id     = 1;
   uint64   block_number = 2;
-  optional Error error  = 3;
 }
 
 message ContractLoadedBlockRequest {
@@ -121,7 +104,6 @@ message ContractLoadedBlockResponse {
   uint64   chain_id         = 1;
   bytes    contract_address = 2;
   uint64   block_number     = 3;
-  optional Error error      = 4;
 }
 
 message HealthCheckRequest {}
