@@ -105,3 +105,12 @@ enum PackerCompression {
   PACKER_COMPRESSION_UNSPECIFIED = 0;
   PACKER_COMPRESSION_ZSTD = 1;
 }
+
+message MystikoOptions {
+  bool     is_testnet                    = 1;
+  bool     is_staging                    = 2;
+  optional string db_path                = 3;
+  optional string config_file_path       = 4;
+  optional string config_remote_base_url = 5;
+  optional string config_git_revision    = 6;
+}
