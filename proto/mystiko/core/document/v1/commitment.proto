@@ -2,26 +2,30 @@ syntax = "proto3";
 
 package mystiko.core.document.v1;
 
-import "mystiko/core/v1/common.proto";
+import "mystiko/data/v1/commitment.proto";
 
 message Commitment {
-  string           id                               = 1;
-  uint64           created_at                       = 2;
-  uint64           updated_at                       = 3;
-  uint64           chain_id                         = 4;
-  string           contract_address                 = 5;
-  bytes            commitment_hash                  = 6;
-  string           asset_symbol                     = 7;
-  uint32           asset_decimals                   = 8;
-  optional         string asset_address             = 9;
-  optional         bytes  rollup_fee_amount         = 10;
-  optional         string encrypted_note            = 11;
-  optional         bytes  leaf_index                = 12;
-  optional         bytes  amount                    = 13;
-  optional         bytes  nullifier                 = 14;
-  optional         string shielded_address          = 15;
-  optional         string queued_transaction_hash   = 16;
-  optional         string spending_transaction_hash = 17;
-  optional         string included_transaction_hash = 18;
-  mystiko.core.v1.CommitmentStatus status           = 19;
+  string           id                                = 1;
+  uint64           created_at                        = 2;
+  uint64           updated_at                        = 3;
+  uint64           chain_id                          = 4;
+  string           contract_address                  = 5;
+  uint64           block_number                      = 6;
+  bytes            commitment_hash                   = 7;
+  string           asset_symbol                      = 8;
+  uint32           asset_decimals                    = 9;
+  optional         bool    spent                     = 10;
+  optional         uint64  included_block_number     = 11;
+  optional         uint64  src_chain_block_number    = 12;
+  optional         string  asset_address             = 13;
+  optional         bytes   rollup_fee_amount         = 14;
+  optional         string  encrypted_note            = 15;
+  optional         bytes   leaf_index                = 16;
+  optional         bytes   amount                    = 17;
+  optional         bytes   nullifier                 = 18;
+  optional         string  shielded_address          = 19;
+  optional         string  queued_transaction_hash   = 20;
+  optional         string  spending_transaction_hash = 21;
+  optional         string  included_transaction_hash = 22;
+  mystiko.data.v1.CommitmentStatus status            = 23;
 }

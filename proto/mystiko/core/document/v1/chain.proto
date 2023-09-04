@@ -18,5 +18,4 @@ message Chain {
   bool     name_override       = 6;
   repeated Provider providers  = 7;
   bool     provider_override   = 8;
-  uint64   synced_block_number = 9;
 }
