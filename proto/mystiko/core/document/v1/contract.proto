@@ -11,9 +11,6 @@ message Contract {
   uint64       chain_id                      = 4;
   string       contract_address              = 5;
   bool         disabled                      = 6;
-  uint64       sync_start                    = 7;
-  uint64       sync_size                     = 8;
-  uint64       synced_block_number           = 9;
-  optional     uint64 checked_leaf_index     = 10;
-  mystiko.core.v1.ContractType contract_type = 11;
+  uint64       loaded_block_number           = 7;
+  mystiko.core.v1.ContractType contract_type = 8;
 }

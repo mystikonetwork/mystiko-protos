@@ -8,6 +8,7 @@ message Nullifier {
   uint64 updated_at       = 3;
   uint64 chain_id         = 4;
   string contract_address = 5;
-  bytes  nullifier        = 6;
-  string transaction_hash = 7;
+  uint64 block_number     = 6;
+  bytes  nullifier        = 7;
+  string transaction_hash = 8;
 }
