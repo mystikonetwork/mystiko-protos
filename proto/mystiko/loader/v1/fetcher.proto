@@ -16,7 +16,6 @@ message FetcherConfig {
   optional ProviderFetcherConfig  provider  = 3;
 }
 
-
 message IndexerFetcherConfig {
   optional string url           = 1;
   optional uint64 timeout_ms    = 4;
