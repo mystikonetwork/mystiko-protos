@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mystiko.loader.v1;
+
+import "mystiko/loader/v1/fetcher.proto";
+import "mystiko/loader/v1/validator.proto";
+import "mystiko/loader/v1/handler.proto";
+
+message LoaderConfig {
+  repeated FetcherType   fetchers         = 1;
+  repeated ValidatorType validators       = 2;
+  FetcherConfig          fetcher_config   = 3;
+  ValidatorConfig        validator_config = 4;
+  HandlerConfig          handler          = 5;
+}

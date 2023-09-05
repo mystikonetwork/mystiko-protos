@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package mystiko.loader.v1;
+
+message HandlerConfig {
+}

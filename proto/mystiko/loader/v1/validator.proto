@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package mystiko.loader.v1;
+
+enum  ValidatorType {
+  VALIDATOR_TYPE_RULE = 0;
+}
+
+enum  RuleValidatorCheckerType {
+  Rule_Validator_Checker_Type_integrity = 0;
+  Rule_Validator_Checker_Type_sequence  = 1;
+  Rule_Validator_Checker_Type_cOUNTER   = 2;
+  Rule_Validator_Checker_Type_tree      = 3;
+}
+
+message ValidatorConfig {
+  RuleValidatorConfig rule = 1;
+}
+
+message RuleValidatorConfig {
+  repeated RuleValidatorCheckerType checkers = 1;
+  uint32   validate_concurrency              = 2;
+}
