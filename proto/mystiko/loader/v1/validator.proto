@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package mystiko.loader.v1;
 
-enum  ValidatorType {
+enum ValidatorType {
   VALIDATOR_TYPE_UNSPECIFIED = 0;
   VALIDATOR_TYPE_RULE        = 1;
 }
 
-enum  RuleValidatorCheckerType {
+enum RuleValidatorCheckerType {
   RULE_VALIDATOR_CHECKER_TYPE_UNSPECIFIED = 0;
   RULE_VALIDATOR_CHECKER_TYPE_INTEGRITY   = 1;
   RULE_VALIDATOR_CHECKER_TYPE_SEQUENCE    = 2;

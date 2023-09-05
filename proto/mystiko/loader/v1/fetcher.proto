@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.loader.v1;
 
-enum  FetcherType {
+enum FetcherType {
   FETCHER_TYPE_UNSPECIFIED = 0;
   FETCHER_TYPE_PACKER      = 1;
   FETCHER_TYPE_INDEXER     = 2;
