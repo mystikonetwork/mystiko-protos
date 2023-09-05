@@ -11,19 +11,14 @@ enum  FetcherType {
 }
 
 message FetcherConfig {
-  PackerFetcherConfig    packer    = 1;
-  IndexerFetcherConfig   indexer   = 2;
-  EtherscanFetcherConfig etherscan = 3;
-  ProviderFetcherConfig  provider  = 4;
+  optional IndexerFetcherConfig   indexer   = 1;
+  optional EtherscanFetcherConfig etherscan = 2;
+  optional ProviderFetcherConfig  provider  = 3;
 }
 
-message PackerFetcherConfig {
-}
 
 message IndexerFetcherConfig {
   optional string url           = 1;
-  optional string auth_username = 2;
-  optional string auth_password = 3;
   optional uint64 timeout_ms    = 4;
   optional uint64 filter_size   = 5;
 }

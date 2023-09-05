@@ -16,10 +16,9 @@ enum  RuleValidatorCheckerType {
 }
 
 message ValidatorConfig {
-  RuleValidatorConfig rule = 1;
+  optional RuleValidatorConfig rule = 1;
 }
 
 message RuleValidatorConfig {
   repeated RuleValidatorCheckerType checkers = 1;
-  uint32   validate_concurrency              = 2;
 }
