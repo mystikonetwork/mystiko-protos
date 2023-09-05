@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package mystiko.config.v1;
+
+message ConfigOptions {
+  optional string file_path       = 1;
+  optional bool   is_testnet      = 2;
+  optional bool   is_staging      = 3;
+  optional string remote_base_url = 4;
+  optional string git_revision    = 5;
+}
