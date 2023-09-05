@@ -3,10 +3,11 @@ syntax = "proto3";
 package mystiko.loader.v1;
 
 enum  FetcherType {
-  FETCHER_TYPE_PACKER    = 0;
-  FETCHER_TYPE_INDEXER   = 1;
-  FETCHER_TYPE_ETHERSCAN = 2;
-  FETCHER_TYPE_PROVIDER  = 3;
+  FETCHER_TYPE_UNSPECIFIED = 0;
+  FETCHER_TYPE_PACKER      = 1;
+  FETCHER_TYPE_INDEXER     = 2;
+  FETCHER_TYPE_ETHERSCAN   = 3;
+  FETCHER_TYPE_PROVIDER    = 4;
 }
 
 message FetcherConfig {

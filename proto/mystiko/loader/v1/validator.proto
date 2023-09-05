@@ -3,14 +3,16 @@ syntax = "proto3";
 package mystiko.loader.v1;
 
 enum  ValidatorType {
-  VALIDATOR_TYPE_RULE = 0;
+  VALIDATOR_TYPE_UNSPECIFIED = 0;
+  VALIDATOR_TYPE_RULE        = 1;
 }
 
 enum  RuleValidatorCheckerType {
-  Rule_Validator_Checker_Type_integrity = 0;
-  Rule_Validator_Checker_Type_sequence  = 1;
-  Rule_Validator_Checker_Type_cOUNTER   = 2;
-  Rule_Validator_Checker_Type_tree      = 3;
+  Rule_Validator_Checker_Type_UNSPECIFIED = 0;
+  Rule_Validator_Checker_Type_integrity   = 1;
+  Rule_Validator_Checker_Type_sequence    = 2;
+  Rule_Validator_Checker_Type_cOUNTER     = 3;
+  Rule_Validator_Checker_Type_tree        = 4;
 }
 
 message ValidatorConfig {
