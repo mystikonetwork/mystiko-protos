@@ -40,7 +40,7 @@ message DepositContractsRequest {
 }
 
 message DepositContractsResponse {
-  repeated mystiko.config.contract.v1.DepositContractConfig contracts = 1;
+  repeated mystiko.config.contract.v1.DepositContractConfig configs = 1;
 }
 
 message DepositContractsWithDisabledRequest {
@@ -48,7 +48,7 @@ message DepositContractsWithDisabledRequest {
 }
 
 message DepositContractsWithDisabledResponse {
-  repeated mystiko.config.contract.v1.DepositContractConfig contracts = 1;
+  repeated mystiko.config.contract.v1.DepositContractConfig configs = 1;
 }
 
 message ContractsRequest {
@@ -56,7 +56,7 @@ message ContractsRequest {
 }
 
 message ContractsResponse {
-  repeated mystiko.config.contract.v1.ContractConfig contracts = 1;
+  repeated mystiko.config.contract.v1.ContractConfig configs = 1;
 }
 
 message ContractsWithDisabledRequest {
@@ -64,7 +64,7 @@ message ContractsWithDisabledRequest {
 }
 
 message ContractsWithDisabledResponse {
-  repeated mystiko.config.contract.v1.ContractConfig contracts = 1;
+  repeated mystiko.config.contract.v1.ContractConfig configs = 1;
 }
 
 message FindAssetRequest {
@@ -73,7 +73,7 @@ message FindAssetRequest {
 }
 
 message FindAssetResponse {
-  optional mystiko.config.v1.AssetConfig asset_config = 1;
+  optional mystiko.config.v1.AssetConfig config = 1;
 }
 
 message ContractEventFilterSizeRequest {

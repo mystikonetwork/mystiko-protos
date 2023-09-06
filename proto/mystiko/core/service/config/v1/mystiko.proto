@@ -18,8 +18,8 @@ service MystikoConfigService {
   rpc FindChain(FindChainRequest) returns (FindChainResponse);
   rpc FindPeerChains(FindPeerChainsRequest) returns (FindPeerChainsResponse);
   rpc FindAssetSymbols(FindAssetSymbolsRequest) returns (FindAssetSymbolsResponse);
-  rpc FindBridges(FindBridgesRequest) returns (FindBridgesResponse);
   rpc FindBridge(FindBridgeRequest) returns (FindBridgeResponse);
+  rpc FindBridges(FindBridgesRequest) returns (FindBridgesResponse);
   rpc FindDepositContract(FindDepositContractRequest) returns (FindDepositContractResponse);
   rpc FindDepositContractByAddress(FindDepositContractByAddressRequest) returns (FindDepositContractByAddressResponse);
   rpc FindPoolContract(FindPoolContractRequest) returns (FindPoolContractResponse);
@@ -40,7 +40,7 @@ message FindDefaultCircuitRequest {
 }
 
 message FindDefaultCircuitResponse {
-  mystiko.config.v1.CircuitConfig circuit = 1;
+  mystiko.config.v1.CircuitConfig config = 1;
 }
 
 message FindCircuitRequest {
