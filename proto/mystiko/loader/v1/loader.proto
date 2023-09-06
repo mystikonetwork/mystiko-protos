@@ -2,14 +2,14 @@ syntax = "proto3";
 
 package mystiko.loader.v1;
 
-import "mystiko/core/v1/mystiko.proto";
+import "mystiko/config/v1/mystiko.proto";
 import "mystiko/loader/v1/fetcher.proto";
 import "mystiko/loader/v1/validator.proto";
 
 message LoaderConfig {
-  repeated FetcherType                   fetchers               = 1;
-  repeated ValidatorType                 validators             = 2;
-  optional mystiko.core.v1.ConfigOptions mystiko_config_options = 3;
-  optional FetcherConfig                 fetcher_config         = 4;
-  optional ValidatorConfig               validator_config       = 5;
+  repeated FetcherType                     fetchers               = 1;
+  repeated ValidatorType                   validators             = 2;
+  optional mystiko.config.v1.ConfigOptions mystiko_config_options = 3;
+  optional FetcherConfig                   fetcher_config         = 4;
+  optional ValidatorConfig                 validator_config       = 5;
 }
