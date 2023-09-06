@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.v1;
 
-import "mystiko/config/v1/mystiko.proto";
+import "mystiko/core/v1/mystiko.proto";
 
 enum BridgeType {
   BRIDGE_TYPE_UNSPECIFIED = 0;
@@ -100,6 +100,6 @@ enum PackerCompression {
 }
 
 message MystikoOptions {
-  optional mystiko.config.v1.ConfigOptions config_options = 1;
-  optional string                          db_path        = 2;
+  optional ConfigOptions config_options = 1;
+  optional string        db_path        = 2;
 }
