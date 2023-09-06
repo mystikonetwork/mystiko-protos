@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package mystiko.core.v1;
 
+import "mystiko/config/v1/mystiko.proto";
+
 enum BridgeType {
   BRIDGE_TYPE_UNSPECIFIED = 0;
   BRIDGE_TYPE_LOOP        = 1;
@@ -98,10 +100,6 @@ enum PackerCompression {
 }
 
 message MystikoOptions {
-  bool     is_testnet                    = 1;
-  bool     is_staging                    = 2;
-  optional string db_path                = 3;
-  optional string config_file_path       = 4;
-  optional string config_remote_base_url = 5;
-  optional string config_git_revision    = 6;
+  optional mystiko.config.v1.ConfigOptions config_options = 1;
+  optional string                          db_path        = 2;
 }

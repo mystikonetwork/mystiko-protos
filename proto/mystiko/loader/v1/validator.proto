@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package mystiko.loader.v1;
+
+enum ValidatorType {
+  VALIDATOR_TYPE_UNSPECIFIED = 0;
+  VALIDATOR_TYPE_RULE        = 1;
+}
+
+enum RuleValidatorCheckerType {
+  RULE_VALIDATOR_CHECKER_TYPE_UNSPECIFIED = 0;
+  RULE_VALIDATOR_CHECKER_TYPE_INTEGRITY   = 1;
+  RULE_VALIDATOR_CHECKER_TYPE_SEQUENCE    = 2;
+  RULE_VALIDATOR_CHECKER_TYPE_COUNTER     = 3;
+  RULE_VALIDATOR_CHECKER_TYPE_TREE        = 4;
+}
+
+message ValidatorConfig {
+  optional RuleValidatorConfig rule = 1;
+}
+
+message RuleValidatorConfig {
+  repeated RuleValidatorCheckerType checkers = 1;
+}
