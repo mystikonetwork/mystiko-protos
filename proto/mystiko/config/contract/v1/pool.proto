@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package mystiko.config.contract.v1;
+
+import "mystiko/core/v1/common.proto";
+import "mystiko/config/v1/asset.proto";
+import "mystiko/config/v1/circuit.proto";
+
+message PoolContractConfig {
+  uint32 version                                           = 1;
+  string name                                              = 2;
+  string address                                           = 3;
+  uint64 start_block                                       = 4;
+  string pool_name                                         = 5;
+  string min_rollup_fee                                    = 6;
+  mystiko.core.v1.ContractType contract_type               = 7;
+  mystiko.core.v1.BridgeType bridge_type                   = 8;
+  mystiko.config.v1.AssetConfig main_asset_config          = 9;
+  mystiko.config.v1.AssetConfig asset_config               = 10;
+  repeated mystiko.config.v1.CircuitConfig circuit_configs = 11;
+  optional uint64 event_filter_size                        = 12;
+  optional uint64 indexer_filter_size                      = 13;
+  optional string asset_address                            = 14;
+  repeated string circuits                                 = 15;
+}

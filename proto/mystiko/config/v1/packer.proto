@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mystiko.config.v1;
+
+import "mystiko/core/v1/common.proto";
+
+message PackerConfig {
+  string  url                                   = 1;
+  uint64  client_timeout_ms                     = 2;
+  uint32  version                               = 3;
+  mystiko.core.v1.PackerChecksum    checksum    = 4;
+  mystiko.core.v1.PackerCompression compression = 5;
+}

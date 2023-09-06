@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package mystiko.config.bridge.v1;
+
+import "mystiko/core/v1/common.proto";
+
+message PolyBridgeConfig {
+  string name                            = 1;
+  string explorer_url                    = 2;
+  string explorer_prefix                 = 3;
+  string api_url                         = 4;
+  string api_prefix                      = 5;
+  mystiko.core.v1.BridgeType bridge_type = 6;
+}

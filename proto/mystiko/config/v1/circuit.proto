@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mystiko.config.v1;
+
+import "mystiko/core/v1/common.proto";
+
+message CircuitConfig {
+  string   name                            = 1;
+  mystiko.core.v1.CircuitType circuit_type = 2;
+  bool     is_default                      = 3;
+  repeated string program_file             = 4;
+  repeated string abi_file                 = 5;
+  repeated string proving_key_file         = 6;
+  repeated string verifying_key_file       = 7;
+}

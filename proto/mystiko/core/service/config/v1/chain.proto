@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package mystiko.core.service.config.v1;
+
+import "mystiko/config/v1/chain.proto";
+import "mystiko/config/v1/asset.proto";
+import "mystiko/config/contract/v1/deposit.proto";
+import "mystiko/config/contract/v1/contract.proto";
+
+service ChainConfigService {
+  rpc GetChainConfig(GetChainConfigRequest) returns (GetChainConfigResponse);
+  rpc StartBlock(StartBlockRequest) returns (StartBlockResponse);
+  rpc DepositContracts(DepositContractsRequest) returns (DepositContractsResponse);
+  rpc DepositContractsWithDisabled(DepositContractsWithDisabledRequest) returns (DepositContractsWithDisabledResponse);
+  rpc Contracts(ContractsRequest) returns (ContractsResponse);
+  rpc ContractsWithDisabled(ContractsWithDisabledRequest) returns (ContractsWithDisabledResponse);
+  rpc FindAsset(FindAssetRequest) returns (FindAssetResponse);
+  rpc ContractEventFilterSize(ContractEventFilterSizeRequest) returns (ContractEventFilterSizeResponse);
+  rpc ContractIndexerFilterSize(ContractIndexerFilterSizeRequest) returns (ContractIndexerFilterSizeResponse);
+}
+
+message GetChainConfigRequest {
+  uint64 chain_id = 1;
+}
+
+message GetChainConfigResponse {
+  mystiko.config.v1.ChainConfig config = 1;
+}
+
+message StartBlockRequest {
+  uint64 chain_id = 1;
+}
+
+message StartBlockResponse {
+  uint64 start_block = 1;
+}
+
+message DepositContractsRequest {
+  uint64 chain_id = 1;
+}
+
+message DepositContractsResponse {
+  repeated mystiko.config.contract.v1.DepositContractConfig contracts = 1;
+}
+
+message DepositContractsWithDisabledRequest {
+  uint64 chain_id = 1;
+}
+
+message DepositContractsWithDisabledResponse {
+  repeated mystiko.config.contract.v1.DepositContractConfig contracts = 1;
+}
+
+message ContractsRequest {
+  uint64 chain_id = 1;
+}
+
+message ContractsResponse {
+  repeated mystiko.config.contract.v1.ContractConfig contracts = 1;
+}
+
+message ContractsWithDisabledRequest {
+  uint64 chain_id = 1;
+}
+
+message ContractsWithDisabledResponse {
+  repeated mystiko.config.contract.v1.ContractConfig contracts = 1;
+}
+
+message FindAssetRequest {
+  uint64 chain_id = 1;
+  string address = 2;
+}
+
+message FindAssetResponse {
+  optional mystiko.config.v1.AssetConfig asset_config = 1;
+}
+
+message ContractEventFilterSizeRequest {
+  uint64 chain_id = 1;
+  string address  = 2;
+}
+
+message ContractEventFilterSizeResponse {
+  uint64 size = 1;
+}
+
+message ContractIndexerFilterSizeRequest {
+  uint64 chain_id = 1;
+  string address  = 2;
+}
+
+message ContractIndexerFilterSizeResponse {
+  uint64 size = 1;
+}

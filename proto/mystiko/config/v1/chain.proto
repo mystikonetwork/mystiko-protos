@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package mystiko.config.v1;
+
+import "mystiko/core/v1/common.proto";
+import "mystiko/config/v1/asset.proto";
+import "mystiko/config/v1/provider.proto";
+import "mystiko/config/contract/v1/deposit.proto";
+import "mystiko/config/contract/v1/pool.proto";
+
+message ChainConfig {
+  uint64  chain_id                                                                    = 1;
+  string  name                                                                        = 2;
+  string  asset_symbol                                                                = 3;
+  uint32  asset_decimals                                                              = 4;
+  string  explorer_url                                                                = 5;
+  string  explorer_api_url                                                            = 6;
+  string  explorer_prefix                                                             = 7;
+  uint32  provider_quorum_percentage                                                  = 9;
+  string  signer_endpoint                                                             = 10;
+  uint64  event_filter_block_backoff                                                  = 11;
+  uint64  event_filter_size                                                           = 12;
+  uint64  indexer_filter_size                                                         = 13;
+  AssetConfig  main_asset_config                                                      = 14;
+  mystiko.core.v1.ProviderType  provider_type                                         = 15;
+  repeated  string  recommended_amounts                                               = 16;
+  repeated  ProviderConfig  provider_configs                                          = 17;
+  repeated  AssetConfig  asset_configs                                                = 18;
+  repeated  uint64  packer_sorted_granularities                                       = 19;
+  repeated  mystiko.config.contract.v1.DepositContractConfig deposit_contract_configs = 20;
+  repeated  mystiko.config.contract.v1.PoolContractConfig pool_contract_configs       = 21;
+}

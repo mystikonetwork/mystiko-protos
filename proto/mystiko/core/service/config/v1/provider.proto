@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package mystiko.core.service.config.v1;
+
+import "mystiko/config/v1/provider.proto";
+
+service ProviderConfigService {
+  rpc GetProviderConfig(GetProviderConfigRequest) returns (GetProviderConfigResponse);
+}
+
+message GetProviderConfigRequest {
+  uint64 chain_id = 1;
+}
+
+message GetProviderConfigResponse {
+  mystiko.config.v1.ProviderConfig config = 1;
+}
