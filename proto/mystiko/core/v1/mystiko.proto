@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package mystiko.config.v1;
+package mystiko.core.v1;
 
 message ConfigOptions {
   optional string file_path       = 1;
