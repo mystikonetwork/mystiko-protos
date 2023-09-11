@@ -13,9 +13,10 @@ enum FetcherType {
 }
 
 message FetcherConfig {
-  optional IndexerFetcherConfig   indexer   = 1;
-  optional EtherscanFetcherConfig etherscan = 2;
-  optional ProviderFetcherConfig  provider  = 3;
+  optional PackerFetcherConfig    packer    = 1;
+  optional IndexerFetcherConfig   indexer   = 2;
+  optional EtherscanFetcherConfig etherscan = 3;
+  optional ProviderFetcherConfig  provider  = 4;
 }
 
 message IndexerFetcherConfig {
