@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.document.v1;
 
+import "mystiko/common/v1/types.proto";
 import "mystiko/core/v1/common.proto";
 
 message Deposit {
@@ -35,6 +36,6 @@ message Deposit {
   optional string relay_transaction_hash         = 28;
   optional string rollup_transaction_hash        = 29;
   optional string error_message                  = 30;
-  mystiko.core.v1.BridgeType    bridge_type      = 31;
-  mystiko.core.v1.DepositStatus status           = 32;
+  mystiko.common.v1.BridgeType    bridge_type    = 31;
+  mystiko.core.v1.DepositStatus   status         = 32;
 }
