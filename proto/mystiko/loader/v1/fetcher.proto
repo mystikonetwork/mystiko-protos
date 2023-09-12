@@ -49,9 +49,9 @@ message ProviderFetcherConfig {
 }
 
 message ProviderFetcherChainConfig {
-  repeated string urls             = 1;
-  optional uint64 delay_num_blocks = 2;
-  optional mystiko.common.v1.ProviderType provider_type = 3;
+  map<uint32, string>                     urls             = 1;
+  optional uint64                         delay_num_blocks = 2;
+  optional mystiko.common.v1.ProviderType provider_type    = 3;
 }
 
 message PackerFetcherConfig {
