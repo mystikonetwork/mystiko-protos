@@ -20,5 +20,5 @@ message ValidatorConfig {
 }
 
 message RuleValidatorConfig {
-  repeated RuleValidatorCheckerType checkers = 1;
+  map<uint32, RuleValidatorCheckerType> checkers = 1;
 }
