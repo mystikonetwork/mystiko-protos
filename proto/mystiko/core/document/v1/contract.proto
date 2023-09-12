@@ -2,15 +2,15 @@ syntax = "proto3";
 
 package mystiko.core.document.v1;
 
-import "mystiko/core/v1/common.proto";
+import "mystiko/common/v1/types.proto";
 
 message Contract {
-  string       id                            = 1;
-  uint64       created_at                    = 2;
-  uint64       updated_at                    = 3;
-  uint64       chain_id                      = 4;
-  string       contract_address              = 5;
-  bool         disabled                      = 6;
-  uint64       loaded_block_number           = 7;
-  mystiko.core.v1.ContractType contract_type = 8;
+  string       id                              = 1;
+  uint64       created_at                      = 2;
+  uint64       updated_at                      = 3;
+  uint64       chain_id                        = 4;
+  string       contract_address                = 5;
+  bool         disabled                        = 6;
+  uint64       loaded_block_number             = 7;
+  mystiko.common.v1.ContractType contract_type = 8;
 }

@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package mystiko.loader.v1;
 
+import "mystiko/common/v1/types.proto";
+
 enum FetcherType {
   FETCHER_TYPE_UNSPECIFIED = 0;
   FETCHER_TYPE_PACKER      = 1;
@@ -11,20 +13,23 @@ enum FetcherType {
 }
 
 message FetcherConfig {
-  optional IndexerFetcherConfig   indexer   = 1;
-  optional EtherscanFetcherConfig etherscan = 2;
-  optional ProviderFetcherConfig  provider  = 3;
+  optional PackerFetcherConfig    packer    = 1;
+  optional IndexerFetcherConfig   indexer   = 2;
+  optional EtherscanFetcherConfig etherscan = 3;
+  optional ProviderFetcherConfig  provider  = 4;
 }
 
 message IndexerFetcherConfig {
   optional string url           = 1;
-  optional uint64 timeout_ms    = 4;
-  optional uint64 filter_size   = 5;
+  optional uint64 timeout_ms    = 2;
+  optional uint64 filter_size   = 3;
+  optional bool skip_validation = 4;
 }
 
 message EtherscanFetcherConfig {
   optional uint32                          concurrency = 1;
   map<uint64, EtherscanFetcherChainConfig> chains      = 2;
+  optional bool skip_validation                        = 3;
 }
 
 message EtherscanFetcherChainConfig {
@@ -33,14 +38,22 @@ message EtherscanFetcherChainConfig {
   optional uint64 max_requests_per_second = 3;
   optional uint64 page_size               = 4;
   optional string url_prefix              = 5;
+  optional uint64 delay_num_blocks        = 6;
 }
 
 message ProviderFetcherConfig {
   optional uint32                        concurrency = 1;
   optional uint64                        timeout_ms  = 2;
   map<uint64,ProviderFetcherChainConfig> chains      = 3;
+  optional bool skip_validation                      = 4;
 }
 
 message ProviderFetcherChainConfig {
-  repeated string urls = 1;
+  map<uint32, string>                     urls             = 1;
+  optional uint64                         delay_num_blocks = 2;
+  optional mystiko.common.v1.ProviderType provider_type    = 3;
+}
+
+message PackerFetcherConfig {
+  optional bool skip_validation = 1;
 }
