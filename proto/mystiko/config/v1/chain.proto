@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.config.v1;
 
-import "mystiko/core/v1/common.proto";
+import "mystiko/common/v1/types.proto";
 import "mystiko/config/v1/asset.proto";
 import "mystiko/config/v1/provider.proto";
 import "mystiko/config/contract/v1/deposit.proto";
@@ -22,7 +22,7 @@ message ChainConfig {
   uint64  event_filter_size                                                              = 11;
   uint64  indexer_filter_size                                                            = 12;
   AssetConfig  main_asset_config                                                         = 13;
-  mystiko.core.v1.ProviderType  provider_type                                            = 14;
+  mystiko.common.v1.ProviderType  provider_type                                          = 14;
   map<string, AssetConfig>  asset_configs                                                = 15;
   map<string, mystiko.config.contract.v1.DepositContractConfig> deposit_contract_configs = 16;
   map<string, mystiko.config.contract.v1.PoolContractConfig> pool_contract_configs       = 17;

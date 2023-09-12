@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.service.config.v1;
 
+import "mystiko/common/v1/types.proto";
 import "mystiko/config/v1/chain.proto";
 import "mystiko/config/v1/mystiko.proto";
 import "mystiko/config/v1/circuit.proto";
@@ -9,7 +10,6 @@ import "mystiko/config/bridge/v1/bridge.proto";
 import "mystiko/config/contract/v1/deposit.proto";
 import "mystiko/config/contract/v1/pool.proto";
 import "mystiko/config/contract/v1/contract.proto";
-import "mystiko/core/v1/common.proto";
 
 service MystikoConfigService {
   rpc GetMystikoConfig(GetMystikoConfigRequest) returns (GetMystikoConfigResponse);
@@ -36,7 +36,7 @@ message GetMystikoConfigResponse {
 }
 
 message FindDefaultCircuitRequest {
-  mystiko.core.v1.CircuitType circuit_type = 1;
+  mystiko.common.v1.CircuitType circuit_type = 1;
 }
 
 message FindDefaultCircuitResponse {
@@ -83,11 +83,11 @@ message FindBridgesRequest {
 }
 
 message FindBridgesResponse {
-  repeated mystiko.core.v1.BridgeType bridge_type = 1;
+  repeated mystiko.common.v1.BridgeType bridge_type = 1;
 }
 
 message FindBridgeRequest {
-  mystiko.core.v1.BridgeType bridge_type = 1;
+  mystiko.common.v1.BridgeType bridge_type = 1;
 }
 
 message FindBridgeResponse {
@@ -98,7 +98,7 @@ message FindDepositContractRequest {
   uint64 chain_id                        = 1;
   uint64 peer_chain_id                   = 2;
   string asset_symbol                    = 3;
-  mystiko.core.v1.BridgeType bridge_type = 4;
+  mystiko.common.v1.BridgeType bridge_type = 4;
 }
 
 message FindDepositContractResponse {
@@ -115,10 +115,10 @@ message FindDepositContractByAddressResponse {
 }
 
 message FindPoolContractRequest {
-  uint64 chain_id                        = 1;
-  string asset_symbol                    = 2;
-  mystiko.core.v1.BridgeType bridge_type = 3;
-  uint32 version                         = 4;
+  uint64 chain_id                          = 1;
+  string asset_symbol                      = 2;
+  mystiko.common.v1.BridgeType bridge_type = 3;
+  uint32 version                           = 4;
 }
 
 message FindPoolContractResponse {
@@ -126,9 +126,9 @@ message FindPoolContractResponse {
 }
 
 message FindPoolContractsRequest {
-  uint64 chain_id                        = 1;
-  string asset_symbol                    = 2;
-  mystiko.core.v1.BridgeType bridge_type = 3;
+  uint64 chain_id                          = 1;
+  string asset_symbol                      = 2;
+  mystiko.common.v1.BridgeType bridge_type = 3;
 }
 
 message FindPoolContractsResponse {

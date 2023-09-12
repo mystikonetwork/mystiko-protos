@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package mystiko.config.contract.v1;
 
+import "mystiko/common/v1/types.proto";
 import "mystiko/config/v1/asset.proto";
-import "mystiko/core/v1/common.proto";
 import "mystiko/config/contract/v1/pool.proto";
 
 message DepositContractConfig {
@@ -15,8 +15,8 @@ message DepositContractConfig {
   string   min_amount                                              = 6;
   string   max_amount                                              = 7;
   PoolContractConfig pool_contract_config                          = 8;
-  mystiko.core.v1.BridgeType bridge_type                           = 9;
-  mystiko.core.v1.ContractType contract_type                       = 10;
+  mystiko.common.v1.BridgeType bridge_type                         = 9;
+  mystiko.common.v1.ContractType contract_type                     = 10;
   optional string min_bridge_fee                                   = 11;
   optional string min_executor_fee                                 = 12;
   optional uint32 service_fee                                      = 13;

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.config.contract.v1;
 
-import "mystiko/core/v1/common.proto";
+import "mystiko/common/v1/types.proto";
 import "mystiko/config/v1/asset.proto";
 import "mystiko/config/v1/circuit.proto";
 
@@ -13,8 +13,8 @@ message PoolContractConfig {
   uint64 start_block                                       = 4;
   string pool_name                                         = 5;
   string min_rollup_fee                                    = 6;
-  mystiko.core.v1.ContractType contract_type               = 7;
-  mystiko.core.v1.BridgeType bridge_type                   = 8;
+  mystiko.common.v1.ContractType contract_type             = 7;
+  mystiko.common.v1.BridgeType bridge_type                 = 8;
   mystiko.config.v1.AssetConfig asset_config               = 9;
   repeated mystiko.config.v1.CircuitConfig circuit_configs = 10;
   repeated string circuits                                 = 11;

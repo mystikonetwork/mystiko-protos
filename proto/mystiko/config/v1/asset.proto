@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package mystiko.config.v1;
 
-import "mystiko/core/v1/common.proto";
+import "mystiko/common/v1/types.proto";
 
 message AssetConfig {
-  mystiko.core.v1.AssetType asset_type          = 1;
-  string                    asset_symbol        = 2;
-  uint32                    asset_decimals      = 3;
-  optional     string       asset_address       = 4;
-  repeated     string       recommended_amounts = 5;
+  mystiko.common.v1.AssetType asset_type          = 1;
+  string                      asset_symbol        = 2;
+  uint32                      asset_decimals      = 3;
+  optional     string         asset_address       = 4;
+  repeated     string         recommended_amounts = 5;
 }
