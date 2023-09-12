@@ -8,6 +8,6 @@ message AssetConfig {
   mystiko.core.v1.AssetType asset_type          = 1;
   string                    asset_symbol        = 2;
   uint32                    asset_decimals      = 3;
-  string                    asset_address       = 4;
+  optional     string       asset_address       = 4;
   repeated     string       recommended_amounts = 5;
 }
