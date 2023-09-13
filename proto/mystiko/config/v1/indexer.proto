@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package mystiko.config.v1;
+
+message IndexerConfig {
+  string url        = 1;
+  uint64 timeout_ms = 2;
+}

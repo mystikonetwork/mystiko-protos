@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package mystiko.config.bridge.v1;
+
+import "mystiko/common/v1/types.proto";
+
+message AxelarBridgeConfig {
+  string name                              = 1;
+  mystiko.common.v1.BridgeType bridge_type = 2;
+}

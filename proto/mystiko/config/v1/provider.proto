@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package mystiko.config.v1;
+
+message ProviderConfig {
+  string url           = 1;
+  uint32 timeout_ms    = 2;
+  uint32 max_try_count = 3;
+  uint32 quorum_weight = 4;
+}

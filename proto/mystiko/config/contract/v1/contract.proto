@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package mystiko.config.contract.v1;
+
+import "mystiko/config/contract/v1/deposit.proto";
+import "mystiko/config/contract/v1/pool.proto";
+
+message ContractConfig {
+  oneof value {
+    DepositContractConfig deposit = 1;
+    PoolContractConfig    pool    = 2;
+  }
+}

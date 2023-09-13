@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package mystiko.config.contract.v1;
+
+import "mystiko/common/v1/types.proto";
+import "mystiko/config/v1/asset.proto";
+import "mystiko/config/contract/v1/pool.proto";
+
+message DepositContractConfig {
+  uint32   version                                                 = 1;
+  string   name                                                    = 2;
+  string   address                                                 = 3;
+  uint64   start_block                                             = 4;
+  bool     disabled                                                = 5;
+  string   min_amount                                              = 6;
+  string   max_amount                                              = 7;
+  PoolContractConfig pool_contract_config                          = 8;
+  mystiko.common.v1.BridgeType bridge_type                         = 9;
+  mystiko.common.v1.ContractType contract_type                     = 10;
+  optional string min_bridge_fee                                   = 11;
+  optional string min_executor_fee                                 = 12;
+  optional uint32 service_fee                                      = 13;
+  optional uint32 service_fee_divider                              = 14;
+  optional mystiko.config.v1.AssetConfig bridge_fee_asset_config   = 15;
+  optional mystiko.config.v1.AssetConfig executor_fee_asset_config = 16;
+  optional uint64 peer_chain_id                                    = 17;
+  optional string peer_contract_address                            = 18;
+}
