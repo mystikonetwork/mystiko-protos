@@ -5,8 +5,8 @@ package mystiko.service.v1;
 message ClientOptions {
   optional string host            = 1;
   optional uint32 port            = 2;
-  optional bool   is_web          = 3;
-  optional bool   is_ssl          = 4;
-  optional bytes  ssl_cert        = 5;
+  optional bool   is_ssl          = 3;
+  optional string ssl_cert        = 4;
+  optional string ssl_cert_path   = 5;
   optional string ssl_server_name = 6;
 }
