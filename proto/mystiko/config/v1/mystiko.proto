@@ -18,11 +18,3 @@ message MystikoConfig {
   repeated string country_blacklist                                = 7;
   repeated CircuitConfig circuit_configs                           = 8;
 }
-
-message ConfigOptions {
-  optional string file_path       = 1;
-  optional bool   is_testnet      = 2;
-  optional bool   is_staging      = 3;
-  optional string remote_base_url = 4;
-  optional string git_revision    = 5;
-}
