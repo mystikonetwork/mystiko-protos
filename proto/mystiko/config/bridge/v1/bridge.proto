@@ -2,18 +2,13 @@ syntax = "proto3";
 
 package mystiko.config.bridge.v1;
 
-import "mystiko/config/bridge/v1/axelar.proto";
-import "mystiko/config/bridge/v1/celer.proto";
-import "mystiko/config/bridge/v1/layer_zero.proto";
-import "mystiko/config/bridge/v1/poly.proto";
-import "mystiko/config/bridge/v1/tbridge.proto";
+import "mystiko/common/v1/types.proto";
 
 message BridgeConfig {
-  oneof value {
-    AxelarBridgeConfig    axelar     = 1;
-    CelerBridgeConfig     celer      = 2;
-    LayerZeroBridgeConfig layer_zero = 3;
-    PolyBridgeConfig      poly       = 4;
-    TBridgeConfig         tbridge    = 5;
-  }
+  string name                              = 1;
+  mystiko.common.v1.BridgeType bridge_type = 2;
+  optional string explorer_url             = 3;
+  optional string explorer_prefix          = 4;
+  optional string api_url                  = 5;
+  optional string api_prefix               = 6;
 }
