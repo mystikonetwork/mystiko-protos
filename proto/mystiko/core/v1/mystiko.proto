@@ -2,9 +2,9 @@ syntax = "proto3";
 
 package mystiko.core.v1;
 
-import "mystiko/config/v1/mystiko.proto";
+import "mystiko/common/v1/config.proto";
 
 message MystikoOptions {
-  optional mystiko.config.v1.ConfigOptions config_options = 1;
+  optional mystiko.common.v1.ConfigOptions config_options = 1;
   optional string                          db_path        = 2;
 }
