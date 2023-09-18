@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package mystiko.config.api.v1;
+
+import "mystiko/common/v1/types.proto";
+import "mystiko/config/v1/chain.proto";
+import "mystiko/config/v1/mystiko.proto";
+import "mystiko/config/v1/circuit.proto";
+import "mystiko/config/bridge/v1/bridge.proto";
+import "mystiko/config/contract/v1/deposit.proto";
+import "mystiko/config/contract/v1/pool.proto";
+import "mystiko/config/contract/v1/contract.proto";
+
+message GetConfigResponse {
+  mystiko.config.v1.MystikoConfig config = 1;
+}
+
+message FindDefaultCircuitResponse {
+  optional mystiko.config.v1.CircuitConfig config = 1;
+}
+
+message FindCircuitResponse {
+  optional mystiko.config.v1.CircuitConfig config = 1;
+}
+
+message FindChainResponse {
+  optional mystiko.config.v1.ChainConfig config = 1;
+}
+
+message FindPeerChainsResponse {
+  repeated mystiko.config.v1.ChainConfig configs = 1;
+}
+
+message FindAssetSymbolsResponse {
+  repeated string asset_symbol = 1;
+}
+
+message FindBridgesResponse {
+  repeated mystiko.common.v1.BridgeType bridge_type = 1;
+}
+
+message FindBridgeResponse {
+  optional mystiko.config.bridge.v1.BridgeConfig config = 1;
+}
+
+message FindDepositContractResponse {
+  optional mystiko.config.contract.v1.DepositContractConfig config = 1;
+}
+
+message FindDepositContractByAddressResponse {
+  optional mystiko.config.contract.v1.DepositContractConfig config = 1;
+}
+
+message FindPoolContractResponse {
+  optional mystiko.config.contract.v1.PoolContractConfig config = 1;
+}
+
+message FindPoolContractsResponse {
+  repeated mystiko.config.contract.v1.PoolContractConfig config = 1;
+}
+
+message FindPoolContractByAddressResponse {
+  optional mystiko.config.contract.v1.PoolContractConfig config = 1;
+}
+
+message FindContractByAddressResponse {
+  optional mystiko.config.contract.v1.ContractConfig config = 1;
+}
+
+message GetTransactionUrlResponse {
+  optional string url = 1;
+}

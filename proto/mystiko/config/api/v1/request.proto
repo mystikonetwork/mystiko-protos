@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package mystiko.config.api.v1;
+
+import "mystiko/common/v1/types.proto";
+
+message GetConfigRequest {}
+
+message FindDefaultCircuitRequest {
+  mystiko.common.v1.CircuitType circuit_type = 1;
+}
+
+message FindCircuitRequest {
+  string circuit_name = 1;
+}
+
+message FindChainRequest {
+  uint64 chain_id = 1;
+}
+
+message FindPeerChainsRequest {
+  uint64 chain_id = 1;
+}
+
+message FindAssetSymbolsRequest {
+  uint64 chain_id = 1;
+  uint64 peer_chain_id = 2;
+}
+
+message FindBridgesRequest {
+  uint64 chain_id      = 1;
+  uint64 peer_chain_id = 2;
+  string asset_symbol  = 3;
+}
+
+message FindBridgeRequest {
+  mystiko.common.v1.BridgeType bridge_type = 1;
+}
+
+message FindDepositContractRequest {
+  uint64 chain_id                          = 1;
+  uint64 peer_chain_id                     = 2;
+  string asset_symbol                      = 3;
+  mystiko.common.v1.BridgeType bridge_type = 4;
+}
+
+message FindDepositContractByAddressRequest {
+  uint64 chain_id = 1;
+  string address  = 2;
+}
+
+message FindPoolContractRequest {
+  uint64 chain_id                          = 1;
+  string asset_symbol                      = 2;
+  mystiko.common.v1.BridgeType bridge_type = 3;
+  uint32 version                           = 4;
+}
+
+message FindPoolContractsRequest {
+  uint64 chain_id                          = 1;
+  string asset_symbol                      = 2;
+  mystiko.common.v1.BridgeType bridge_type = 3;
+}
+
+message FindPoolContractByAddressRequest {
+  uint64 chain_id = 1;
+  string address  = 2;
+}
+
+message FindContractByAddressRequest {
+  uint64 chain_id = 1;
+  string address  = 2;
+}
+
+message GetTransactionUrlRequest {
+  uint64 chain_id = 1;
+  string tx_hash  = 2;
+}
