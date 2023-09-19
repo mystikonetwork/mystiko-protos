@@ -7,6 +7,7 @@ import "mystiko/config/v1/circuit.proto";
 import "mystiko/config/v1/indexer.proto";
 import "mystiko/config/v1/packer.proto";
 import "mystiko/config/bridge/v1/bridge.proto";
+import "mystiko/service/v1/client.proto";
 
 message MystikoConfig {
   string   version                                                 = 1;
@@ -14,7 +15,8 @@ message MystikoConfig {
   map<int32, mystiko.config.bridge.v1.BridgeConfig> bridge_configs = 3;
   optional string git_revision                                     = 4;
   optional IndexerConfig indexer_config                            = 5;
-  optional PackerConfig packer_config                              = 6;
-  repeated string country_blacklist                                = 7;
-  repeated CircuitConfig circuit_configs                           = 8;
+  optional mystiko.service.v1.ClientOptions sequencer_config       = 6;
+  optional PackerConfig packer_config                              = 7;
+  repeated string country_blacklist                                = 8;
+  repeated CircuitConfig circuit_configs                           = 9;
 }
