@@ -20,7 +20,7 @@ message ChainConfig {
   string  signer_endpoint                                                                = 9;
   uint64  event_delay_blocks                                                             = 10;
   uint64  event_filter_size                                                              = 11;
-  uint64  indexer_filter_size                                                            = 12;
+  uint64  sequencer_fetch_size                                                           = 12;
   AssetConfig  main_asset_config                                                         = 13;
   mystiko.common.v1.ProviderType  provider_type                                          = 14;
   map<string, AssetConfig>  asset_configs                                                = 15;
