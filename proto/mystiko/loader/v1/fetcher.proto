@@ -14,10 +14,10 @@ enum FetcherType {
 }
 
 message FetcherConfig {
-  optional PackerFetcherConfig              packer    = 1;
-  optional mystiko.service.v1.ClientOptions sequencer = 2;
-  optional EtherscanFetcherConfig           etherscan = 3;
-  optional ProviderFetcherConfig            provider  = 4;
+  optional PackerFetcherConfig    packer    = 1;
+  optional SequencerFetcherConfig sequencer = 2;
+  optional EtherscanFetcherConfig etherscan = 3;
+  optional ProviderFetcherConfig  provider  = 4;
 }
 
 message EtherscanFetcherConfig {
@@ -50,4 +50,9 @@ message ProviderFetcherChainConfig {
 
 message PackerFetcherConfig {
   optional bool skip_validation = 1;
+}
+
+message SequencerFetcherConfig {
+  optional bool skip_validation                     = 1;
+  optional mystiko.service.v1.ClientOptions options = 2;
 }
