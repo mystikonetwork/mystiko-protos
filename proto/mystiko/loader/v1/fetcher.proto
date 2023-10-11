@@ -3,27 +3,21 @@ syntax = "proto3";
 package mystiko.loader.v1;
 
 import "mystiko/common/v1/types.proto";
+import "mystiko/service/v1/client.proto";
 
 enum FetcherType {
   FETCHER_TYPE_UNSPECIFIED = 0;
   FETCHER_TYPE_PACKER      = 1;
-  FETCHER_TYPE_INDEXER     = 2;
+  FETCHER_TYPE_SEQUENCER   = 2;
   FETCHER_TYPE_ETHERSCAN   = 3;
   FETCHER_TYPE_PROVIDER    = 4;
 }
 
 message FetcherConfig {
-  optional PackerFetcherConfig    packer    = 1;
-  optional IndexerFetcherConfig   indexer   = 2;
-  optional EtherscanFetcherConfig etherscan = 3;
-  optional ProviderFetcherConfig  provider  = 4;
-}
-
-message IndexerFetcherConfig {
-  optional string url           = 1;
-  optional uint64 timeout_ms    = 2;
-  optional uint64 filter_size   = 3;
-  optional bool skip_validation = 4;
+  optional PackerFetcherConfig              packer    = 1;
+  optional mystiko.service.v1.ClientOptions sequencer = 2;
+  optional EtherscanFetcherConfig           etherscan = 3;
+  optional ProviderFetcherConfig            provider  = 4;
 }
 
 message EtherscanFetcherConfig {
