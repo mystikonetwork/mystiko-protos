@@ -33,12 +33,14 @@ message FetchChainResponse {
 }
 
 message ChainLoadedBlockRequest {
-  uint64 chain_id = 1;
+  uint64   chain_id            = 1;
+  optional bool with_contracts = 2;
 }
 
 message ChainLoadedBlockResponse {
-  uint64   chain_id     = 1;
-  uint64   block_number = 2;
+  uint64   chain_id                              = 1;
+  uint64   block_number                          = 2;
+  repeated ContractLoadedBlockResponse contracts = 3;
 }
 
 message ContractLoadedBlockRequest {
@@ -47,9 +49,33 @@ message ContractLoadedBlockRequest {
 }
 
 message ContractLoadedBlockResponse {
-  uint64   chain_id         = 1;
-  bytes    contract_address = 2;
-  uint64   block_number     = 3;
+  uint64 chain_id         = 1;
+  bytes  contract_address = 2;
+  uint64 block_number     = 3;
+}
+
+message GetCommitmentsRequest {
+  uint64   chain_id                = 1;
+  bytes    contract_address        = 2;
+  repeated bytes commitment_hashes = 3;
+}
+
+message GetCommitmentsResponse {
+  uint64   chain_id                               = 1;
+  bytes    contract_address                       = 2;
+  repeated mystiko.data.v1.Commitment commitments = 3;
+}
+
+message GetNullifiersRequest {
+  uint64   chain_id               = 1;
+  bytes    contract_address       = 2;
+  repeated bytes nullifier_hashes = 3;
+}
+
+message GetNullifiersResponse {
+  uint64   chain_id                             = 1;
+  bytes    contract_address                     = 2;
+  repeated mystiko.data.v1.Nullifier nullifiers = 3;
 }
 
 message HealthCheckRequest {}
@@ -57,8 +83,10 @@ message HealthCheckRequest {}
 message HealthCheckResponse {}
 
 service SequencerService {
-  rpc FetchChain(FetchChainRequest)                           returns (FetchChainResponse);
-  rpc ChainLoadedBlock(ChainLoadedBlockRequest)               returns (ChainLoadedBlockResponse);
-  rpc ContractLoadedBlock(ContractLoadedBlockRequest)         returns (ContractLoadedBlockResponse);
-  rpc HealthCheck(HealthCheckRequest)                         returns (HealthCheckResponse);
+  rpc FetchChain(FetchChainRequest)                   returns (FetchChainResponse);
+  rpc ChainLoadedBlock(ChainLoadedBlockRequest)       returns (ChainLoadedBlockResponse);
+  rpc ContractLoadedBlock(ContractLoadedBlockRequest) returns (ContractLoadedBlockResponse);
+  rpc GetCommitments(GetCommitmentsRequest)           returns (GetCommitmentsResponse);
+  rpc GetNullifiers(GetNullifiersRequest)             returns (GetNullifiersResponse);
+  rpc HealthCheck(HealthCheckRequest)                 returns (HealthCheckResponse);
 }
