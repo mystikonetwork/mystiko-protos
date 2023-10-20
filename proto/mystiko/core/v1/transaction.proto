@@ -3,14 +3,14 @@ syntax = "proto3";
 package mystiko.core.v1;
 
 message Transaction {
-  optional bytes  from      = 1;
-  optional bytes  to        = 2;
-  optional bytes  gas       = 3;
-  optional bytes  gas_price = 4;
-  optional bytes  value     = 5;
-  optional bytes  data      = 6;
-  optional bytes  nonce     = 7;
-  optional uint64 chain_id  = 8;
+  optional string  from      = 1;
+  optional string  to        = 2;
+  optional string  gas       = 3;
+  optional string  gas_price = 4;
+  optional string  value     = 5;
+  optional string  data      = 6;
+  optional string  nonce     = 7;
+  optional uint64  chain_id  = 8;
 }
 
 message GetAddressRequest {}
