@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package mystiko.core.v1;
+
+message Transaction {
+  optional string  from      = 1;
+  optional string  to        = 2;
+  optional string  gas       = 3;
+  optional string  gas_price = 4;
+  optional string  value     = 5;
+  optional string  data      = 6;
+  optional string  nonce     = 7;
+}
+
+message GetAddressRequest {}
+
+message GetAddressResponse {
+  string address = 1;
+}
+
+message SendTransactionRequest {
+  uint64      chain_id    = 1;
+  Transaction transaction = 2;
+}
+
+message SendTransactionResponse {
+  uint64 chain_id = 1;
+  string tx_hash  = 2;
+}
+
+service TransactionService {
+  rpc GetAddress(GetAddressRequest)           returns (GetAddressResponse);
+  rpc SendTransaction(SendTransactionRequest) returns (SendTransactionResponse);
+}
