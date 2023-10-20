@@ -10,7 +10,6 @@ message Transaction {
   optional string  value     = 5;
   optional string  data      = 6;
   optional string  nonce     = 7;
-  optional uint64  chain_id  = 8;
 }
 
 message GetAddressRequest {}
