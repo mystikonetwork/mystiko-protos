@@ -27,7 +27,8 @@ message Eip1559Transaction {
   optional string nonce                    = 6;
   optional string max_fee_per_gas          = 7;
   optional string max_priority_fee_per_gas = 8;
-  repeated AccessListItem access_list      = 9;
+  optional uint64 chain_id                 = 9;
+  repeated AccessListItem access_list      = 10;
 }
 
 message Eip2930Transaction {
