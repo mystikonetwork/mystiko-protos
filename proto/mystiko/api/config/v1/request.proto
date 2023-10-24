@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package mystiko.config.api.v1;
+package mystiko.api.config.v1;
 
 import "mystiko/common/v1/types.proto";
 
