@@ -2,14 +2,46 @@ syntax = "proto3";
 
 package mystiko.core.v1;
 
+message AccessListItem {
+  optional string address      = 1;
+  repeated string storage_keys = 2;
+}
+
+message LegacyTransaction {
+  optional string from      = 1;
+  optional string to        = 2;
+  optional string gas       = 3;
+  optional string gas_price = 4;
+  optional string value     = 5;
+  optional string data      = 6;
+  optional string nonce     = 7;
+  optional uint64 chain_id  = 8;
+}
+
+message Eip1559Transaction {
+  optional string from                     = 1;
+  optional string to                       = 2;
+  optional string gas                      = 3;
+  optional string value                    = 4;
+  optional string data                     = 5;
+  optional string nonce                    = 6;
+  optional string max_fee_per_gas          = 7;
+  optional string max_priority_fee_per_gas = 8;
+  optional uint64 chain_id                 = 9;
+  repeated AccessListItem access_list      = 10;
+}
+
+message Eip2930Transaction {
+  LegacyTransaction       tx          = 1;
+  repeated AccessListItem access_list = 2;
+}
+
 message Transaction {
-  optional string  from      = 1;
-  optional string  to        = 2;
-  optional string  gas       = 3;
-  optional string  gas_price = 4;
-  optional string  value     = 5;
-  optional string  data      = 6;
-  optional string  nonce     = 7;
+  oneof transaction {
+    LegacyTransaction  legacy_transaction  = 1;
+    Eip1559Transaction eip1559_transaction = 2;
+    Eip2930Transaction eip2930_transaction = 3;
+  }
 }
 
 message GetAddressRequest {}

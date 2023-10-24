@@ -22,11 +22,12 @@ message ChainConfig {
   uint64  event_filter_size                                                              = 11;
   uint64  sequencer_fetch_size                                                           = 12;
   AssetConfig  main_asset_config                                                         = 13;
-  mystiko.common.v1.ProviderType  provider_type                                          = 14;
-  map<string, AssetConfig>  asset_configs                                                = 15;
-  map<string, mystiko.config.contract.v1.DepositContractConfig> deposit_contract_configs = 16;
-  map<string, mystiko.config.contract.v1.PoolContractConfig> pool_contract_configs       = 17;
-  repeated  string  recommended_amounts                                                  = 18;
-  repeated  ProviderConfig  provider_configs                                             = 19;
-  repeated  uint64  granularities                                                        = 20;
+  mystiko.common.v1.ProviderType    provider_type                                        = 14;
+  mystiko.common.v1.TransactionType transaction_type                                     = 15;
+  map<string, AssetConfig>  asset_configs                                                = 16;
+  map<string, mystiko.config.contract.v1.DepositContractConfig> deposit_contract_configs = 17;
+  map<string, mystiko.config.contract.v1.PoolContractConfig> pool_contract_configs       = 18;
+  repeated  string  recommended_amounts                                                  = 19;
+  repeated  ProviderConfig  provider_configs                                             = 20;
+  repeated  uint64  granularities                                                        = 21;
 }
