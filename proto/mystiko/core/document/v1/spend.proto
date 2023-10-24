@@ -4,7 +4,7 @@ package mystiko.core.document.v1;
 
 import "mystiko/core/v1/common.proto";
 
-message Transaction {
+message Spend {
   string            id                               = 1;
   uint64            created_at                       = 2;
   uint64            updated_at                       = 3;
@@ -33,6 +33,6 @@ message Transaction {
   optional  bytes   random_auditing_public_key       = 26;
   optional  string  error_message                    = 27;
   optional  string  transaction_hash                 = 28;
-  mystiko.core.v1.TransactionType   transaction_type = 29;
-  mystiko.core.v1.TransactionStatus status           = 30;
+  mystiko.core.v1.SpendType   spend_type             = 29;
+  mystiko.core.v1.SpendStatus status                 = 30;
 }
