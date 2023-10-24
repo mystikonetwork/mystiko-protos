@@ -5,13 +5,6 @@ package mystiko.common.v1;
 import "google/protobuf/any.proto";
 
 message ApiResponse {
-  StatusCode code          = 1;
-  string     message       = 2;
-  google.protobuf.Any data = 3;
-}
-
-enum StatusCode {
-  STATUS_CODE_UNSPECIFIED = 0;
-  STATUS_CODE_SUCCESS     = 1;
-  STATUS_CODE_FAILED      = 2;
+  google.protobuf.Any data      = 1;
+  optional string error_message = 2;
 }
