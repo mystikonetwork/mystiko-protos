@@ -5,6 +5,8 @@ package mystiko.common.v1;
 import "google/protobuf/any.proto";
 
 message ApiResponse {
-  optional google.protobuf.Any data = 1;
-  optional string error_message     = 2;
+  oneof result {
+    google.protobuf.Any data = 1;
+    string error_message     = 2;
+  }
 }
