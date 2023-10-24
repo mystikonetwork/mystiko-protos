@@ -20,17 +20,17 @@ enum DepositStatus {
   DEPOSIT_STATUS_FAILED          = 7;
 }
 
-enum TransactionStatus {
-  TRANSACTION_STATUS_UNSPECIFIED      = 0;
-  TRANSACTION_STATUS_PENDING          = 1;
-  TRANSACTION_STATUS_SUCCEEDED        = 2;
-  TRANSACTION_STATUS_FAILED           = 3;
+enum SpendStatus {
+  SPEND_STATUS_UNSPECIFIED      = 0;
+  SPEND_STATUS_PENDING          = 1;
+  SPEND_STATUS_SUCCEEDED        = 2;
+  SPEND_STATUS_FAILED           = 3;
 }
 
-enum TransactionType {
-  TRANSACTION_TYPE_UNSPECIFIED = 0;
-  TRANSACTION_TYPE_TRANSFER    = 1;
-  TRANSACTION_TYPE_WITHDRAW    = 2;
+enum SpendType {
+  SPEND_TYPE_UNSPECIFIED = 0;
+  SPEND_TYPE_TRANSFER    = 1;
+  SPEND_TYPE_WITHDRAW    = 2;
 }
 
 enum NetworkType {
