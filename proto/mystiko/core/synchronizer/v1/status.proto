@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mystiko.core.synchronizer.v1;
+
+message ContractStatus {
+  string contract_address = 1;
+  uint64 synced_block     = 2;
+}
+
+message ChainStatus {
+  uint64   chain_id     = 1;
+  uint64   synced_block = 2;
+  repeated ContractStatus contracts = 3;
+}
+
+message SynchronizerStatus {
+  repeated ChainStatus chains = 1;
+}
