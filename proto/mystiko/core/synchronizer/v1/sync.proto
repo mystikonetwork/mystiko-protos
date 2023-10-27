@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package mystiko.core.synchronizer.v1;
+
+message SyncOptions {
+  optional bool   disable_datapacker_fetcher             = 1;
+  optional bool   enable_datapacker_fetcher_validate     = 2;
+  optional bool   disable_sequencer_fetcher              = 3;
+  optional bool   enable_sequencer_fetcher_validate      = 4;
+  optional bool   disable_provider_fetcher               = 5;
+  optional bool   disable_provider_fetcher_validate      = 6;
+  optional bool   disable_rule_validator                 = 7;
+  optional bool   disable_rule_validator_integrity_check = 8;
+  optional bool   disable_rule_validator_sequence_check  = 9;
+  optional bool   disable_rule_validator_counter_check   = 10;
+  optional bool   disable_rule_validator_tree_check      = 11;
+  optional uint64 fetcher_fetch_timeout_ms               = 12;
+  optional uint64 fetcher_query_loaded_block_timeout_ms  = 13;
+  optional uint64 validator_validate_concurrency         = 14;
+  repeated uint64 chain_ids                              = 15;
+}
