@@ -3,8 +3,27 @@ syntax = "proto3";
 package mystiko.api.v1;
 
 message ApiResponse {
+  StatusCode   code      = 1;
   oneof result {
-    bytes  data          = 1;
-    string error_message = 2;
+    bytes  data          = 2;
+    string error_message = 3;
   }
+}
+
+enum StatusCode {
+  STATUS_CODE_UNSPECIFIED                = 0;
+  STATUS_CODE_SUCCESS                    = 1;
+  STATUS_CODE_UNKNOWN_ERROR              = 2;
+  STATUS_CODE_CONFIG_ERROR               = 3;
+  STATUS_CODE_DATABASE_MIGRATION_ERROR   = 4;
+  STATUS_CODE_CRYPTO_ERROR               = 5;
+  STATUS_CODE_MNEMONIC_ERROR             = 6;
+  STATUS_CODE_HEX_STRING_ERROR           = 7;
+  STATUS_CODE_STORAGE_ERROR              = 8;
+  STATUS_CODE_INVALID_PASSWORD_ERROR     = 9;
+  STATUS_CODE_MISMATCHED_PASSWORD_ERROR  = 10;
+  STATUS_CODE_NO_EXISTING_WALLET_ERROR   = 11;
+  STATUS_CODE_NO_SUCH_ACCOUNT_ERROR      = 12;
+  STATUS_CODE_INVALID_PROVIDER_URL_ERROR = 13;
+  STATUS_CODE_DATA_LOADER_ERROR          = 14;
 }
