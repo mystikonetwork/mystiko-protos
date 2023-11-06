@@ -10,9 +10,8 @@ message ScanOptions {
 }
 
 message ScanResult {
-  string   from_id                           = 1;
-  string   to_id                             = 2;
-  uint64   total_count                       = 3;
-  uint64   owned_count                       = 4;
-  repeated string scanned_shielded_addresses = 5;
+  uint64   total_count                       = 1;
+  uint64   owned_count                       = 2;
+  repeated string scanned_shielded_addresses = 3;
+  optional string to_id                      = 4;
 }
