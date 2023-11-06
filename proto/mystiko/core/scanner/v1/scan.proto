@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mystiko.core.scanner.v1;
+
+message ScanOptions {
+  string   wallet_password           = 1;
+  optional uint64 batch_size         = 2;
+  optional uint32 concurrency        = 3;
+  repeated string shielded_addresses = 4;
+}
+
+message ScanResult {
+  string   from_id                           = 1;
+  string   to_id                             = 2;
+  uint64   total_count                       = 3;
+  uint64   owned_count                       = 4;
+  repeated string scanned_shielded_addresses = 5;
+}
