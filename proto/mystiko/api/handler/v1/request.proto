@@ -39,6 +39,16 @@ message FindAccountRequest {
 
 message UpdateAccountRequest {
   mystiko.core.handler.v1.UpdateAccountOptions options = 1;
+  oneof identifier {
+    string id               = 2;
+    string shielded_address = 3;
+    string public_key       = 4;
+  }
+}
+
+message UpdateEncryptionRequest {
+  string old_wallet_password = 1;
+  string new_wallet_password = 2;
 }
 
 message ExportSecretKeyRequest {
