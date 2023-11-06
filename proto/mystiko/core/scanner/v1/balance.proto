@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package mystiko.core.scanner.v1;
+
+import "mystiko/common/v1/types.proto";
+
+message Balance {
+  string   asset_symbol = 1;
+  double   unspent      = 2;
+  double   pending      = 3;
+  optional double spent = 4;
+}
+
+message BalanceOptions {
+  optional bool   with_spent                         = 1;
+  repeated string shielded_addresses                 = 2;
+  repeated uint64 chain_ids                          = 3;
+  repeated string asset_symbols                      = 4;
+  repeated string contract_addresses                 = 5;
+  repeated mystiko.common.v1.BridgeType bridge_types = 6;
+}
+
+message BalanceResult {
+  repeated Balance balances = 1;
+}
