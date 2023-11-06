@@ -3,8 +3,10 @@ syntax = "proto3";
 package mystiko.core.v1;
 
 import "mystiko/common/v1/config.proto";
+import "mystiko/loader/v1/loader.proto";
 
 message MystikoOptions {
   optional mystiko.common.v1.ConfigOptions config_options = 1;
-  optional string                          db_path        = 2;
+  optional mystiko.loader.v1.LoaderConfig  loader_config  = 2;
+  optional string                          db_path        = 3;
 }
