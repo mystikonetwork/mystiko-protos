@@ -3,6 +3,8 @@ syntax = "proto3";
 package mystiko.api.handler.v1;
 
 import "mystiko/core/handler/v1/wallet.proto";
+import "mystiko/core/handler/v1/account.proto";
+import "mystiko/storage/v1/filter.proto";
 
 message CreateWalletRequest {
   mystiko.core.handler.v1.CreateWalletOptions options = 1;
@@ -21,4 +23,29 @@ message UpdatePasswordRequest {
 
 message ExportMnemonicPhraseRequest {
   string password = 1;
+}
+
+message CreateAccountRequest {
+  mystiko.core.handler.v1.CreateAccountOptions options = 1;
+}
+
+message CountAccountRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+message FindAccountRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+message UpdateAccountRequest {
+  mystiko.core.handler.v1.UpdateAccountOptions options = 1;
+}
+
+message ExportSecretKeyRequest {
+  string wallet_password    = 1;
+  oneof identifier {
+    string id               = 2;
+    string public_key       = 3;
+    string shielded_address = 4;
+  }
 }
