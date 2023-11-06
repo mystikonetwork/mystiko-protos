@@ -2,13 +2,6 @@ syntax = "proto3";
 
 package mystiko.core.v1;
 
-enum AccountStatus {
-  ACCOUNT_STATUS_UNSPECIFIED = 0;
-  ACCOUNT_STATUS_CREATED     = 1;
-  ACCOUNT_STATUS_SCANNING    = 2;
-  ACCOUNT_STATUS_SCANNED     = 3;
-}
-
 enum DepositStatus {
   DEPOSIT_STATUS_UNSPECIFIED     = 0;
   DEPOSIT_STATUS_ASSET_APPROVING = 1;
