@@ -41,6 +41,10 @@ message UpdateAccountResponse {
   mystiko.core.document.v1.Account account = 1;
 }
 
+message UpdateEncryptionResponse {
+  repeated mystiko.core.document.v1.Account account = 1;
+}
+
 message ExportSecretKeyResponse {
   string secret_key = 1;
 }
