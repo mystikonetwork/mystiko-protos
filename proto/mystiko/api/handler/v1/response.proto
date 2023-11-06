@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package mystiko.api.handler.v1;
+
+import "mystiko/core/document/v1/wallet.proto";
+import "mystiko/core/document/v1/account.proto";
+
+message CreateWalletResponse {
+  mystiko.core.document.v1.Wallet wallet = 1;
+}
+
+message CheckCurrentResponse {
+  mystiko.core.document.v1.Wallet wallet = 1;
+}
+
+message CheckPasswordResponse {
+  mystiko.core.document.v1.Wallet wallet = 1;
+}
+
+message UpdatePasswordResponse {
+  mystiko.core.document.v1.Wallet wallet = 1;
+}
+
+message ExportMnemonicPhraseResponse {
+  string mnemonic_phrase = 1;
+}
+
+message CreateAccountResponse {
+  mystiko.core.document.v1.Account account = 1;
+}
+
+message CountAccountResponse {
+  uint64 count = 1;
+}
+
+message FindAccountResponse {
+  repeated mystiko.core.document.v1.Account account = 1;
+}
+
+message UpdateAccountResponse {
+  mystiko.core.document.v1.Account account = 1;
+}
+
+message ExportSecretKeyResponse {
+  string secret_key = 1;
+}
