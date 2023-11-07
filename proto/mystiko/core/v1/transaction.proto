@@ -3,7 +3,7 @@ syntax = "proto3";
 package mystiko.core.v1;
 
 message AccessListItem {
-  optional string address      = 1;
+  string   address             = 1;
   repeated string storage_keys = 2;
 }
 
