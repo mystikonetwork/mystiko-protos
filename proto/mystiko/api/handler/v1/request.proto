@@ -34,7 +34,18 @@ message CountAccountRequest {
 }
 
 message FindAccountRequest {
-  mystiko.storage.v1.QueryFilter filter = 1;
+  oneof condition {
+    mystiko.storage.v1.QueryFilter filter = 1;
+    bool find_all                         = 2;
+  }
+}
+
+message FindAccountByIdentifierRequest {
+  oneof identifier {
+    string id                             = 2;
+    string shielded_address               = 3;
+    string public_key                     = 4;
+  }
 }
 
 message UpdateAccountRequest {

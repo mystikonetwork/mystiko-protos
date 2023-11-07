@@ -37,6 +37,10 @@ message FindAccountResponse {
   repeated mystiko.core.document.v1.Account account = 1;
 }
 
+message FindAccountByIdentifierResponse {
+  optional mystiko.core.document.v1.Account account = 1;
+}
+
 message UpdateAccountResponse {
   mystiko.core.document.v1.Account account = 1;
 }
