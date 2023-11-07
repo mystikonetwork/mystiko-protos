@@ -8,8 +8,9 @@ import "mystiko/common/v1/types.proto";
 message DepositQuoteOptions {
   uint64   chain_id                                 = 1;
   string   asset_symbol                             = 2;
-  optional uint64 dst_chain_id                      = 3;
-  optional mystiko.common.v1.BridgeType bridge_type = 4;
+  optional uint64 query_remote_timeout_ms           = 3;
+  optional uint64 dst_chain_id                      = 4;
+  optional mystiko.common.v1.BridgeType bridge_type = 5;
 }
 
 message DepositQuote {
@@ -33,9 +34,10 @@ message DepositOptions {
   optional uint64 dst_chain_id                          = 6;
   optional double bridge_fee_amount                     = 7;
   optional double executor_fee_amount                   = 8;
-  optional mystiko.common.v1.BridgeType bridge_type     = 9;
-  optional mystiko.core.v1.Transaction asset_approve_tx = 10;
-  optional mystiko.core.v1.Transaction deposit_tx       = 11;
+  optional uint64 query_remote_timeout_ms               = 9;
+  optional mystiko.common.v1.BridgeType bridge_type     = 10;
+  optional mystiko.core.v1.Transaction asset_approve_tx = 11;
+  optional mystiko.core.v1.Transaction deposit_tx       = 12;
 }
 
 message DepositSummary {
