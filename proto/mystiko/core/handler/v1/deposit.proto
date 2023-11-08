@@ -12,6 +12,28 @@ message DepositQuoteOptions {
   optional uint64 dst_chain_id                      = 4;
   optional mystiko.common.v1.BridgeType bridge_type = 5;
 }
+message DepositCreateOptions {
+  uint64   chain_id                                     = 1;
+  string   asset_symbol                                 = 2;
+  double   amount                                       = 3;
+  string   shielded_address                             = 4;
+  double   rollup_fee_amount                            = 5;
+  optional uint64 dst_chain_id                          = 6;
+  optional double bridge_fee_amount                     = 7;
+  optional double executor_fee_amount                   = 8;
+  optional uint64 query_remote_timeout_ms               = 9;
+  optional DepositQuote deposit_quote                   = 10;
+  optional mystiko.common.v1.BridgeType bridge_type     = 11;
+}
+
+message DepositSendOptions {
+  string   deposit_id                                   = 1;
+  optional uint64 query_remote_timeout_ms               = 2;
+  optional uint64 asset_approve_confirmations           = 3;
+  optional uint64 deposit_confirmations                 = 4;
+  optional mystiko.core.v1.Transaction asset_approve_tx = 5;
+  optional mystiko.core.v1.Transaction deposit_tx       = 6;
+}
 
 message DepositQuote {
   double   min_amount                       = 1;
@@ -23,24 +45,6 @@ message DepositQuote {
   optional double min_executor_fee_amount   = 7;
   optional string executor_fee_asset_symbol = 8;
   repeated double recommended_amounts       = 9;
-}
-
-message DepositOptions {
-  uint64   chain_id                                     = 1;
-  string   asset_symbol                                 = 2;
-  double   amount                                       = 3;
-  string   shielded_address                             = 4;
-  double   rollup_fee_amount                            = 5;
-  optional uint64 dst_chain_id                          = 6;
-  optional double bridge_fee_amount                     = 7;
-  optional double executor_fee_amount                   = 8;
-  optional uint64 query_remote_timeout_ms               = 9;
-  optional uint64 asset_approve_confirmations           = 10;
-  optional uint64 deposit_confirmations                 = 11;
-  optional DepositQuote deposit_quote                   = 12;
-  optional mystiko.common.v1.BridgeType bridge_type     = 13;
-  optional mystiko.core.v1.Transaction asset_approve_tx = 14;
-  optional mystiko.core.v1.Transaction deposit_tx       = 15;
 }
 
 message DepositSummary {
