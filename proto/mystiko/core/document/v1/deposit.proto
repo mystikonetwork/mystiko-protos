@@ -31,10 +31,10 @@ message Deposit {
   optional string bridge_fee_asset_symbol        = 23;
   optional string executor_fee_asset_address     = 24;
   optional string executor_fee_asset_symbol      = 25;
-  optional string asset_approve_transaction_hash = 26;
-  optional string queued_transaction_hash        = 27;
-  optional string included_transaction_hash      = 28;
-  optional string src_chain_transaction_hash     = 29;
+  optional string queued_transaction_hash        = 26;
+  optional string included_transaction_hash      = 27;
+  optional string src_chain_transaction_hash     = 28;
+  repeated string asset_approve_transaction_hash = 29;
   optional string error_message                  = 30;
   mystiko.common.v1.BridgeType    bridge_type    = 31;
   mystiko.core.v1.DepositStatus   status         = 32;
