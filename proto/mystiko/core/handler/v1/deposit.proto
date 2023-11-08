@@ -35,10 +35,12 @@ message DepositOptions {
   optional double bridge_fee_amount                     = 7;
   optional double executor_fee_amount                   = 8;
   optional uint64 query_remote_timeout_ms               = 9;
-  optional DepositQuote deposit_quote                   = 10;
-  optional mystiko.common.v1.BridgeType bridge_type     = 11;
-  optional mystiko.core.v1.Transaction asset_approve_tx = 12;
-  optional mystiko.core.v1.Transaction deposit_tx       = 13;
+  optional uint64 asset_approve_confirmations           = 10;
+  optional uint64 deposit_confirmations                 = 11;
+  optional DepositQuote deposit_quote                   = 12;
+  optional mystiko.common.v1.BridgeType bridge_type     = 13;
+  optional mystiko.core.v1.Transaction asset_approve_tx = 14;
+  optional mystiko.core.v1.Transaction deposit_tx       = 15;
 }
 
 message DepositSummary {
