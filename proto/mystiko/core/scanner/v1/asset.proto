@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package mystiko.core.scanner.v1;
+
+import "mystiko/common/v1/types.proto";
+import "mystiko/core/scanner/v1/balance.proto";
+
+message AssetsOptions {
+  repeated string shielded_addresses                 = 1;
+}
+
+message BridgeAssets {
+  mystiko.common.v1.BridgeType bridge_type           = 1;
+  repeated Balance balances                          = 2;
+}
+
+message ChainAssetsResult {
+  uint64 chain_id                                    = 1;
+  repeated BridgeAssets bridges                      = 2;
+}
+
+message AssetsResult {
+  repeated ChainAssetsResult chains                  = 1;
+}
