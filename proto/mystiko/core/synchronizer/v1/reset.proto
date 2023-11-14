@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package mystiko.core.synchronizer.v1;
+
+message ResetChainOptions {
+  uint64 chain_id                                        = 1;
+  optional uint64 block_number                           = 2;
+}
+
+message ResetOptions {
+  repeated ResetChainOptions chains                      = 1;
+}
