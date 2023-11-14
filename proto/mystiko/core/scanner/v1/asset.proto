@@ -18,7 +18,3 @@ message ChainAssetsResult {
   uint64 chain_id                                    = 1;
   repeated BridgeAssets bridges                      = 2;
 }
-
-message AssetsResult {
-  repeated ChainAssetsResult chains                  = 1;
-}
