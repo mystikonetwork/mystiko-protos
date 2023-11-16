@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package mystiko.core.synchronizer.v1;
+package mystiko.loader.v1;
 
 message ResetChainOptions {
   uint64 chain_id                                        = 1;
