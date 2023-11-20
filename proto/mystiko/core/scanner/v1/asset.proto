@@ -3,7 +3,6 @@ syntax = "proto3";
 package mystiko.core.scanner.v1;
 
 import "mystiko/common/v1/types.proto";
-import "mystiko/core/scanner/v1/balance.proto";
 
 message AssetsOptions {
   repeated string shielded_addresses = 1;
