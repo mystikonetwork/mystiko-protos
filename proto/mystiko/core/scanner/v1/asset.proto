@@ -10,7 +10,8 @@ message AssetsOptions {
 
 message AssetsByVersion {
   uint32 pool_version = 1;
-  double balance      = 2;
+  string pool_name    = 2;
+  double balance      = 3;
 }
 
 message AssetsBySymbol {
