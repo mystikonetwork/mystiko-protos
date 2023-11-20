@@ -8,8 +8,8 @@ message ContractStatus {
 }
 
 message ChainStatus {
-  uint64   chain_id     = 1;
-  uint64   synced_block = 2;
+  uint64   chain_id                 = 1;
+  uint64   synced_block             = 2;
   repeated ContractStatus contracts = 3;
 }
 

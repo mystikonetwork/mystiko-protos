@@ -3,18 +3,29 @@ syntax = "proto3";
 package mystiko.core.scanner.v1;
 
 import "mystiko/common/v1/types.proto";
-import "mystiko/core/scanner/v1/balance.proto";
 
 message AssetsOptions {
-  repeated string shielded_addresses                 = 1;
+  repeated string shielded_addresses = 1;
 }
 
-message BridgeAssets {
-  mystiko.common.v1.BridgeType bridge_type           = 1;
-  repeated Balance balances                          = 2;
+message AssetsByVersion {
+  uint32 pool_version    = 1;
+  double balance         = 2;
+  string decimal_balance = 3;
 }
 
-message ChainAssetsResult {
-  uint64 chain_id                                    = 1;
-  repeated BridgeAssets bridges                      = 2;
+message AssetsBySymbol {
+  string asset_symbol               = 1;
+  uint32 asset_decimals             = 2;
+  repeated AssetsByVersion versions = 3;
+}
+
+message AssetsByBridge {
+  mystiko.common.v1.BridgeType bridge_type = 1;
+  repeated AssetsBySymbol symbols          = 2;
+}
+
+message AssetsByChain {
+  uint64 chain_id                 = 1;
+  repeated AssetsByBridge bridges = 2;
 }

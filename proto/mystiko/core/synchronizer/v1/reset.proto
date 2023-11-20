@@ -3,11 +3,11 @@ syntax = "proto3";
 package mystiko.core.synchronizer.v1;
 
 message ResetChainOptions {
-  uint64 chain_id                                        = 1;
-  repeated string contract_addresses                     = 2;
-  optional uint64 block_number                           = 3;
+  uint64 chain_id                    = 1;
+  repeated string contract_addresses = 2;
+  optional uint64 block_number       = 3;
 }
 
 message ResetOptions {
-  repeated ResetChainOptions chains                      = 1;
+  repeated ResetChainOptions chains = 1;
 }
