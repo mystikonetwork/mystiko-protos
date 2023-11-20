@@ -9,15 +9,13 @@ message AssetsOptions {
 }
 
 message AssetsByVersion {
-  uint32 pool_version    = 1;
-  double balance         = 2;
-  string decimal_balance = 3;
+  uint32 pool_version = 1;
+  double balance      = 2;
 }
 
 message AssetsBySymbol {
   string asset_symbol               = 1;
-  uint32 asset_decimals             = 2;
-  repeated AssetsByVersion versions = 3;
+  repeated AssetsByVersion versions = 2;
 }
 
 message AssetsByBridge {
