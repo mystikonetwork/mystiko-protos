@@ -5,10 +5,13 @@ package mystiko.core.scanner.v1;
 import "mystiko/common/v1/types.proto";
 
 message Balance {
-  string   asset_symbol = 1;
-  double   unspent      = 2;
-  double   pending      = 3;
-  optional double spent = 4;
+  string   asset_symbol         = 1;
+  double   unspent              = 2;
+  string   decimal_unspent      = 3;
+  double   pending              = 4;
+  string   decimal_pending      = 5;
+  optional double spent         = 6;
+  optional string decimal_spent = 7;
 }
 
 message BalanceOptions {
