@@ -17,7 +17,7 @@ message AssetsByVersion {
 
 message AssetsBySymbol {
   string asset_symbol               = 1;
-  uint32 asset_decimal              = 2;
+  uint32 asset_decimals             = 2;
   repeated AssetsByVersion versions = 3;
 }
 
