@@ -23,9 +23,9 @@ message Spend {
   repeated  string  signature_public_key_hashes      = 16;
   repeated  string  encrypted_auditor_notes          = 17;
   optional  double  rollup_fee_amount                = 18;
-  optional  string  decimal_rollup_fee_amount        = 19;
+  optional  string  rollup_fee_decimal_amount        = 19;
   optional  double  gas_relayer_fee_amount           = 20;
-  optional  string  decimal_gas_relayer_fee_amount   = 21;
+  optional  string  gas_relayer_fee_decimal_amount   = 21;
   optional  string  signature_public_key             = 22;
   optional  string  asset_address                    = 23;
   optional  string  proof                            = 24;

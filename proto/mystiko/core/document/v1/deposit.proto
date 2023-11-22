@@ -24,14 +24,14 @@ message Deposit {
   double   amount                                = 16;
   string   decimal_amount                        = 17;
   double   rollup_fee_amount                     = 18;
-  string   decimal_rollup_fee_amount             = 19;
+  string   rollup_fee_decimal_amount             = 19;
   string   shielded_address                      = 20;
   string   wallet_id                             = 21;
   optional string asset_address                  = 22;
   optional double bridge_fee_amount              = 23;
-  optional string decimal_bridge_fee_amount      = 24;
+  optional string bridge_fee_decimal_amount      = 24;
   optional double executor_fee_amount            = 25;
-  optional string decimal_executor_fee_amount    = 26;
+  optional string executor_fee_decimal_amount    = 26;
   optional string bridge_fee_asset_address       = 27;
   optional string bridge_fee_asset_symbol        = 28;
   optional uint32 bridge_fee_asset_decimals      = 29;
