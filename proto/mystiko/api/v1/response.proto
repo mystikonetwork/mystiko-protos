@@ -13,11 +13,18 @@ message ApiResponse {
 message StatusCode {
   bool  success          = 1;
   oneof error {
-    MystikoError mystiko = 2;
-    AccountError account = 3;
-    DepositError deposit = 4;
-    ScannerError scanner = 5;
+    MystikoLibError lib  = 2;
+    MystikoError mystiko = 3;
+    AccountError account = 4;
+    DepositError deposit = 5;
+    ScannerError scanner = 6;
   }
+}
+
+enum MystikoLibError {
+  MYSTIKO_LIB_ERROR_UNSPECIFIED               = 0;
+  MYSTIKO_LIB_ERROR_GET_MYSTIKO_GUARD_ERROR   = 1;
+  MYSTIKO_LIB_ERROR_DESERIALIZE_MESSAGE_ERROR = 2;
 }
 
 enum MystikoError {
