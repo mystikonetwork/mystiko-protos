@@ -15,9 +15,10 @@ message StatusCode {
   oneof error {
     MystikoLibError lib  = 2;
     MystikoError mystiko = 3;
-    AccountError account = 4;
-    DepositError deposit = 5;
-    ScannerError scanner = 6;
+    WalletError  wallet  = 4;
+    AccountError account = 5;
+    DepositError deposit = 6;
+    ScannerError scanner = 7;
   }
 }
 
