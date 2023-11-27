@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package mystiko.relayer.v1;
+
+message RelayerClientOptions {
+  bool  is_testnet                               = 1;
+  bool  is_staging                               = 2;
+  uint64 timeout_ms                              = 3;
+  optional string relayer_config_file_path       = 4;
+  optional string relayer_config_remote_base_url = 5;
+  optional string relayer_config_git_revision    = 6;
+}
