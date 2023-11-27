@@ -11,13 +11,23 @@ message ApiResponse {
 }
 
 message StatusCode {
-  bool  success          = 1;
+  bool  success                  = 1;
   oneof error {
-    MystikoError mystiko = 2;
-    AccountError account = 3;
-    DepositError deposit = 4;
-    ScannerError scanner = 5;
+    MystikoLibError lib          = 2;
+    MystikoError mystiko         = 3;
+    WalletError  wallet          = 4;
+    AccountError account         = 5;
+    DepositError deposit         = 6;
+    ScannerError scanner         = 7;
+    SynchronizeError synchronize = 8;
   }
+}
+
+enum MystikoLibError {
+  MYSTIKO_LIB_ERROR_UNSPECIFIED               = 0;
+  MYSTIKO_LIB_ERROR_GET_MYSTIKO_GUARD_ERROR   = 1;
+  MYSTIKO_LIB_ERROR_DESERIALIZE_MESSAGE_ERROR = 2;
+  MYSTIKO_LIB_ERROR_STORAGE_ERROR             = 3;
 }
 
 enum MystikoError {
