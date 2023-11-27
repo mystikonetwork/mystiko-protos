@@ -40,15 +40,26 @@ message SendDepositOptions {
 }
 
 message DepositQuote {
-  double   min_amount                       = 1;
-  double   max_amount                       = 2;
-  double   min_rollup_fee_amount            = 3;
-  string   rollup_fee_asset_symbol          = 4;
-  optional double min_bridge_fee_amount     = 5;
-  optional string bridge_fee_asset_symbol   = 6;
-  optional double min_executor_fee_amount   = 7;
-  optional string executor_fee_asset_symbol = 8;
-  repeated double recommended_amounts       = 9;
+  string   asset_symbol                           = 1;
+  uint32   asset_decimals                         = 2;
+  double   min_amount                             = 3;
+  string   min_decimal_amount                     = 4;
+  double   max_amount                             = 5;
+  string   max_decimal_amount                     = 6;
+  double   min_rollup_fee_amount                  = 7;
+  string   min_rollup_fee_decimal_amount          = 8;
+  string   rollup_fee_asset_symbol                = 9;
+  uint32   rollup_fee_asset_decimals              = 10;
+  optional double min_bridge_fee_amount           = 11;
+  optional string min_bridge_fee_decimal_amount   = 12;
+  optional string bridge_fee_asset_symbol         = 13;
+  optional uint32 bridge_fee_asset_decimals       = 14;
+  optional double min_executor_fee_amount         = 15;
+  optional string min_executor_fee_decimal_amount = 16;
+  optional string executor_fee_asset_symbol       = 17;
+  optional uint32 executor_fee_asset_decimals     = 18;
+  repeated double recommended_amounts             = 19;
+  repeated string recommended_decimal_amounts     = 20;
 }
 
 message DepositSummary {
