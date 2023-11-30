@@ -9,7 +9,7 @@ message QuoteResponse {
   mystiko.core.handler.v1.DepositQuote quote = 1;
 }
 
-message SummaryRequest {
+message SummaryResponse {
   mystiko.core.handler.v1.DepositSummary summary = 1;
 }
 
