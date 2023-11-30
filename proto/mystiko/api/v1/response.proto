@@ -30,6 +30,7 @@ enum MystikoError {
   MYSTIKO_ERROR_CONFIG_ERROR               = 4;
   MYSTIKO_ERROR_DATABASE_MIGRATION_ERROR   = 5;
   MYSTIKO_ERROR_INVALID_PROVIDER_URL_ERROR = 6;
+  MYSTIKO_ERROR_STORAGE_ERROR              = 7;
 }
 
 enum AccountError {
