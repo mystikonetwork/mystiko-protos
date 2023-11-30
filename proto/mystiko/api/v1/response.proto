@@ -19,6 +19,7 @@ message StatusCode {
     DepositError deposit         = 5;
     ScannerError scanner         = 6;
     SynchronizeError synchronize = 7;
+    ConfigError  config          = 8;
   }
 }
 
@@ -31,6 +32,12 @@ enum MystikoError {
   MYSTIKO_ERROR_DATABASE_MIGRATION_ERROR   = 5;
   MYSTIKO_ERROR_INVALID_PROVIDER_URL_ERROR = 6;
   MYSTIKO_ERROR_STORAGE_ERROR              = 7;
+}
+
+enum ConfigError {
+  CONFIG_ERROR_UNSPECIFIED             = 0;
+  CONFIG_ERROR_DESERIALIZE_ERROR       = 1;
+  CONFIG_ERROR_GET_MYSTIKO_GUARD_ERROR = 2;
 }
 
 enum AccountError {
