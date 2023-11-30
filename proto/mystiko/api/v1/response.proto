@@ -23,13 +23,6 @@ message StatusCode {
   }
 }
 
-enum MystikoLibError {
-  MYSTIKO_LIB_ERROR_UNSPECIFIED               = 0;
-  MYSTIKO_LIB_ERROR_GET_MYSTIKO_GUARD_ERROR   = 1;
-  MYSTIKO_LIB_ERROR_DESERIALIZE_MESSAGE_ERROR = 2;
-  MYSTIKO_LIB_ERROR_STORAGE_ERROR             = 3;
-}
-
 enum MystikoError {
   MYSTIKO_ERROR_UNSPECIFIED                = 0;
   MYSTIKO_ERROR_SYNCHRONIZER_ERROR         = 1;
