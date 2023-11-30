@@ -13,13 +13,12 @@ message ApiResponse {
 message StatusCode {
   bool  success                  = 1;
   oneof error {
-    MystikoLibError lib          = 2;
-    MystikoError mystiko         = 3;
-    WalletError  wallet          = 4;
-    AccountError account         = 5;
-    DepositError deposit         = 6;
-    ScannerError scanner         = 7;
-    SynchronizeError synchronize = 8;
+    MystikoError mystiko         = 2;
+    WalletError  wallet          = 3;
+    AccountError account         = 4;
+    DepositError deposit         = 5;
+    ScannerError scanner         = 6;
+    SynchronizeError synchronize = 7;
   }
 }
 
