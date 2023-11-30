@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package mystiko.api.handler.account.v1;
+package mystiko.api.handler.v1;
 
 import "mystiko/core/handler/v1/account.proto";
 import "mystiko/storage/v1/filter.proto";
+import "mystiko/core/document/v1/account.proto";
 
 message CreateAccountRequest {
   mystiko.core.handler.v1.CreateAccountOptions options = 1;
@@ -49,4 +50,32 @@ message ExportSecretKeyRequest {
     string public_key       = 3;
     string shielded_address = 4;
   }
+}
+
+message CreateAccountResponse {
+  mystiko.core.document.v1.Account account = 1;
+}
+
+message CountAccountResponse {
+  uint64 count = 1;
+}
+
+message FindAccountResponse {
+  repeated mystiko.core.document.v1.Account account = 1;
+}
+
+message FindAccountByIdentifierResponse {
+  optional mystiko.core.document.v1.Account account = 1;
+}
+
+message UpdateAccountResponse {
+  mystiko.core.document.v1.Account account = 1;
+}
+
+message UpdateEncryptionResponse {
+  repeated mystiko.core.document.v1.Account account = 1;
+}
+
+message ExportSecretKeyResponse {
+  string secret_key = 1;
 }
