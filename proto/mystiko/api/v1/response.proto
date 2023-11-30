@@ -88,7 +88,7 @@ enum DepositError {
   DEPOSIT_ERROR_DUPLICATE_COMMITMENT_ERROR        = 23;
   DEPOSIT_ERROR_WALLETS_ERROR                     = 24;
   DEPOSIT_ERROR_ACCOUNTS_ERROR                    = 25;
-
+  DEPOSIT_ERROR_GET_MYSTIKO_GUARD_ERROR           = 26;
 }
 
 enum ScannerError {
