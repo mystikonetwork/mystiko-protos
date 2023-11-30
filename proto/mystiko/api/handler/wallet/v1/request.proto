@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package mystiko.api.handler.wallet.v1;
+
+import "mystiko/core/handler/v1/wallet.proto";
+
+message CreateWalletRequest {
+  mystiko.core.handler.v1.CreateWalletOptions options = 1;
+}
+
+message CheckCurrentRequest {}
+
+message CheckPasswordRequest {
+  string password = 1;
+}
+
+message UpdatePasswordRequest {
+  string old_password = 1;
+  string new_password = 2;
+}
+
+message ExportMnemonicPhraseRequest {
+  string password = 1;
+}
