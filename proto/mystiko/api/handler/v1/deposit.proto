@@ -13,7 +13,7 @@ message SummaryRequest {
   mystiko.core.handler.v1.CreateDepositOptions options = 1;
 }
 
-message CreateRequest {
+message CreateDepositRequest {
   mystiko.core.handler.v1.CreateDepositOptions options = 1;
 }
 
@@ -29,7 +29,7 @@ message SummaryResponse {
   mystiko.core.handler.v1.DepositSummary summary = 1;
 }
 
-message CreateResponse {
+message CreateDepositResponse {
   mystiko.core.document.v1.Deposit deposit = 1;
 }
 
