@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package mystiko.api.handler.v1;
+
+import "mystiko/core/handler/v1/deposit.proto";
+import "mystiko/core/document/v1/deposit.proto";
+
+message QuoteRequest {
+  mystiko.core.handler.v1.QuoteDepositOptions options = 1;
+}
+
+message SummaryRequest {
+  mystiko.core.handler.v1.CreateDepositOptions options = 1;
+}
+
+message CreateDepositRequest {
+  mystiko.core.handler.v1.CreateDepositOptions options = 1;
+}
+
+message SendRequest {
+  mystiko.core.handler.v1.SendDepositOptions options = 1;
+}
+
+message QuoteResponse {
+  mystiko.core.handler.v1.DepositQuote quote = 1;
+}
+
+message SummaryResponse {
+  mystiko.core.handler.v1.DepositSummary summary = 1;
+}
+
+message CreateDepositResponse {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message SendResponse {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}

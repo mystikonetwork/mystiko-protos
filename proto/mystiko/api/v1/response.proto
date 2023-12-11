@@ -13,21 +13,14 @@ message ApiResponse {
 message StatusCode {
   bool  success                  = 1;
   oneof error {
-    MystikoLibError lib          = 2;
-    MystikoError mystiko         = 3;
-    WalletError  wallet          = 4;
-    AccountError account         = 5;
-    DepositError deposit         = 6;
-    ScannerError scanner         = 7;
-    SynchronizeError synchronize = 8;
+    MystikoError mystiko         = 2;
+    WalletError  wallet          = 3;
+    AccountError account         = 4;
+    DepositError deposit         = 5;
+    ScannerError scanner         = 6;
+    SynchronizeError synchronize = 7;
+    ConfigError  config          = 8;
   }
-}
-
-enum MystikoLibError {
-  MYSTIKO_LIB_ERROR_UNSPECIFIED               = 0;
-  MYSTIKO_LIB_ERROR_GET_MYSTIKO_GUARD_ERROR   = 1;
-  MYSTIKO_LIB_ERROR_DESERIALIZE_MESSAGE_ERROR = 2;
-  MYSTIKO_LIB_ERROR_STORAGE_ERROR             = 3;
 }
 
 enum MystikoError {
@@ -38,16 +31,25 @@ enum MystikoError {
   MYSTIKO_ERROR_CONFIG_ERROR               = 4;
   MYSTIKO_ERROR_DATABASE_MIGRATION_ERROR   = 5;
   MYSTIKO_ERROR_INVALID_PROVIDER_URL_ERROR = 6;
+  MYSTIKO_ERROR_STORAGE_ERROR              = 7;
+}
+
+enum ConfigError {
+  CONFIG_ERROR_UNSPECIFIED               = 0;
+  CONFIG_ERROR_DESERIALIZE_MESSAGE_ERROR = 1;
+  CONFIG_ERROR_GET_MYSTIKO_GUARD_ERROR   = 2;
 }
 
 enum AccountError {
-  ACCOUNT_ERROR_UNSPECIFIED           = 0;
-  ACCOUNT_ERROR_STORAGE_ERROR         = 1;
-  ACCOUNT_ERROR_CRYPTO_ERROR          = 2;
-  ACCOUNT_ERROR_MNEMONIC_ERROR        = 3;
-  ACCOUNT_ERROR_HEX_STRING_ERROR      = 4;
-  ACCOUNT_ERROR_NO_SUCH_ACCOUNT_ERROR = 5;
-  ACCOUNT_ERROR_WALLETS_ERROR         = 6;
+  ACCOUNT_ERROR_UNSPECIFIED               = 0;
+  ACCOUNT_ERROR_STORAGE_ERROR             = 1;
+  ACCOUNT_ERROR_CRYPTO_ERROR              = 2;
+  ACCOUNT_ERROR_MNEMONIC_ERROR            = 3;
+  ACCOUNT_ERROR_HEX_STRING_ERROR          = 4;
+  ACCOUNT_ERROR_NO_SUCH_ACCOUNT_ERROR     = 5;
+  ACCOUNT_ERROR_WALLETS_ERROR             = 6;
+  ACCOUNT_ERROR_GET_MYSTIKO_GUARD_ERROR   = 7;
+  ACCOUNT_ERROR_DESERIALIZE_MESSAGE_ERROR = 8;
 }
 
 enum WalletError {
@@ -59,6 +61,8 @@ enum WalletError {
   WALLET_ERROR_INVALID_PASSWORD_ERROR    = 5;
   WALLET_ERROR_MISMATCHED_PASSWORD_ERROR = 6;
   WALLET_ERROR_NO_EXISTING_WALLET_ERROR  = 7;
+  WALLET_ERROR_GET_MYSTIKO_GUARD_ERROR   = 8;
+  WALLET_ERROR_DESERIALIZE_MESSAGE_ERROR = 9;
 }
 
 enum DepositError {
@@ -88,7 +92,8 @@ enum DepositError {
   DEPOSIT_ERROR_DUPLICATE_COMMITMENT_ERROR        = 23;
   DEPOSIT_ERROR_WALLETS_ERROR                     = 24;
   DEPOSIT_ERROR_ACCOUNTS_ERROR                    = 25;
-
+  DEPOSIT_ERROR_GET_MYSTIKO_GUARD_ERROR           = 26;
+  DEPOSIT_ERROR_DESERIALIZE_MESSAGE_ERROR         = 27;
 }
 
 enum ScannerError {
@@ -104,12 +109,16 @@ enum ScannerError {
   SCANNER_ERROR_ANYHOW_ERROR                  = 9;
   SCANNER_ERROR_ACCOUNT_HANDLER_ERROR         = 10;
   SCANNER_ERROR_WALLET_HANDLER_ERROR          = 11;
+  SCANNER_ERROR_GET_MYSTIKO_GUARD_ERROR       = 12;
+  SCANNER_ERROR_DESERIALIZE_MESSAGE_ERROR     = 13;
 }
 
 enum SynchronizeError {
-  SYNCHRONIZE_ERROR_UNSPECIFIED             = 0;
-  SYNCHRONIZE_ERROR_UNSUPPORTED_CHAIN_ERROR = 1;
-  SYNCHRONIZE_ERROR_DATALOADER_ERROR        = 2;
-  SYNCHRONIZE_ERROR_DATALOADER_CONFIG_ERROR = 3;
-  SYNCHRONIZE_ERROR_ANYHOW_ERROR            = 4;
+  SYNCHRONIZE_ERROR_UNSPECIFIED               = 0;
+  SYNCHRONIZE_ERROR_UNSUPPORTED_CHAIN_ERROR   = 1;
+  SYNCHRONIZE_ERROR_DATALOADER_ERROR          = 2;
+  SYNCHRONIZE_ERROR_DATALOADER_CONFIG_ERROR   = 3;
+  SYNCHRONIZE_ERROR_ANYHOW_ERROR              = 4;
+  SYNCHRONIZE_ERROR_GET_MYSTIKO_GUARD_ERROR   = 5;
+  SYNCHRONIZE_ERROR_DESERIALIZE_MESSAGE_ERROR = 6;
 }
