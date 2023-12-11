@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.document.v1;
 
+import "mystiko/common/v1/types.proto";
 import "mystiko/core/v1/common.proto";
 
 message Spend {
@@ -12,28 +13,32 @@ message Spend {
   string            contract_address                 = 5;
   string            asset_symbol                     = 6;
   uint32            asset_decimals                   = 7;
-  string            root_hash                        = 8;
-  double            amount                           = 9;
-  string            decimal_amount                   = 10;
-  string            recipient                        = 11;
-  string            wallet_id                        = 12;
-  repeated  string  input_commitments                = 13;
-  repeated  string  output_commitments               = 14;
-  repeated  string  nullifiers                       = 15;
-  repeated  string  signature_public_key_hashes      = 16;
-  repeated  string  encrypted_auditor_notes          = 17;
-  optional  double  rollup_fee_amount                = 18;
-  optional  string  rollup_fee_decimal_amount        = 19;
-  optional  double  gas_relayer_fee_amount           = 20;
-  optional  string  gas_relayer_fee_decimal_amount   = 21;
-  optional  string  signature_public_key             = 22;
-  optional  string  asset_address                    = 23;
-  optional  string  proof                            = 24;
-  optional  string  gas_relayer_address              = 25;
-  optional  string  signature                        = 26;
-  optional  string  random_auditing_public_key       = 27;
-  optional  string  error_message                    = 28;
-  optional  string  transaction_hash                 = 29;
-  mystiko.core.v1.SpendType   spend_type             = 30;
-  mystiko.core.v1.SpendStatus status                 = 31;
+  double            amount                           = 8;
+  string            decimal_amount                   = 9;
+  string            recipient                        = 10;
+  string            wallet_id                        = 11;
+  repeated  string  input_commitments                = 12;
+  repeated  string  output_commitments               = 13;
+  repeated  string  nullifiers                       = 14;
+  repeated  string  signature_public_key_hashes      = 15;
+  repeated  string  encrypted_auditor_notes          = 16;
+  optional  double  rollup_fee_amount                = 17;
+  optional  string  rollup_fee_decimal_amount        = 18;
+  optional  double  rollup_fee_total_amount          = 19;
+  optional  string  rollup_fee_total_decimal_amount  = 20;
+  optional  double  gas_relayer_fee_amount           = 21;
+  optional  string  gas_relayer_fee_decimal_amount   = 22;
+  optional  string  signature_public_key             = 23;
+  optional  string  asset_address                    = 24;
+  optional  string  proof                            = 25;
+  optional  string  root_hash                        = 26;
+  optional  string  gas_relayer_address              = 27;
+  optional  string  gas_relayer_url                  = 28;
+  optional  string  signature                        = 29;
+  optional  string  random_auditing_public_key       = 30;
+  optional  string  error_message                    = 31;
+  optional  string  transaction_hash                 = 32;
+  mystiko.common.v1.BridgeType bridge_type           = 33;
+  mystiko.core.v1.SpendType    spend_type            = 34;
+  mystiko.core.v1.SpendStatus  status                = 35;
 }
