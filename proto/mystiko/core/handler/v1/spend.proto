@@ -1,0 +1,120 @@
+syntax = "proto3";
+
+package mystiko.core.handler.v1;
+
+import "mystiko/core/v1/common.proto";
+import "mystiko/core/v1/transaction.proto";
+import "mystiko/common/v1/types.proto";
+
+message QuoteSpendOptions {
+  uint64   chain_id                                 = 1;
+  string   asset_symbol                             = 2;
+  optional uint32 version                           = 3;
+  optional double amount                            = 4;
+  optional bool   use_relayer                       = 5;
+  optional uint64 query_timeout_ms                  = 6;
+  optional mystiko.core.v1.SpendType    spend_type  = 7;
+  optional mystiko.common.v1.BridgeType bridge_type = 8;
+}
+
+message CreateSpendOptions {
+  uint64   chain_id                                 = 1;
+  string   asset_symbol                             = 2;
+  double   amount                                   = 4;
+  string   recipient                                = 5;
+  string   wallet_password                          = 6;
+  optional uint32 version                           = 7;
+  optional double rollup_fee_amount                 = 8;
+  optional string gas_relayer                       = 9;
+  optional uint64 query_timeout_ms                  = 10;
+  optional SpendQuote spend_quote                   = 11;
+  optional mystiko.core.v1.SpendType    spend_type  = 12;
+  optional mystiko.common.v1.BridgeType bridge_type = 13;
+}
+
+message SendSpendOptions {
+  string   spend_id                        = 1;
+  string   wallet_password                 = 2;
+  optional string private_key              = 3;
+  optional uint64 query_timeout_ms         = 4;
+  optional uint64 spend_confirmations      = 5;
+  optional uint64 tx_send_timeout_ms       = 6;
+  optional uint64 tx_wait_timeout_ms       = 7;
+  optional uint64 tx_wait_interval_ms      = 8;
+  optional uint64 relayer_wait_timeout_ms  = 9;
+  optional uint64 relayer_wait_interval_ms = 10;
+  optional mystiko.core.v1.Transaction tx  = 11;
+}
+
+message AmountRange {
+  double min         = 1;
+  string decimal_min = 2;
+  double max         = 3;
+  string decimal_max = 4;
+}
+
+message GasRelayer {
+  string url                           = 1;
+  string name                          = 2;
+  string address                       = 3;
+  double min_gas_fee                   = 4;
+  string min_gas_fee_decimal           = 5;
+  double service_fee_ratio             = 6;
+  uint32 service_fee_of_ten_thousandth = 7;
+}
+
+enum SpendInvalidCode {
+  SPEND_INVALID_CODE_UNSPECIFIED         = 0;
+  SPEND_INVALID_CODE_INVALID_AMOUNT      = 1;
+  SPEND_INVALID_CODE_SPLIT_DISABLED      = 2;
+  SPEND_INVALID_CODE_NO_AVAILABLE_ASSETS = 3;
+}
+
+message SpendQuote {
+  bool     valid                                           = 1;
+  string   asset_symbol                                    = 2;
+  uint32   asset_decimals                                  = 3;
+  double   current_balance                                 = 4;
+  string   current_decimal_balance                         = 5;
+  uint64   num_of_inputs                                   = 6;
+  uint64   num_of_outputs                                  = 7;
+  double   min_rollup_fee                                  = 8;
+  string   min_rollup_fee_decimal                          = 9;
+  string   rollup_fee_asset_symbol                         = 10;
+  uint32   rollup_fee_asset_decimals                       = 11;
+  repeated double           fixed_amounts                  = 12;
+  repeated string           fixed_decimal_amounts          = 13;
+  repeated string           selected_commitments           = 14;
+  repeated GasRelayer       gas_relayers                   = 15;
+  optional double           max_gas_relayer_fee            = 16;
+  optional string           max_gas_relayer_fee_decimal    = 17;
+  optional string           gas_relayer_fee_asset_symbol   = 18;
+  optional uint32           gas_relayer_fee_asset_decimals = 19;
+  optional SpendInvalidCode invalid_code                   = 20;
+  optional AmountRange      amount_range                   = 21;
+}
+
+message SpendSummary {
+  string   asset_symbol                          = 1;
+  uint32   asset_decimals                        = 2;
+  double   current_balance                       = 3;
+  string   current_decimal_balance               = 4;
+  double   new_balance                           = 5;
+  string   new_decimal_balance                   = 6;
+  double   amount                                = 7;
+  string   decimal_amount                        = 8;
+  string   recipient                             = 9;
+  double   rollup_fee_amount                     = 10;
+  string   rollup_fee_decimal_amount             = 11;
+  double   rollup_fee_total_amount               = 12;
+  string   rollup_fee_total_decimal_amount       = 13;
+  string   rollup_fee_asset_symbol               = 14;
+  uint32   rollup_fee_asset_decimals             = 15;
+  optional double gas_relayer_fee_amount         = 16;
+  optional string gas_relayer_fee_decimal_amount = 17;
+  optional string gas_relayer_fee_asset_symbol   = 18;
+  optional uint32 gas_relayer_fee_asset_decimals = 19;
+  optional string gas_relayer_address            = 20;
+  optional string gas_relayer_name               = 21;
+  optional string gas_relayer_url                = 22;
+}

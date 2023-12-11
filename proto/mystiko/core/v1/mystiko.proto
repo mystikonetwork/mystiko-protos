@@ -11,4 +11,5 @@ message MystikoOptions {
   optional mystiko.relayer.v1.RelayerClientOptions relayer_client_options = 2;
   optional mystiko.loader.v1.LoaderConfig          loader_config          = 3;
   optional string                                  db_path                = 4;
+  optional string                                  static_cache_path      = 5;
 }
