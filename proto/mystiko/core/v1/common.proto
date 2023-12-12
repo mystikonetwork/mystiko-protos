@@ -15,9 +15,11 @@ enum DepositStatus {
 
 enum SpendStatus {
   SPEND_STATUS_UNSPECIFIED      = 0;
-  SPEND_STATUS_PENDING          = 1;
-  SPEND_STATUS_SUCCEEDED        = 2;
-  SPEND_STATUS_FAILED           = 3;
+  SPEND_STATUS_PROOF_GENERATING = 1;
+  SPEND_STATUS_PROOF_GENERATED  = 2;
+  SPEND_STATUS_PENDING          = 3;
+  SPEND_STATUS_SUCCEEDED        = 4;
+  SPEND_STATUS_FAILED           = 5;
 }
 
 enum SpendType {
