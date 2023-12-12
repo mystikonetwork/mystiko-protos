@@ -4,8 +4,6 @@ package mystiko.api.config.v1;
 
 import "mystiko/common/v1/types.proto";
 
-message GetConfigRequest {}
-
 message FindDefaultCircuitRequest {
   mystiko.common.v1.CircuitType circuit_type = 1;
 }
