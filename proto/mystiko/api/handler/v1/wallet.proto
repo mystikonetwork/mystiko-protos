@@ -9,8 +9,6 @@ message CreateWalletRequest {
   mystiko.core.handler.v1.CreateWalletOptions options = 1;
 }
 
-message CheckCurrentRequest {}
-
 message CheckPasswordRequest {
   string password = 1;
 }
