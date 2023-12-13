@@ -28,6 +28,18 @@ message FindDepositRequest {
   mystiko.storage.v1.QueryFilter filter = 1;
 }
 
+message CountDepositRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+message UpdateDepositRequest {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message UpdateDepositBatchRequest {
+  repeated mystiko.core.document.v1.Deposit deposits = 1;
+}
+
 //response
 
 message QuoteResponse {
@@ -52,4 +64,16 @@ message FindDepositResponse {
 
 message FindOneDepositResponse {
   mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message CountDepositResponse {
+  uint64 count = 1;
+}
+
+message UpdateDepositResponse {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message UpdateDepositBatchResponse {
+  repeated mystiko.core.document.v1.Deposit deposits = 1;
 }
