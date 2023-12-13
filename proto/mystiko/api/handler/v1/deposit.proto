@@ -2,8 +2,11 @@ syntax = "proto3";
 
 package mystiko.api.handler.v1;
 
+import "mystiko/storage/v1/filter.proto";
 import "mystiko/core/handler/v1/deposit.proto";
 import "mystiko/core/document/v1/deposit.proto";
+
+// request
 
 message QuoteRequest {
   mystiko.core.handler.v1.QuoteDepositOptions options = 1;
@@ -21,6 +24,12 @@ message SendRequest {
   mystiko.core.handler.v1.SendDepositOptions options = 1;
 }
 
+message FindDepositRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+//response
+
 message QuoteResponse {
   mystiko.core.handler.v1.DepositQuote quote = 1;
 }
@@ -35,4 +44,8 @@ message CreateDepositResponse {
 
 message SendResponse {
   mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message FindDepositResponse {
+  repeated mystiko.core.document.v1.Deposit deposit = 1;
 }
