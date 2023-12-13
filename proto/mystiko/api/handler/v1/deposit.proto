@@ -40,6 +40,11 @@ message UpdateDepositBatchRequest {
   repeated mystiko.core.document.v1.Deposit deposits = 1;
 }
 
+message UpdateDepositByFilterRequest {
+  repeated ColumnValuePair column_values = 1;
+  mystiko.storage.v1.QueryFilter filter  = 2;
+}
+
 //response
 
 message QuoteResponse {
@@ -76,4 +81,10 @@ message UpdateDepositResponse {
 
 message UpdateDepositBatchResponse {
   repeated mystiko.core.document.v1.Deposit deposits = 1;
+}
+
+// column value
+message ColumnValuePair {
+  string column                        = 1;
+  mystiko.storage.v1.ColumnValue value = 2;
 }
