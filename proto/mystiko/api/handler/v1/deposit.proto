@@ -47,5 +47,5 @@ message SendResponse {
 }
 
 message FindDepositResponse {
-  repeated mystiko.core.document.v1.Deposit deposit = 1;
+  repeated mystiko.core.document.v1.Deposit deposits = 1;
 }
