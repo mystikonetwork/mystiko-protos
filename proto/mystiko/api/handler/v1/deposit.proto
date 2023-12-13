@@ -45,6 +45,22 @@ message UpdateDepositByFilterRequest {
   mystiko.storage.v1.QueryFilter filter  = 2;
 }
 
+message UpdateAllDepositRequest {
+  repeated ColumnValuePair column_values = 1;
+}
+
+message DeleteDepositRequest {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message DeleteDepositBatchRequest {
+  repeated mystiko.core.document.v1.Deposit deposits = 1;
+}
+
+message DeleteDepositByFilterRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
 //response
 
 message QuoteResponse {
