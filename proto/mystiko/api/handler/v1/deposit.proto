@@ -34,6 +34,10 @@ message FindDepositRequest {
   mystiko.storage.v1.QueryFilter filter = 1;
 }
 
+message FindDepositByIdRequest {
+  string id = 1;
+}
+
 message CountDepositRequest {
   mystiko.storage.v1.QueryFilter filter = 1;
 }
