@@ -5,6 +5,7 @@ package mystiko.api.handler.v1;
 import "mystiko/storage/v1/filter.proto";
 import "mystiko/core/handler/v1/deposit.proto";
 import "mystiko/core/document/v1/deposit.proto";
+import "mystiko/service/v1/client.proto";
 
 // request
 
@@ -22,6 +23,11 @@ message CreateDepositRequest {
 
 message SendRequest {
   mystiko.core.handler.v1.SendDepositOptions options = 1;
+}
+
+message SendWithGrpcRequest {
+  mystiko.core.handler.v1.SendDepositOptions send_options   = 1;
+  mystiko.service.v1.ClientOptions           client_options = 2;
 }
 
 message FindDepositRequest {
@@ -61,7 +67,7 @@ message DeleteDepositByFilterRequest {
   mystiko.storage.v1.QueryFilter filter = 1;
 }
 
-//response
+// response
 
 message QuoteResponse {
   mystiko.core.handler.v1.DepositQuote quote = 1;
