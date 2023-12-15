@@ -98,6 +98,7 @@ enum DepositError {
   DEPOSIT_ERROR_GET_MYSTIKO_GUARD_ERROR           = 26;
   DEPOSIT_ERROR_DESERIALIZE_MESSAGE_ERROR         = 27;
   DEPOSIT_ERROR_PROTOCOL_KEY_ERROR                = 28;
+  DEPOSIT_ERROR_GRPC_CONNECT_ERROR                = 29;
 }
 
 enum ScannerError {

@@ -2,8 +2,12 @@ syntax = "proto3";
 
 package mystiko.api.handler.v1;
 
+import "mystiko/storage/v1/filter.proto";
 import "mystiko/core/handler/v1/deposit.proto";
 import "mystiko/core/document/v1/deposit.proto";
+import "mystiko/service/v1/client.proto";
+
+// request
 
 message QuoteRequest {
   mystiko.core.handler.v1.QuoteDepositOptions options = 1;
@@ -21,6 +25,54 @@ message SendRequest {
   mystiko.core.handler.v1.SendDepositOptions options = 1;
 }
 
+message SendWithGrpcRequest {
+  mystiko.core.handler.v1.SendDepositOptions send_options   = 1;
+  mystiko.service.v1.ClientOptions           client_options = 2;
+}
+
+message FindDepositRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+message FindDepositByIdRequest {
+  string id = 1;
+}
+
+message CountDepositRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+message UpdateDepositRequest {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message UpdateDepositBatchRequest {
+  repeated mystiko.core.document.v1.Deposit deposits = 1;
+}
+
+message UpdateDepositByFilterRequest {
+  repeated ColumnValuePair column_values = 1;
+  mystiko.storage.v1.QueryFilter filter  = 2;
+}
+
+message UpdateAllDepositRequest {
+  repeated ColumnValuePair column_values = 1;
+}
+
+message DeleteDepositRequest {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message DeleteDepositBatchRequest {
+  repeated mystiko.core.document.v1.Deposit deposits = 1;
+}
+
+message DeleteDepositByFilterRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+// response
+
 message QuoteResponse {
   mystiko.core.handler.v1.DepositQuote quote = 1;
 }
@@ -35,4 +87,30 @@ message CreateDepositResponse {
 
 message SendResponse {
   mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message FindDepositResponse {
+  repeated mystiko.core.document.v1.Deposit deposits = 1;
+}
+
+message FindOneDepositResponse {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message CountDepositResponse {
+  uint64 count = 1;
+}
+
+message UpdateDepositResponse {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message UpdateDepositBatchResponse {
+  repeated mystiko.core.document.v1.Deposit deposits = 1;
+}
+
+// column value
+message ColumnValuePair {
+  string column                        = 1;
+  mystiko.storage.v1.ColumnValue value = 2;
 }
