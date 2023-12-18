@@ -3,7 +3,6 @@ syntax = "proto3";
 package mystiko.api.synchronizer.v1;
 
 import "mystiko/core/synchronizer/v1/status.proto";
-import "mystiko/core/synchronizer/v1/reset.proto";
 
 message ChainSyncedBlockResponse {
   optional uint64 result = 1;
