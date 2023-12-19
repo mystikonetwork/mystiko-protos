@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package mystiko.api.scanner.v1;
+
+import "mystiko/core/scanner/v1/scan.proto";
+import "mystiko/core/scanner/v1/reset.proto";
+import "mystiko/core/scanner/v1/balance.proto";
+import "mystiko/core/scanner/v1/asset.proto";
+
+message ScanResponse {
+  mystiko.core.scanner.v1.ScanResult result = 1;
+}
+
+message ResetResponse {
+  mystiko.core.scanner.v1.ResetResult result = 1;
+}
+
+message BalanceResponse {
+  mystiko.core.scanner.v1.BalanceResult result = 1;
+}
+
+message AssetsResponse {
+  repeated mystiko.core.scanner.v1.AssetsByChain results = 1;
+}
+
+message ChainAssetsResponse {
+  optional mystiko.core.scanner.v1.AssetsByChain result = 1;
+}
