@@ -24,6 +24,7 @@ message EtherscanFetcherConfig {
   optional uint32                          concurrency = 1;
   map<uint64, EtherscanFetcherChainConfig> chains      = 2;
   optional bool skip_validation                        = 3;
+  optional uint32 target_block_priority                = 4;
 }
 
 message EtherscanFetcherChainConfig {
@@ -40,6 +41,7 @@ message ProviderFetcherConfig {
   optional uint64                        timeout_ms  = 2;
   map<uint64,ProviderFetcherChainConfig> chains      = 3;
   optional bool skip_validation                      = 4;
+  optional uint32 target_block_priority              = 5;
 }
 
 message ProviderFetcherChainConfig {
@@ -49,10 +51,12 @@ message ProviderFetcherChainConfig {
 }
 
 message PackerFetcherConfig {
-  optional bool skip_validation = 1;
+  optional bool skip_validation         = 1;
+  optional uint32 target_block_priority = 2;
 }
 
 message SequencerFetcherConfig {
   optional bool skip_validation                     = 1;
-  optional mystiko.service.v1.ClientOptions options = 2;
+  optional uint32 target_block_priority             = 2;
+  optional mystiko.service.v1.ClientOptions options = 3;
 }
