@@ -11,15 +11,15 @@ message ApiResponse {
 }
 
 message StatusCode {
-  bool  success                  = 1;
+  bool  success                    = 1;
   oneof error {
-    MystikoError     mystiko     = 2;
-    WalletError      wallet      = 3;
-    AccountError     account     = 4;
-    DepositError     deposit     = 5;
-    ScannerError     scanner     = 6;
-    SynchronizeError synchronize = 7;
-    ConfigError      config      = 8;
+    MystikoError      mystiko      = 2;
+    WalletError       wallet       = 3;
+    AccountError      account      = 4;
+    DepositError      deposit      = 5;
+    ScannerError      scanner      = 6;
+    SynchronizerError synchronizer = 7;
+    ConfigError       config       = 8;
   }
 }
 
@@ -119,7 +119,7 @@ enum ScannerError {
   SCANNER_ERROR_PROTOCOL_KEY_ERROR            = 14;
 }
 
-enum SynchronizeError {
+enum SynchronizerError {
   SYNCHRONIZE_ERROR_UNSPECIFIED               = 0;
   SYNCHRONIZE_ERROR_UNSUPPORTED_CHAIN_ERROR   = 1;
   SYNCHRONIZE_ERROR_DATALOADER_ERROR          = 2;
