@@ -15,7 +15,7 @@ message CountAccountRequest {
 }
 
 message FindAccountRequest {
-  optional mystiko.storage.v1.QueryFilter filter = 1;
+  mystiko.storage.v1.QueryFilter filter = 1;
 }
 
 message FindAccountByIdentifierRequest {
