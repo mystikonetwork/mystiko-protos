@@ -15,27 +15,16 @@ message CountAccountRequest {
 }
 
 message FindAccountRequest {
-  oneof condition {
-    mystiko.storage.v1.QueryFilter filter = 1;
-    bool find_all                         = 2;
-  }
+  mystiko.storage.v1.QueryFilter filter = 1;
 }
 
 message FindAccountByIdentifierRequest {
-  oneof identifier {
-    string id                             = 2;
-    string shielded_address               = 3;
-    string public_key                     = 4;
-  }
+  string identifier = 1;
 }
 
 message UpdateAccountRequest {
   mystiko.core.handler.v1.UpdateAccountOptions options = 1;
-  oneof identifier {
-    string id               = 2;
-    string shielded_address = 3;
-    string public_key       = 4;
-  }
+  string identifier                                    = 2;
 }
 
 message UpdateEncryptionRequest {
@@ -44,12 +33,8 @@ message UpdateEncryptionRequest {
 }
 
 message ExportSecretKeyRequest {
-  string wallet_password    = 1;
-  oneof identifier {
-    string id               = 2;
-    string public_key       = 3;
-    string shielded_address = 4;
-  }
+  string wallet_password           = 1;
+  string identifier                = 2;
 }
 
 message CreateAccountResponse {

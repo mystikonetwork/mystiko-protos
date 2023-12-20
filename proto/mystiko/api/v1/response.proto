@@ -11,15 +11,15 @@ message ApiResponse {
 }
 
 message StatusCode {
-  bool  success                  = 1;
+  bool  success                    = 1;
   oneof error {
-    MystikoError mystiko         = 2;
-    WalletError  wallet          = 3;
-    AccountError account         = 4;
-    DepositError deposit         = 5;
-    ScannerError scanner         = 6;
-    SynchronizeError synchronize = 7;
-    ConfigError  config          = 8;
+    MystikoError      mystiko      = 2;
+    WalletError       wallet       = 3;
+    AccountError      account      = 4;
+    DepositError      deposit      = 5;
+    ScannerError      scanner      = 6;
+    SynchronizerError synchronizer = 7;
+    ConfigError       config       = 8;
   }
 }
 
@@ -119,12 +119,12 @@ enum ScannerError {
   SCANNER_ERROR_PROTOCOL_KEY_ERROR            = 14;
 }
 
-enum SynchronizeError {
-  SYNCHRONIZE_ERROR_UNSPECIFIED               = 0;
-  SYNCHRONIZE_ERROR_UNSUPPORTED_CHAIN_ERROR   = 1;
-  SYNCHRONIZE_ERROR_DATALOADER_ERROR          = 2;
-  SYNCHRONIZE_ERROR_DATALOADER_CONFIG_ERROR   = 3;
-  SYNCHRONIZE_ERROR_ANYHOW_ERROR              = 4;
-  SYNCHRONIZE_ERROR_GET_MYSTIKO_GUARD_ERROR   = 5;
-  SYNCHRONIZE_ERROR_DESERIALIZE_MESSAGE_ERROR = 6;
+enum SynchronizerError {
+  SYNCHRONIZER_ERROR_UNSPECIFIED               = 0;
+  SYNCHRONIZER_ERROR_UNSUPPORTED_CHAIN_ERROR   = 1;
+  SYNCHRONIZER_ERROR_DATALOADER_ERROR          = 2;
+  SYNCHRONIZER_ERROR_DATALOADER_CONFIG_ERROR   = 3;
+  SYNCHRONIZER_ERROR_ANYHOW_ERROR              = 4;
+  SYNCHRONIZER_ERROR_GET_MYSTIKO_GUARD_ERROR   = 5;
+  SYNCHRONIZER_ERROR_DESERIALIZE_MESSAGE_ERROR = 6;
 }
