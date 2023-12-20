@@ -3,20 +3,24 @@ syntax = "proto3";
 package mystiko.api.v1;
 
 message ApiResponse {
-  StatusCode      code          = 1;
-  optional bytes  data          = 2;
-  optional string error_message = 3;
+  StatusCode   code      = 1;
+  oneof result {
+    bytes  data          = 2;
+    string error_message = 3;
+  }
 }
 
 message StatusCode {
-  bool     success                            = 1;
-  optional MystikoError     mystiko_error     = 2;
-  optional WalletError      wallet_error      = 3;
-  optional AccountError     account_error     = 4;
-  optional DepositError     deposit_error     = 5;
-  optional ScannerError     scanner_error     = 6;
-  optional SynchronizeError synchronize_error = 7;
-  optional ConfigError      config_error      = 8;
+  bool  success                  = 1;
+  oneof error {
+    MystikoError     mystiko     = 2;
+    WalletError      wallet      = 3;
+    AccountError     account     = 4;
+    DepositError     deposit     = 5;
+    ScannerError     scanner     = 6;
+    SynchronizeError synchronize = 7;
+    ConfigError      config      = 8;
+  }
 }
 
 enum MystikoError {
