@@ -19,16 +19,12 @@ message FindAccountRequest {
 }
 
 message FindAccountByIdentifierRequest {
-  optional string id               = 1;
-  optional string shielded_address = 2;
-  optional string public_key       = 3;
+  string identifier = 1;
 }
 
 message UpdateAccountRequest {
   mystiko.core.handler.v1.UpdateAccountOptions options = 1;
-  optional string id                                   = 2;
-  optional string shielded_address                     = 3;
-  optional string public_key                           = 4;
+  string identifier                                    = 2;
 }
 
 message UpdateEncryptionRequest {
@@ -38,9 +34,7 @@ message UpdateEncryptionRequest {
 
 message ExportSecretKeyRequest {
   string wallet_password           = 1;
-  optional string id               = 2;
-  optional string shielded_address = 3;
-  optional string public_key       = 4;
+  string identifier                = 2;
 }
 
 message CreateAccountResponse {
