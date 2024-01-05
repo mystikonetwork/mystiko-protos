@@ -20,6 +20,7 @@ message StatusCode {
     ScannerError      scanner      = 6;
     SynchronizerError synchronizer = 7;
     ConfigError       config       = 8;
+    SpendError        spend        = 9;
   }
 }
 
@@ -68,7 +69,7 @@ enum WalletError {
   WALLET_ERROR_DESERIALIZE_MESSAGE_ERROR = 9;
 }
 
-enum SpendsError {
+enum DepositError {
   DEPOSIT_ERROR_UNSPECIFIED                       = 0;
   DEPOSIT_ERROR_HEX_STRING_ERROR                  = 1;
   DEPOSIT_ERROR_FROM_DEC_STR_ERROR                = 2;
@@ -99,6 +100,52 @@ enum SpendsError {
   DEPOSIT_ERROR_DESERIALIZE_MESSAGE_ERROR         = 27;
   DEPOSIT_ERROR_PROTOCOL_KEY_ERROR                = 28;
   DEPOSIT_ERROR_GRPC_CONNECT_ERROR                = 29;
+}
+
+enum SpendError {
+  SPEND_ERROR_UNSPECIFIED                                     = 0;
+  SPEND_ERROR_ANYHOW_ERROR                                    = 1;
+  SPEND_ERROR_PUBLIC_ASSETS_ERROR                             = 2;
+  SPEND_ERROR_COMMITMENT_POOL_CONTRACTS_ERROR                 = 3;
+  SPEND_ERROR_TRANSACTIONS_ERROR                              = 4;
+  SPEND_ERROR_STORAGE_ERROR                                   = 5;
+  SPEND_ERROR_WALLETS_ERROR                                   = 6;
+  SPEND_ERROR_ACCOUNTS_ERROR                                  = 7;
+  SPEND_ERROR_RELAYER_CLIENT_ERROR                            = 8;
+  SPEND_ERROR_HEX_STRING_ERROR                                = 9;
+  SPEND_ERROR_PARSE_BIG_INT_ERROR                             = 10;
+  SPEND_ERROR_PROTOCOL_ERROR                                  = 11;
+  SPEND_ERROR_PROTOCOL_KEY_ERROR                              = 12;
+  SPEND_ERROR_CRYPTO_ERROR                                    = 13;
+  SPEND_ERROR_MERKLE_TREE_ERROR                               = 14;
+  SPEND_ERROR_G16_PROVER_ERROR                                = 15;
+  SPEND_ERROR_LOCAL_WALLET_ERROR                              = 16;
+  SPEND_ERROR_SERDE_JSON_ERROR                                = 17;
+  SPEND_ERROR_NO_POOL_CONTRACT_FOUND_ERROR                    = 18;
+  SPEND_ERROR_NO_POOL_CONTRACT_ADDRESS_FOUND_ERROR            = 19;
+  SPEND_ERROR_MISSING_PRIVATE_KEY_ERROR                       = 20;
+  SPEND_ERROR_UNSUPPORTED_CHAIN_ID_ERROR                      = 21;
+  SPEND_ERROR_UNSUPPORTED_SPEND_JOIN_SPLIT_TYPE_ERROR         = 22;
+  SPEND_ERROR_INVALID_CREATE_OPTIONS_ERROR                    = 23;
+  SPEND_ERROR_INVALID_PUBLIC_ADDRESS_ERROR                    = 24;
+  SPEND_ERROR_INVALID_MYSTIKO_ADDRESS_ERROR                   = 25;
+  SPEND_ERROR_INVALID_AMOUNT_ERROR                            = 26;
+  SPEND_ERROR_INVALID_ROLLUP_FEE_AMOUNT_ERROR                 = 27;
+  SPEND_ERROR_INSUFFICIENT_POOL_BALANCE_ERROR                 = 28;
+  SPEND_ERROR_UNKNOWN_MERKLE_ROOT_ERROR                       = 29;
+  SPEND_ERROR_ALREADY_SPENT_COMMITMENT_ERROR                  = 30;
+  SPEND_ERROR_MISSING_SHIELDED_ADDRESS_IN_COMMITMENT_ERROR    = 31;
+  SPEND_ERROR_MISSING_ENCRYPTED_NOTE_IN_COMMITMENT_ERROR      = 32;
+  SPEND_ERROR_MISSING_COMMITMENT_IN_MERKLE_TREE               = 33;
+  SPEND_ERROR_NON_OWNED_SHIELDED_ADDRESS_ERROR                = 34;
+  SPEND_ERROR_MISSING_CIRCUIT_TYPE_IN_CONFIG_ERROR            = 35;
+  SPEND_ERROR_INVALID_ZK_PROOF_ERROR                          = 36;
+  SPEND_ERROR_SPEND_NOT_FOUND_ERROR                           = 37;
+  SPEND_ERROR_SPEND_STATUS_ERROR                              = 38;
+  SPEND_ERROR_MISSING_GIVEN_RELAYER_ERROR                     = 39;
+  SPEND_ERROR_MISSING_TRANSACTION_HASH_FROM_RELAYER_JOB_ERROR = 40;
+  SPEND_ERROR_GET_MYSTIKO_GUARD_ERROR                         = 41;
+  SPEND_ERROR_DESERIALIZE_MESSAGE_ERROR                       = 42;
 }
 
 enum ScannerError {
