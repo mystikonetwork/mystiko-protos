@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package mystiko.api.handler.v1;
+
+import "common.proto";
+import "mystiko/storage/v1/filter.proto";
+import "mystiko/core/handler/v1/spend.proto";
+import "mystiko/core/document/v1/spend.proto";
+import "mystiko/service/v1/client.proto";
+
+// request
+
+message QuoteRequest {
+  mystiko.core.handler.v1.QuoteSpendOptions options = 1;
+}
+
+message SummaryRequest {
+  mystiko.core.handler.v1.CreateSpendOptions options = 1;
+}
+
+message CreateSpendRequest {
+  mystiko.core.handler.v1.CreateSpendOptions options = 1;
+}
+
+message SendRequest {
+  mystiko.core.handler.v1.SendSpendOptions options = 1;
+}
+
+message SendWithGrpcRequest {
+  mystiko.core.handler.v1.SendSpendOptions   send_options   = 1;
+  mystiko.service.v1.ClientOptions           client_options = 2;
+}
+
+message FindSpendRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+message FindSpendByIdRequest {
+  string id = 1;
+}
+
+message CountSpendsRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+message UpdateSpendRequest {
+  mystiko.core.document.v1.Spend spend = 1;
+}
+
+message UpdateSpendBatchRequest {
+  repeated mystiko.core.document.v1.Spend spends = 1;
+}
+
+message UpdateSpendByFilterRequest {
+  repeated ColumnValuePair column_values  = 1;
+  mystiko.storage.v1.QueryFilter filter   = 2;
+}
+
+message UpdateAllSpendRequest {
+  repeated ColumnValuePair column_values = 1;
+}
+
+message DeleteSpendRequest {
+  mystiko.core.document.v1.Spend spend = 1;
+}
+
+message DeleteSpendBatchRequest {
+  repeated mystiko.core.document.v1.Spend spends = 1;
+}
+
+message DeleteSpendByFilterRequest {
+  mystiko.storage.v1.QueryFilter filter = 1;
+}
+
+// response
+
+message QuoteResponse {
+  mystiko.core.handler.v1.SpendQuote quote = 1;
+}
+
+message SummaryResponse {
+  mystiko.core.handler.v1.SpendSummary summary = 1;
+}
+
+message CreateSpendResponse {
+  mystiko.core.document.v1.Spend spend = 1;
+}
+
+message SendResponse {
+  mystiko.core.document.v1.Spend spend = 1;
+}
+
+message FindSpendResponse {
+  repeated mystiko.core.document.v1.Spend spend = 1;
+}
+
+message FindOneSpendResponse {
+  mystiko.core.document.v1.Spend spend = 1;
+}
+
+message CountSpendsResponse {
+  int64 count = 1;
+}
+
+message UpdateSpendResponse {
+  mystiko.core.document.v1.Spend spend = 1;
+}
+
+message UpdateSpendBatchResponse {
+  repeated mystiko.core.document.v1.Spend spends = 1;
+}
