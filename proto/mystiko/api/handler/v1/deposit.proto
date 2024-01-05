@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package mystiko.api.handler.v1;
 
+import "mystiko/api/handler/v1/common.proto";
 import "mystiko/storage/v1/filter.proto";
 import "mystiko/core/handler/v1/deposit.proto";
 import "mystiko/core/document/v1/deposit.proto";
@@ -107,10 +108,4 @@ message UpdateDepositResponse {
 
 message UpdateDepositBatchResponse {
   repeated mystiko.core.document.v1.Deposit deposits = 1;
-}
-
-// column value
-message ColumnValuePair {
-  string column                        = 1;
-  mystiko.storage.v1.ColumnValue value = 2;
 }

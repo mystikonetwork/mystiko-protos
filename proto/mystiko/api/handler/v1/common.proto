@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package mystiko.api.handler.v1;
+
+import "mystiko/storage/v1/filter.proto";
+
+// column value
+message ColumnValuePair {
+  string column                        = 1;
+  mystiko.storage.v1.ColumnValue value = 2;
+}
