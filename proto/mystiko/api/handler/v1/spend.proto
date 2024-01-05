@@ -99,7 +99,7 @@ message FindOneSpendResponse {
 }
 
 message CountSpendsResponse {
-  int64 count = 1;
+  uint64 count = 1;
 }
 
 message UpdateSpendResponse {
