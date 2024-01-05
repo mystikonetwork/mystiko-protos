@@ -90,8 +90,8 @@ message SendSpendResponse {
   mystiko.core.document.v1.Spend spend = 1;
 }
 
-message FindSpendResponse {
-  repeated mystiko.core.document.v1.Spend spend = 1;
+message FindSpendsResponse {
+  repeated mystiko.core.document.v1.Spend spends = 1;
 }
 
 message FindOneSpendResponse {
