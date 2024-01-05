@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.api.handler.v1;
 
-import "common.proto";
+import "mystiko/api/handler/v1/common.proto";
 import "mystiko/storage/v1/filter.proto";
 import "mystiko/core/handler/v1/deposit.proto";
 import "mystiko/core/document/v1/deposit.proto";

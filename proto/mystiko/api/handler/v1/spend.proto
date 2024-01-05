@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.api.handler.v1;
 
-import "common.proto";
+import "mystiko/api/handler/v1/common.proto";
 import "mystiko/storage/v1/filter.proto";
 import "mystiko/core/handler/v1/spend.proto";
 import "mystiko/core/document/v1/spend.proto";
@@ -10,11 +10,11 @@ import "mystiko/service/v1/client.proto";
 
 // request
 
-message QuoteRequest {
+message SpendQuoteRequest {
   mystiko.core.handler.v1.QuoteSpendOptions options = 1;
 }
 
-message SummaryRequest {
+message SpendSummaryRequest {
   mystiko.core.handler.v1.CreateSpendOptions options = 1;
 }
 
@@ -22,11 +22,11 @@ message CreateSpendRequest {
   mystiko.core.handler.v1.CreateSpendOptions options = 1;
 }
 
-message SendRequest {
+message SendSpendRequest {
   mystiko.core.handler.v1.SendSpendOptions options = 1;
 }
 
-message SendWithGrpcRequest {
+message SendSpendWithGrpcRequest {
   mystiko.core.handler.v1.SendSpendOptions   send_options   = 1;
   mystiko.service.v1.ClientOptions           client_options = 2;
 }
@@ -74,11 +74,11 @@ message DeleteSpendByFilterRequest {
 
 // response
 
-message QuoteResponse {
+message SpendQuoteResponse {
   mystiko.core.handler.v1.SpendQuote quote = 1;
 }
 
-message SummaryResponse {
+message SpendSummaryResponse {
   mystiko.core.handler.v1.SpendSummary summary = 1;
 }
 
@@ -86,7 +86,7 @@ message CreateSpendResponse {
   mystiko.core.document.v1.Spend spend = 1;
 }
 
-message SendResponse {
+message SendSpendResponse {
   mystiko.core.document.v1.Spend spend = 1;
 }
 
