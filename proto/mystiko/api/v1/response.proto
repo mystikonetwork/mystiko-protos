@@ -68,7 +68,7 @@ enum WalletError {
   WALLET_ERROR_DESERIALIZE_MESSAGE_ERROR = 9;
 }
 
-enum DepositError {
+enum SpendsError {
   DEPOSIT_ERROR_UNSPECIFIED                       = 0;
   DEPOSIT_ERROR_HEX_STRING_ERROR                  = 1;
   DEPOSIT_ERROR_FROM_DEC_STR_ERROR                = 2;
