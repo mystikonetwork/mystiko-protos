@@ -70,3 +70,7 @@ message FindContractByAddressResponse {
 message GetTransactionUrlResponse {
   optional string url = 1;
 }
+
+message SupportedAssetSymbolsResponse {
+  repeated string symbols = 1;
+}
