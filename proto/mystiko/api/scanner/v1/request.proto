@@ -12,7 +12,7 @@ message ScanRequest {
 }
 
 message ResetRequest {
-  mystiko.core.scanner.v1.ResetOptions options = 1;
+  mystiko.core.scanner.v1.ScannerResetOptions options = 1;
 }
 
 message BalanceRequest {
