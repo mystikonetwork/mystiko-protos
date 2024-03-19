@@ -11,8 +11,8 @@ message ScanRequest {
   mystiko.core.scanner.v1.ScanOptions options = 1;
 }
 
-message ResetRequest {
-  mystiko.core.scanner.v1.ResetOptions options = 1;
+message ScannerResetRequest {
+  mystiko.core.scanner.v1.ScannerResetOptions options = 1;
 }
 
 message BalanceRequest {

@@ -22,6 +22,6 @@ message SyncRequest {
   mystiko.core.synchronizer.v1.SyncOptions options = 1;
 }
 
-message ResetRequest {
-  mystiko.core.synchronizer.v1.ResetOptions options = 1;
+message SynchronizerResetRequest {
+  mystiko.core.synchronizer.v1.SynchronizerResetOptions options = 1;
 }

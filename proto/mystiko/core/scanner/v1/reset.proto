@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.scanner.v1;
 
-message ResetOptions {
+message ScannerResetOptions {
   optional string reset_to_id        = 1;
   repeated string shielded_addresses = 2;
 }

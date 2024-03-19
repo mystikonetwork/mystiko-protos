@@ -8,6 +8,6 @@ message ResetChainOptions {
   optional uint64 block_number       = 3;
 }
 
-message ResetOptions {
+message SynchronizerResetOptions {
   repeated ResetChainOptions chains = 1;
 }
