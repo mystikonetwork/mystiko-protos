@@ -72,7 +72,9 @@ message GetCommitmentsByTxHashRequest {
 }
 
 message GetCommitmentsByTxHashResponse {
-  repeated mystiko.data.v1.Commitment commitments = 1;
+  uint64   chain_id                               = 1;
+  bytes    contract_address                       = 2;
+  repeated mystiko.data.v1.Commitment commitments = 3;
 }
 
 message GetNullifiersRequest {
@@ -86,11 +88,13 @@ message GetNullifiersByTxHashRequest {
   bytes    tx_hash             = 3;
 }
 
-message GetNullifiersByTxHashResponse {
-  repeated mystiko.data.v1.Nullifier nullifiers = 1;
+message GetNullifiersResponse {
+  uint64   chain_id                             = 1;
+  bytes    contract_address                     = 2;
+  repeated mystiko.data.v1.Nullifier nullifiers = 3;
 }
 
-message GetNullifiersResponse {
+message GetNullifiersByTxHashResponse {
   uint64   chain_id                             = 1;
   bytes    contract_address                     = 2;
   repeated mystiko.data.v1.Nullifier nullifiers = 3;
