@@ -36,14 +36,15 @@ message SendSpendOptions {
   string   spend_id                        = 1;
   string   wallet_password                 = 2;
   optional string private_key              = 3;
-  optional uint64 query_timeout_ms         = 4;
-  optional uint64 spend_confirmations      = 5;
-  optional uint64 tx_send_timeout_ms       = 6;
-  optional uint64 tx_wait_timeout_ms       = 7;
-  optional uint64 tx_wait_interval_ms      = 8;
-  optional uint64 relayer_wait_timeout_ms  = 9;
-  optional uint64 relayer_wait_interval_ms = 10;
-  optional mystiko.core.v1.Transaction tx  = 11;
+  optional string signer_provider          = 4;
+  optional uint64 query_timeout_ms         = 5;
+  optional uint64 spend_confirmations      = 6;
+  optional uint64 tx_send_timeout_ms       = 7;
+  optional uint64 tx_wait_timeout_ms       = 8;
+  optional uint64 tx_wait_interval_ms      = 9;
+  optional uint64 relayer_wait_timeout_ms  = 10;
+  optional uint64 relayer_wait_interval_ms = 11;
+  optional mystiko.core.v1.Transaction tx  = 12;
 }
 
 message AmountRange {
