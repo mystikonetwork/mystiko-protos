@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mystiko.data.v1;
+
+message MerkleCommitments {
+  repeated bytes commitment_hashes = 1;
+}
+
+enum MerkleCompressionType {
+  MERKLE_COMPRESSION_TYPE_UNSPECIFIED = 0;
+  MERKLE_COMPRESSION_TYPE_ZSTD        = 1;
+}
+
+message MerkleTree {
+  bytes root_hash                        = 1;
+  bytes compressed_commitment_hashes     = 2;
+  MerkleCompressionType compression_type = 3;
+}
