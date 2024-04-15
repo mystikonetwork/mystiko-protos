@@ -124,6 +124,7 @@ service SequencerService {
   rpc ContractLoadedBlock(ContractLoadedBlockRequest)       returns (ContractLoadedBlockResponse);
   rpc GetCommitments(GetCommitmentsRequest)                 returns (GetCommitmentsResponse);
   rpc GetCommitmentsByTxHash(GetCommitmentsByTxHashRequest) returns (GetCommitmentsByTxHashResponse);
+  rpc GetCommitmentHashes(GetCommitmentHashesRequest)       returns (GetCommitmentHashesResponse);
   rpc GetNullifiers(GetNullifiersRequest)                   returns (GetNullifiersResponse);
   rpc GetNullifiersByTxHash(GetNullifiersByTxHashRequest)   returns (GetNullifiersByTxHashResponse);
   rpc HealthCheck(HealthCheckRequest)                       returns (HealthCheckResponse);
