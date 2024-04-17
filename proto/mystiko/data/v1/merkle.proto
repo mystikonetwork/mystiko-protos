@@ -3,6 +3,7 @@ syntax = "proto3";
 package mystiko.data.v1;
 
 message MerkleTree {
-  bytes root_hash                  = 1;
-  repeated bytes commitment_hashes = 2;
+  uint64 loaded_block_number       = 1;
+  bytes  root_hash                 = 2;
+  repeated bytes commitment_hashes = 3;
 }
