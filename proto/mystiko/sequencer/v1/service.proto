@@ -68,7 +68,7 @@ message GetCommitmentsResponse {
 
 message GetCommitmentsByTxHashRequest {
   uint64   chain_id            = 1;
-  bytes    tx_hash             = 3;
+  repeated bytes tx_hashes     = 2;
 }
 
 message GetCommitmentsByTxHashResponse {
