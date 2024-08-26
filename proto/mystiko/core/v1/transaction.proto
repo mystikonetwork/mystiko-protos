@@ -50,6 +50,15 @@ message GetAddressResponse {
   string address = 1;
 }
 
+message PersonalSignRequest {
+  string message = 1;
+  string address = 2;
+}
+
+message PersonalSignResponse {
+  string signature = 1;
+}
+
 message SendTransactionRequest {
   uint64      chain_id    = 1;
   Transaction transaction = 2;
@@ -63,4 +72,5 @@ message SendTransactionResponse {
 service TransactionService {
   rpc GetAddress(GetAddressRequest)           returns (GetAddressResponse);
   rpc SendTransaction(SendTransactionRequest) returns (SendTransactionResponse);
+  rpc PersonalSign(PersonalSignRequest)       returns (PersonalSignResponse);
 }
