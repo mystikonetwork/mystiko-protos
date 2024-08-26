@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package mystiko.screening.v1;
+
+message ScreeningClientOptions {
+  optional uint64 timeout_ms                     = 1;
+  optional string screening_config_api_url       = 2;
+}

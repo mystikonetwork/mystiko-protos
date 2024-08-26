@@ -5,11 +5,13 @@ package mystiko.core.v1;
 import "mystiko/common/v1/config.proto";
 import "mystiko/loader/v1/loader.proto";
 import "mystiko/relayer/v1/client.proto";
+import "mystiko/screening/v1/client.proto";
 
 message MystikoOptions {
-  optional mystiko.common.v1.ConfigOptions         config_options         = 1;
-  optional mystiko.relayer.v1.RelayerClientOptions relayer_client_options = 2;
-  optional mystiko.loader.v1.LoaderConfig          loader_config          = 3;
-  optional string                                  db_path                = 4;
-  optional string                                  static_cache_path      = 5;
+  optional mystiko.common.v1.ConfigOptions             config_options           = 1;
+  optional mystiko.relayer.v1.RelayerClientOptions     relayer_client_options   = 2;
+  optional mystiko.loader.v1.LoaderConfig              loader_config            = 3;
+  optional string                                      db_path                  = 4;
+  optional string                                      static_cache_path        = 5;
+  optional mystiko.screening.v1.ScreeningClientOptions screening_client_options = 6;
 }
