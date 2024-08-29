@@ -38,6 +38,7 @@ message SendDepositOptions {
   optional uint64 tx_wait_interval_ms                   = 9;
   optional mystiko.core.v1.Transaction asset_approve_tx = 10;
   optional mystiko.core.v1.Transaction deposit_tx       = 11;
+  optional string screening_message                     = 12;
 }
 
 message DepositQuote {
