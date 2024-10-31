@@ -10,6 +10,7 @@ enum BridgeType {
   BRIDGE_TYPE_CELER       = 4;
   BRIDGE_TYPE_LAYER_ZERO  = 5;
   BRIDGE_TYPE_AXELAR      = 6;
+  BRIDGE_TYPE_WORMHOLE    = 7;
 }
 
 enum ContractType {
