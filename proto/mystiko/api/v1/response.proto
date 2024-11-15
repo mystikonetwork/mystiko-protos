@@ -146,12 +146,13 @@ enum SpendError {
   SPEND_ERROR_MISSING_TRANSACTION_HASH_FROM_RELAYER_JOB_ERROR = 40;
   SPEND_ERROR_GET_MYSTIKO_GUARD_ERROR                         = 41;
   SPEND_ERROR_DESERIALIZE_MESSAGE_ERROR                       = 42;
-  SPEND_ERROR_STD_IO_ERROR                                    = 43;
-  SPEND_ERROR_PROTOS_ERROR                                    = 44;
-  SPEND_ERROR_FETCHER_ERROR                                   = 45;
-  SPEND_ERROR_MISSING_RESOURCE_ERROR                          = 46;
-  SPEND_ERROR_RAW_RESOURCE_ERROR                              = 47;
-  SPEND_ERROR_FETCH_FROM_PROVIDER_ERROR                       = 48;
+  SPEND_ERROR_GRPC_CONNECT_ERROR                              = 43;
+  SPEND_ERROR_STD_IO_ERROR                                    = 44;
+  SPEND_ERROR_PROTOS_ERROR                                    = 45;
+  SPEND_ERROR_FETCHER_ERROR                                   = 46;
+  SPEND_ERROR_MISSING_RESOURCE_ERROR                          = 47;
+  SPEND_ERROR_RAW_RESOURCE_ERROR                              = 48;
+  SPEND_ERROR_FETCH_FROM_PROVIDER_ERROR                       = 49;
 }
 
 enum ScannerError {
