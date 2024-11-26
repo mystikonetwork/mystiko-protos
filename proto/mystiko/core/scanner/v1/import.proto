@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package mystiko.core.scanner.v1;
+
+import "mystiko/common/v1/types.proto";
+
+message AssetChainImportOptions {
+  uint64 chain_id           = 1;
+  repeated string tx_hashes = 2;
+}
+
+message AssetImportOptions {
+  string wallet_password                  = 1;
+  repeated AssetChainImportOptions chains = 2;
+  optional uint64 query_timeout_ms        = 3;
+}
+
+message AssetChainImportResult {
+  uint64 chain_id           = 1;
+  uint32 queued             = 2;
+  uint32 included           = 3;
+}
+
+message AssetImportResult {
+  repeated AssetChainImportResult chains = 1;
+}
