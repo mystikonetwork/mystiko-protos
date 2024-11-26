@@ -14,9 +14,9 @@ message AssetImportOptions {
 }
 
 message AssetChainImportResult {
-  uint64 chain_id = 1;
-  uint32 queued   = 2;
-  uint32 included = 3;
+  uint64 chain_id       = 1;
+  uint32 imported_count = 2;
+  uint32 found_count    = 3;
 }
 
 message AssetImportResult {
