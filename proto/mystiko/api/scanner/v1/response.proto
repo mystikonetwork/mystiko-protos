@@ -6,6 +6,7 @@ import "mystiko/core/scanner/v1/scan.proto";
 import "mystiko/core/scanner/v1/reset.proto";
 import "mystiko/core/scanner/v1/balance.proto";
 import "mystiko/core/scanner/v1/asset.proto";
+import "mystiko/core/scanner/v1/import.proto";
 
 message ScanResponse {
   mystiko.core.scanner.v1.ScanResult result = 1;
@@ -25,4 +26,8 @@ message AssetsResponse {
 
 message ChainAssetsResponse {
   optional mystiko.core.scanner.v1.AssetsByChain result = 1;
+}
+
+message AssetImportResponse {
+  mystiko.core.scanner.v1.AssetImportResult result = 1;
 }
