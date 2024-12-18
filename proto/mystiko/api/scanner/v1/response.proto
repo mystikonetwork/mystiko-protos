@@ -8,6 +8,10 @@ import "mystiko/core/scanner/v1/balance.proto";
 import "mystiko/core/scanner/v1/asset.proto";
 import "mystiko/core/scanner/v1/import.proto";
 
+message SyncResponse {
+  mystiko.core.scanner.v1.BalanceResult result = 1;
+}
+
 message ScanResponse {
   mystiko.core.scanner.v1.ScanResult result = 1;
 }
