@@ -9,12 +9,12 @@ import "mystiko/core/scanner/v1/balance.proto";
 import "mystiko/core/scanner/v1/asset.proto";
 import "mystiko/core/scanner/v1/import.proto";
 
-message SyncRequest {
-  mystiko.core.scanner.v1.SyncOptions options = 1;
+message ScannerSyncRequest {
+  mystiko.core.scanner.v1.ScannerSyncOptions options = 1;
 }
 
-message ScanRequest {
-  mystiko.core.scanner.v1.ScanOptions options = 1;
+message ScannerScanRequest {
+  mystiko.core.scanner.v1.ScannerScanOptions options = 1;
 }
 
 message ScannerResetRequest {

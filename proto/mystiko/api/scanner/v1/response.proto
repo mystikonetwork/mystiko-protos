@@ -8,16 +8,16 @@ import "mystiko/core/scanner/v1/balance.proto";
 import "mystiko/core/scanner/v1/asset.proto";
 import "mystiko/core/scanner/v1/import.proto";
 
-message SyncResponse {
+message ScannerSyncResponse {
   mystiko.core.scanner.v1.BalanceResult result = 1;
 }
 
-message ScanResponse {
-  mystiko.core.scanner.v1.ScanResult result = 1;
+message ScannerScanResponse {
+  mystiko.core.scanner.v1.ScannerScanResult result = 1;
 }
 
-message ResetResponse {
-  mystiko.core.scanner.v1.ResetResult result = 1;
+message ScannerResetResponse {
+  mystiko.core.scanner.v1.ScannerResetResult result = 1;
 }
 
 message BalanceResponse {
