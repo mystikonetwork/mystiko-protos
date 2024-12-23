@@ -32,6 +32,6 @@ message ChainAssetsResponse {
   optional mystiko.core.scanner.v1.AssetsByChain result = 1;
 }
 
-message AssetImportResponse {
+message ScannerAssetImportResponse {
   mystiko.core.scanner.v1.AssetImportResult result = 1;
 }

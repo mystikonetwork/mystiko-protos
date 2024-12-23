@@ -34,6 +34,6 @@ message ChainAssetsRequest {
   mystiko.core.scanner.v1.AssetsOptions options = 2;
 }
 
-message AssetImportRequest {
+message ScannerAssetImportRequest {
   mystiko.core.scanner.v1.AssetImportOptions options = 1;
 }
