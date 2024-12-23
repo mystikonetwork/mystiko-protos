@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.synchronizer.v1;
 
-message SyncOptions {
+message SynchronizerSyncOptions {
   optional bool   disable_datapacker_fetcher             = 1;
   optional bool   enable_datapacker_fetcher_validate     = 2;
   optional bool   disable_sequencer_fetcher              = 3;

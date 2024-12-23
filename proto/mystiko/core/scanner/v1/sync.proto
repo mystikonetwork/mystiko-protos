@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mystiko.core.scanner.v1;
 
-message SyncOptions {
+message ScannerSyncOptions {
   string   wallet_password    = 1;
   optional uint32 concurrency = 2;
 }
