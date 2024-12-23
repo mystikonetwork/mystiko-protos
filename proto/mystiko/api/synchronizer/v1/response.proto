@@ -12,6 +12,6 @@ message ContractSyncedBlockResponse {
   optional uint64 result = 1;
 }
 
-message StatusResponse {
+message SynchronizerStatusResponse {
   mystiko.core.synchronizer.v1.SynchronizerStatus status = 1;
 }

@@ -14,12 +14,12 @@ message ContractSyncedBlockRequest {
   string contract_address = 2;
 }
 
-message StatusRequest {
+message SynchronizerStatusRequest {
   bool with_contracts = 1;
 }
 
-message SyncRequest {
-  mystiko.core.synchronizer.v1.SyncOptions options = 1;
+message SynchronizerSyncRequest {
+  mystiko.core.synchronizer.v1.SynchronizerSyncOptions options = 1;
 }
 
 message SynchronizerResetRequest {
