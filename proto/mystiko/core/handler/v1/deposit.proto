@@ -88,3 +88,8 @@ message DepositSummary {
   map<string, double> total_amounts                 = 21;
   map<string, string> total_decimal_amounts         = 22;
 }
+
+message FixDepositStatusOptions {
+  string   deposit_id              = 1;
+  optional uint64 query_timeout_ms = 2;
+}
