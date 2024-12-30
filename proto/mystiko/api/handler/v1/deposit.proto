@@ -31,6 +31,10 @@ message SendWithGrpcRequest {
   mystiko.service.v1.ClientOptions           client_options = 2;
 }
 
+message FixDepositStatusRequest {
+  mystiko.core.handler.v1.FixDepositStatusOptions options = 1;
+}
+
 message FindDepositRequest {
   mystiko.storage.v1.QueryFilter filter = 1;
 }
@@ -87,6 +91,10 @@ message CreateDepositResponse {
 }
 
 message SendResponse {
+  mystiko.core.document.v1.Deposit deposit = 1;
+}
+
+message FixDepositStatusResponse {
   mystiko.core.document.v1.Deposit deposit = 1;
 }
 
