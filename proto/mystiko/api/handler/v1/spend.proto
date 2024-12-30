@@ -31,6 +31,10 @@ message SendSpendWithGrpcRequest {
   mystiko.service.v1.ClientOptions           client_options = 2;
 }
 
+message FixSpendStatusRequest {
+  mystiko.core.handler.v1.FixSpendStatusOptions options = 1;
+}
+
 message FindSpendRequest {
   mystiko.storage.v1.QueryFilter filter = 1;
 }
@@ -87,6 +91,10 @@ message CreateSpendResponse {
 }
 
 message SendSpendResponse {
+  mystiko.core.document.v1.Spend spend = 1;
+}
+
+message FixSpendStatusResponse {
   mystiko.core.document.v1.Spend spend = 1;
 }
 

@@ -124,3 +124,8 @@ message SpendSummary {
   optional string gas_relayer_name               = 21;
   optional string gas_relayer_url                = 22;
 }
+
+message FixSpendStatusOptions {
+  string   spend_id                = 1;
+  optional uint64 query_timeout_ms = 2;
+}
