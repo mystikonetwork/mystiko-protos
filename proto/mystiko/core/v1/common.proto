@@ -4,8 +4,8 @@ package mystiko.core.v1;
 
 enum MnemonicType {
   MNEMONIC_TYPE_UNSPECIFIED = 0;
-  MNEMONIC_TYPE_LEGACY      = 1;
-  MNEMONIC_TYPE_DEFAULT     = 2;
+  MNEMONIC_TYPE_WEB         = 1;
+  MNEMONIC_TYPE_RUST        = 2;
 }
 
 enum DepositStatus {
