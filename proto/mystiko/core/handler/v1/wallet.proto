@@ -2,7 +2,14 @@ syntax = "proto3";
 
 package mystiko.core.handler.v1;
 
+import "mystiko/core/v1/common.proto";
+
+message MnemonicOptions {
+  string mnemonic_phrase                     = 1;
+  mystiko.core.v1.MnemonicType mnemonic_type = 2;
+}
+
 message CreateWalletOptions {
-  string   password               = 1;
-  optional string mnemonic_phrase = 2;
+  string   password                 = 1;
+  optional MnemonicOptions mnemonic = 2;
 }
