@@ -2,7 +2,13 @@ syntax = "proto3";
 
 package mystiko.core.scanner.v1;
 
+import "mystiko/core/scanner/v1/balance.proto";
+
 message ScannerSyncOptions {
   string   wallet_password    = 1;
   optional uint32 concurrency = 2;
+}
+
+message ScannerSyncResult {
+  repeated mystiko.core.scanner.v1.AccountBalanceResult results = 1;
 }

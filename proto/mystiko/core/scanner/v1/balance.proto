@@ -23,3 +23,8 @@ message BalanceOptions {
 message BalanceResult {
   repeated Balance balances = 1;
 }
+
+message AccountBalanceResult {
+  string   shielded_addresses = 1;
+  repeated Balance balances   = 2;
+}
