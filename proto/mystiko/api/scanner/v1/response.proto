@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package mystiko.api.scanner.v1;
 
+import "mystiko/core/scanner/v1/sync.proto";
 import "mystiko/core/scanner/v1/scan.proto";
 import "mystiko/core/scanner/v1/reset.proto";
 import "mystiko/core/scanner/v1/balance.proto";
@@ -9,7 +10,7 @@ import "mystiko/core/scanner/v1/asset.proto";
 import "mystiko/core/scanner/v1/import.proto";
 
 message ScannerSyncResponse {
-  mystiko.core.scanner.v1.BalanceResult result = 1;
+  mystiko.core.scanner.v1.ScannerSyncResult result = 1;
 }
 
 message ScannerScanResponse {
