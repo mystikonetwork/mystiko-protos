@@ -42,6 +42,8 @@ message ProviderFetcherConfig {
   map<uint64,ProviderFetcherChainConfig> chains      = 3;
   optional bool skip_validation                      = 4;
   optional uint32 target_block_priority              = 5;
+  optional uint32 max_requests_per_second            = 6;
+  optional uint32 max_retry_times                    = 7;
 }
 
 message ProviderFetcherChainConfig {
